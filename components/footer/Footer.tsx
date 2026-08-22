@@ -1,0 +1,325 @@
+import { carterOne } from "@/app/fonts";
+import { Newsletter } from "@/components/footer/Newsletter";
+import LocaleSwitcher from "@/components/LocaleSwitcher";
+import { TwitterX } from "@/components/social-icons/icons";
+import { siteConfig } from "@/config/site";
+import { Link as I18nLink } from "@/i18n/routing";
+import {
+  getArticleNavigationLinks,
+  withArticleFooterLinks,
+} from "@/lib/cms/article-navigation";
+import { cn } from "@/lib/utils";
+import { FooterLink } from "@/types/common";
+import { GithubIcon, InstagramIcon, MailIcon, Youtube } from "lucide-react";
+import { getLocale, getMessages, getTranslations } from "next-intl/server";
+import Image from "next/image";
+import Link from "next/link";
+import type { ReactNode } from "react";
+import { SiDiscord, SiTiktok } from "react-icons/si";
+
+export default async function Footer() {
+  const locale = await getLocale();
+  const [messages, t, tFooter, articleLinks] = await Promise.all([
+    getMessages(),
+    getTranslations("Home"),
+    getTranslations("Footer"),
+    getArticleNavigationLinks(locale),
+  ]);
+
+  const footerLinks = withArticleFooterLinks(
+    tFooter.raw("Links.groups") as FooterLink[],
+    articleLinks
+  );
+
+  return (
+    <div className="home-warm-ambient-soft relative overflow-hidden border-t border-white/10 text-white/68">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(18,11,9,0.08),rgba(18,11,9,0.42))]"
+      />
+      <footer className="container relative mx-auto max-w-8xl py-2">
+        <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-12">
+            <div className="col-span-full flex w-full flex-col gap-4 sm:flex-row md:col-span-2 lg:col-span-1 lg:max-w-xs lg:flex-col xl:col-span-3">
+              <div className="space-y-4 flex-1">
+                <div className="flex items-center">
+                  <I18nLink
+                    href="/"
+                    title={t("title")}
+                    prefetch={true}
+                    className="flex items-center space-x-1 text-white"
+                  >
+                    <Image
+                      src="/logo.png"
+                      alt=""
+                      width={512}
+                      height={512}
+                      className="-mt-1.5 h-10 w-10"
+                    />
+                    <span
+                      className={cn(
+                        carterOne.className,
+                        "text-[20px] leading-none tracking-wide"
+                      )}
+                    >
+                      SendTheSong.io
+                    </span>
+                  </I18nLink>
+                </div>
+
+                <p className="text-sm p4-4 md:pr-12">
+                  {t.rich("tagLine", {
+                    strong: (chunks: ReactNode) => (
+                      <strong className="font-semibold text-white">
+                        {chunks}
+                      </strong>
+                    ),
+                    br: () => <br />,
+                  })}
+                </p>
+
+                <div className="flex items-center gap-2">
+                  {siteConfig.socialLinks?.github && (
+                    <Link
+                      href={siteConfig.socialLinks.github}
+                      prefetch={false}
+                      target="_blank"
+                      rel="noreferrer nofollow noopener"
+                      aria-label="GitHub"
+                      title="View on GitHub"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white/62 transition-colors hover:bg-white/8 hover:text-white"
+                    >
+                      <GithubIcon className="size-4" aria-hidden="true" />
+                    </Link>
+                  )}
+                  {siteConfig.socialLinks?.twitter && (
+                    <Link
+                      href={siteConfig.socialLinks.twitter}
+                      prefetch={false}
+                      target="_blank"
+                      rel="noreferrer nofollow noopener"
+                      aria-label="Twitter"
+                      title="View on Twitter"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white/62 transition-colors hover:bg-white/8 hover:text-white"
+                    >
+                      <TwitterX className="w-4 h-4" aria-hidden="true" />
+                    </Link>
+                  )}
+                  {siteConfig.socialLinks?.youtube && (
+                    <Link
+                      href={siteConfig.socialLinks.youtube}
+                      prefetch={false}
+                      target="_blank"
+                      rel="noreferrer nofollow noopener"
+                      aria-label="YouTube"
+                      title="View on YouTube"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white/62 transition-colors hover:bg-white/8 hover:text-white"
+                    >
+                      <Youtube className="w-4 h-4" aria-hidden="true" />
+                    </Link>
+                  )}
+                  {siteConfig.socialLinks?.instagram && (
+                    <Link
+                      href={siteConfig.socialLinks.instagram}
+                      prefetch={false}
+                      target="_blank"
+                      rel="noreferrer nofollow noopener"
+                      aria-label="Instagram"
+                      title="View on Instagram"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white/62 transition-colors hover:bg-white/8 hover:text-white"
+                    >
+                      <InstagramIcon className="w-4 h-4" aria-hidden="true" />
+                    </Link>
+                  )}
+                  {siteConfig.socialLinks?.tiktok && (
+                    <Link
+                      href={siteConfig.socialLinks.tiktok}
+                      prefetch={false}
+                      target="_blank"
+                      rel="noreferrer nofollow noopener"
+                      aria-label="TikTok"
+                      title="View on TikTok"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white/62 transition-colors hover:bg-white/8 hover:text-white"
+                    >
+                      <SiTiktok className="w-4 h-4" aria-hidden="true" />
+                    </Link>
+                  )}
+                  {siteConfig.socialLinks?.discord && (
+                    <Link
+                      href={siteConfig.socialLinks.discord}
+                      prefetch={false}
+                      target="_blank"
+                      rel="noreferrer nofollow noopener"
+                      aria-label="Discord"
+                      title="Join Discord"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white/62 transition-colors hover:bg-white/8 hover:text-white"
+                    >
+                      <SiDiscord className="w-4 h-4" aria-hidden="true" />
+                    </Link>
+                  )}
+                  {siteConfig.socialLinks?.email && (
+                    <Link
+                      href={`mailto:${siteConfig.socialLinks.email}`}
+                      prefetch={false}
+                      target="_blank"
+                      rel="noreferrer nofollow noopener"
+                      aria-label="Email"
+                      title="Email"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white/62 transition-colors hover:bg-white/8 hover:text-white"
+                    >
+                      <MailIcon className="w-4 h-4" />
+                    </Link>
+                  )}
+                </div>
+
+                <div className="pt-2">
+                  <LocaleSwitcher variant="footer" />
+                </div>
+                <div>
+                  <a href="https://firstlook.tools" target="_blank"><img src="https://firstlook.tools/badge/badge_transparent.svg" alt="Featured on First Look" width="200" height="54" /></a>
+                  <a href="https://fazier.com/launches/sendthesong.io" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=dark" width={100} alt="Fazier badge" /></a>
+                  {/* <a href="https://buildvoyage.com/products/sendthesong?ref=badge">
+                    <img src="https://buildvoyage.com/images/featured_badge.png" alt="Featured on BuildVoyage" width="250" />
+                  </a> */}
+                </div>
+
+              </div>
+            </div>
+
+            {footerLinks.map((section) => {
+              const isArticlesSection = section.id === "articles";
+              const linkClassName = cn(
+                "text-white/62 transition-colors hover:text-white",
+                isArticlesSection && "block max-w-sm line-clamp-2 leading-5"
+              );
+
+              return (
+                <div
+                  key={section.title}
+                  className="min-w-0 lg:col-span-1 xl:col-span-2"
+                >
+                  <div className="mb-4 text-lg font-semibold text-white">
+                    {section.title}
+                  </div>
+                  <ul className="space-y-2 text-sm">
+                    {section.links.map((link, index) => {
+                      if (link.isSubTitle) {
+                        return (
+                          <li key={index} className="pt-4">
+                            <div className="mb-2 text-lg font-semibold text-white">
+                              {link.name}
+                            </div>
+                          </li>
+                        );
+                      }
+
+                      return (
+                        <li key={link.href}>
+                          {link.href!.startsWith("/") && !link.useA ? (
+                            <I18nLink
+                              href={link.href!}
+                              title={link.name}
+                              prefetch={false}
+                              className={linkClassName}
+                              target={link.target || ""}
+                              rel={link.rel || ""}
+                            >
+                              {link.name}
+                            </I18nLink>
+                          ) : (
+                            <Link
+                              href={link.href!}
+                              title={link.name}
+                              prefetch={false}
+                              className={linkClassName}
+                              target={link.target || ""}
+                              rel={link.rel || ""}
+                            >
+                              {link.name}
+                            </Link>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              );
+            })}
+
+            {messages.Footer.Newsletter && (
+              <div className="w-full lg:col-span-1 xl:col-span-3">
+                <Newsletter
+                  contactEmail={siteConfig.socialLinks.email}
+                  labels={{
+                    defaultErrorMessage: tFooter(
+                      "Newsletter.subscribe.defaultErrorMessage"
+                    ),
+                    description: tFooter("Newsletter.description"),
+                    invalidEmail: tFooter("Newsletter.subscribe.invalidEmail"),
+                    successMessage: tFooter(
+                      "Newsletter.subscribe.successMessage"
+                    ),
+                    title: tFooter("Newsletter.title"),
+                  }}
+                  locale={locale}
+                />
+              </div>
+            )}
+          </div>
+
+          <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 md:flex-row">
+            <p className="text-sm text-white/52">
+              {tFooter("Copyright", {
+                year: new Date().getFullYear(),
+                name: siteConfig.name,
+              })}
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 md:justify-end">
+              <Link
+                href={`mailto:${siteConfig.socialLinks.email}`}
+                title={siteConfig.socialLinks.email}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="text-sm text-white/52 transition-colors hover:text-white"
+              >
+                Contact us: {siteConfig.socialLinks.email}
+              </Link>
+              <I18nLink
+                href="/about"
+                title={tFooter("About")}
+                prefetch={false}
+                className="text-sm text-white/52 transition-colors hover:text-white"
+              >
+                {tFooter("About")}
+              </I18nLink>
+              <Link
+                href="/privacy-policy"
+                title={tFooter("PrivacyPolicy")}
+                prefetch={false}
+                className="text-sm text-white/52 transition-colors hover:text-white"
+              >
+                {tFooter("PrivacyPolicy")}
+              </Link>
+              <Link
+                href="/terms-of-service"
+                title={tFooter("TermsOfService")}
+                prefetch={false}
+                className="text-sm text-white/52 transition-colors hover:text-white"
+              >
+                {tFooter("TermsOfService")}
+              </Link>
+              <Link
+                href="/refund-policy"
+                title={tFooter("RefundPolicy")}
+                prefetch={false}
+                className="text-sm text-white/52 transition-colors hover:text-white"
+              >
+                {tFooter("RefundPolicy")}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

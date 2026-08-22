@@ -1,0 +1,382 @@
+{
+  "Hero": {
+    "badge": {
+      "label": "",
+      "text": "✨ Custom song gift maker",
+      "href": ""
+    },
+    "title": "Send A Custom Song They’ll Cherish Forever",
+    "titleLine": "Send A Custom Song They’ll",
+    "titleAccent": "Cherish Forever",
+    "description": "<p class=\"hero-subtitle\">Turn your story into a personalized song gift. Preview it free, refine the lyrics, and send a meaningful custom song in minutes.</p>",
+    "trustBadge": "SendTheSong · Free preview first · Ready in minutes",
+    "inputLabel": "written from the heart",
+    "trustItems": [
+      "Free to preview",
+      "Ready in minutes",
+      "Edit before you unlock"
+    ],
+    "getStarted": "Start a Free Preview",
+    "getStartedLink": "/create-song",
+    "howItWorksCta": "How It Works",
+    "watchReactionsCta": "Watch Reactions",
+    "viewDocs": "Read the Blog",
+    "viewDocsLink": "/blog"
+  },
+  "OccasionShowcase": {
+    "eyebrow": "Occasions",
+    "title": "For Every Precious Moment, A Personal Melody",
+    "description": "Send a custom song to honor life's special stories and emotions.",
+    "previous": "Previous occasion",
+    "next": "Next occasion",
+    "carouselLabel": "Occasion carousel"
+  },
+  "CustomerReactions": {
+    "badge": {
+      "label": "REACTIONS",
+      "text": "😭 Tears of Joy"
+    },
+    "title": "See What Happens When You SendTheSong",
+    "description": "<p>Grab some tissues before you watch. Hover to preview quietly, then click to hear how sending a song creates an unforgettable moment.</p>",
+    "playLabel": "Play {title} with sound",
+    "muteLabel": "Mute {title}",
+    "trustItems": ["Free to preview", "Ready in minutes", "Just for you"],
+    "videos": [
+      {
+        "src": "/cass_demo/optimized/giftsong-slide-2.mp4",
+        "label": "SendTheSong",
+        "title": "Mom's reaction: song sent"
+      },
+      {
+        "src": "/cass_demo/optimized/compressed/giftsong-slide-13.mp4",
+        "label": "SendTheSong",
+        "title": "Joy from sent song"
+      },
+      {
+        "src": "/cass_demo/optimized/compressed/giftsong-slide-14.mp4",
+        "label": "SendTheSong",
+        "title": "Best sent song surprise"
+      },
+      {
+        "src": "/cass_demo/optimized/compressed/giftsong-slide-15.mp4",
+        "label": "SendTheSong",
+        "title": "Wedding song sent forever"
+      },
+      {
+        "src": "/cass_demo/optimized/giftsong-slide-12.mp4",
+        "label": "SendTheSong",
+        "title": "Anniversary song sent"
+      },
+      {
+        "src": "/cass_demo/optimized/giftsong-slide-5.mp4",
+        "label": "SendTheSong",
+        "title": "Sending her a love song"
+      },
+      {
+        "src": "/cass_demo/optimized/compressed/giftsong-slide-18.mp4",
+        "label": "SendTheSong",
+        "title": "Joy from song sent"
+      },
+      {
+        "src": "/cass_demo/optimized/giftsong-slide-20.mp4",
+        "label": "SendTheSong",
+        "title": "Listening to sent song"
+      },
+      {
+        "src": "/cass_demo/optimized/compressed/giftsong-slide-17.mp4",
+        "label": "SendTheSong",
+        "title": "Dad's reaction: song sent"
+      },
+      {
+        "src": "/cass_demo/optimized/compressed/giftsong-slide-16.mp4",
+        "label": "SendTheSong",
+        "title": "Tears for sent song"
+      }
+    ]
+  },
+  "HowItWorks": {
+    "eyebrow": "How It Works",
+    "title": "From one memory to a tear-worthy song in minutes",
+    "description": "Create a custom song, preview for free, then unlock the full gift bundle—with a lyric video and printable lyric art—to send the song in style.",
+    "steps": {
+      "story": {
+        "title": "Tell Us Your Story",
+        "description": "Pick an occasion, select a genre, and drop a few favorite memories. Your words are transformed into beautifully poetic lyrics.",
+        "cta": "Craft My Song"
+      },
+      "preview": {
+        "title": "Preview & Perfect for Free",
+        "description": "Listen to your studio-quality 60-second preview instantly. Not 100% happy? Use our dashboard to tweak lyrics or swap genres with total creative freedom."
+      },
+      "gift": {
+        "title": "Unleash the Ultimate Gift",
+        "description": "Unlock the full <strong>custom song</strong> and get a free custom <strong>lyric video</strong> plus customizable <strong>wall art</strong> poster combo. Send it privately or post on socials to watch them cry tears of joy."
+      },
+      "deliver": {
+        "title": "Share the Surprise Anywhere",
+        "description": "Send the finished song privately, pair it with a <strong>lyric video</strong>, or print <strong>wall art</strong> lyrics to turn one memory into a gift they can replay and keep."
+      }
+    }
+  },
+  "VoicePersonalization": {
+    "eyebrow": "Make It Sound Like You",
+    "title": "Add the voice only they would recognize",
+    "description": "Bring more of yourself into the first moments of a custom song, then send a gift that lets music carry the rest of the story.",
+    "items": {
+      "voiceClone": {
+        "title": "Your Own Singing Voice",
+        "description": "Create a verified voice profile and use your own familiar vocal character in the songs you make.",
+        "highlights": [
+          "Create a personal singing voice for future songs",
+          "Choose it alongside your song's genre and language",
+          "Keep the feeling familiar without needing to perform"
+        ],
+        "demo": {
+          "eyebrow": "Hear the transformation",
+          "title": "One voice, made into a song",
+          "source": {
+            "title": "Original voice recording",
+            "subtitle": "The dry vocal sample used to create the voice"
+          },
+          "song": {
+            "title": "Song created with that voice",
+            "subtitle": "Your singing voice in a finished song",
+            "startsAt": "Song preview starts at 0:04"
+          },
+          "play": "Play {title}",
+          "pause": "Pause {title}"
+        },
+        "consent": "Only clone a voice you are authorized to use. A verification step is required before it can be used.",
+        "cta": "Create my voice",
+        "imageAlt": "Person recording a voice sample for a custom singing voice"
+      },
+      "spokenIntro": {
+        "title": "An Opening in Your Own Words & Voice",
+        "description": "Start the song with a short greeting that makes the surprise feel personal from the very first second.",
+        "highlights": [
+          "Record your own voice message to open the song",
+          "Or write a blessing for the singer to deliver",
+          "Let the spoken moment flow naturally into the music"
+        ],
+        "demo": {
+          "eyebrow": "Hear a real opening",
+          "title": "Steady Light, May",
+          "label": "A custom opening message",
+          "play": "Play opening demo",
+          "pause": "Pause opening demo",
+          "introPlaying": "The spoken message is playing",
+          "songStarts": "The song begins from here"
+        },
+        "cta": "Add an opening message",
+        "imageAlt": "Voice message being recorded before a personalized song begins"
+      }
+    }
+  },
+  "WallArtGallery": {
+    "eyebrow": "More Than a Song",
+    "title": "One Story. A Gift in Every Form.",
+    "description": "Turn one personal story into a song they can hear, a lyric video they can share, and lyric art they can keep. Tap any piece to see it up close.",
+    "wallArtCta": "Explore custom lyrics wall art",
+    "posterCta": "Try the lyric poster maker",
+    "imageAlt": "Personalized lyric wall art preview {index}",
+    "dialogTitle": "Wall art preview"
+  },
+  "OurProducts": {
+    "eyebrow": "Our Products",
+    "title": "The Complete Personalized Gift",
+    "description": "Turn one personal story into a complete personalized music gift: a custom song, a shareable lyric video, and printable wall art—ready to send for birthdays, weddings, anniversaries, and once-in-a-lifetime moments.",
+    "items": {
+      "customSong": {
+        "label": "Signature",
+        "title": "Personalized Song",
+        "price": "From $29.99",
+        "description": "Create a studio-quality custom song from your memories, names, dates, and message. Preview it free, refine the lyrics, then send a song they can replay forever.",
+        "cta": "Create a song",
+        "imageAlt": "Couple listening to a personalized custom song gift on a phone"
+      },
+      "videoGift": {
+        "label": "Add-on",
+        "title": "Lyric Video Gift",
+        "price": "From $23.99",
+        "description": "Pair your custom song with photos, synced lyric scenes, and emotional video templates. A lyric video gift is easy to share by text, email, or social media.",
+        "cta": "Create video styles",
+        "imageAlt": "Personalized lyric video gift with family photo and custom song lyrics"
+      },
+      "wallArt": {
+        "label": "Add-on",
+        "title": "Digital Wall Art",
+        "price": "From $7.99",
+        "description": "Transform your lyrics into printable wall art, record-style posters, or photo layouts. Download a high-resolution keepsake for home printing or a print shop.",
+        "cta": "Create wall art",
+        "imageAlt": "Printable digital wall art posters made from custom song lyrics"
+      }
+    }
+  },
+  "UseCases": {
+    "badge": {
+      "label": "CORE FEATURES",
+      "text": "Personalized Music Gift"
+    },
+    "title": "Why Craft Your Song with Us?",
+    "description": "The absolute best way to send a song that touches hearts. Unmatched value, studio quality, and boundless personalization.",
+    "cases": [
+      {
+        "title": "Ready in 2 Minutes",
+        "description": "Answer a few simple questions and watch your memories transform into a custom song sample in just 2 minutes. No musical skills required.",
+        "image": "/placeholder.webp",
+        "icon": "Zap"
+      },
+      {
+        "title": "Studio-Grade Quality",
+        "description": "Real-sounding emotional vocals, professional instruments, and crystal-clear production. Your personalized song sounds exactly like a hit track recorded in a real studio.",
+        "image": "/placeholder.webp",
+        "icon": "Mic2"
+      },
+      {
+        "title": "Premium Quality, Better Price",
+        "description": "Why pay more for the same magic? We offer top-tier songwriting and studio-quality production at the most competitive price on the market, giving you premium value for less.",
+        "image": "/placeholder.webp",
+        "icon": "CircleDollarSign"
+      },
+      {
+        "title": "Try 100% Free Before You Buy",
+        "description": "Listen to your custom preview without handing over your credit card. Tweak the lyrics, switch genres, and only unlock the full high-res track when you're deeply moved.",
+        "image": "/placeholder.webp",
+        "icon": "Sparkles"
+      },
+      {
+        "title": "Free Custom Wall Art & Video Templates",
+        "description": "Get way more than just audio. Every song comes packed with a massive library of free lyric video and printable wall art templates to create the ultimate personalized music gift combo.",
+        "image": "/placeholder.webp",
+        "icon": "Palette"
+      },
+      {
+        "title": "Built-in Personalization Editors",
+        "description": "Take complete control. Use our intuitive interactive editors to fully customize your lyric video or layout your wall art lyrics. Add your personal photos, dates, and love notes effortlessly.",
+        "image": "/placeholder.webp",
+        "icon": "SlidersHorizontal"
+      }
+    ]
+  },
+  "SongfinchComparison": {
+    "eyebrow": "Why Users Switch from Songfinch to sendthesong.io",
+    "title": "<us>sendthesong.io</us> <vs>vs.</vs> <songfinch>Songfinch</songfinch>",
+    "subtitle": "Don’t pay <price>$200+</price> for a single song. Get <strong>elite studio-quality production</strong> with unlimited freedom <underline>at a fraction of the cost.</underline>",
+    "tableHeaders": {
+      "feature": "Feature / Benefit",
+      "songfinch": "Songfinch",
+      "us": "sendthesong.io (Us)"
+    },
+    "rows": [
+      {
+        "feature": "Starting Price",
+        "songfinch": "$199+ per song",
+        "us": "Ultra affordable, unbeatable price"
+      },
+      {
+        "feature": "Delivery Time",
+        "songfinch": "4 to 7 days, long wait",
+        "us": "Just 2 minutes, instant preview"
+      },
+      {
+        "feature": "Risk-Free Trial",
+        "songfinch": "Pay upfront, no preview",
+        "us": "100% free preview, pay only when happy"
+      },
+      {
+        "feature": "Lyrics Revisions",
+        "songfinch": "Restricted or extra fees",
+        "us": "Unlimited edits with complete control"
+      },
+      {
+        "feature": "Free Lyric Video",
+        "songfinch": "Not included",
+        "us": "Included free with customizable templates"
+      },
+      {
+        "feature": "Free Printable Wall Art",
+        "songfinch": "Not included",
+        "us": "Included free with lyric poster editors"
+      }
+    ],
+    "painPoints": [
+      {
+        "icon": "value",
+        "title": "Absolute Best Value, No Wallet Pain",
+        "description": "Songfinch charges a hefty upfront fee of $199 minimum. We believe everyone deserves to celebrate their love without breaking the bank. We offer the exact same musical magic at the most competitive price on the market."
+      },
+      {
+        "icon": "speed",
+        "title": "From Memories to Music in 2 Minutes",
+        "description": "Why wait a whole week for your anniversary or birthday gift? Our instant creation process lets you create a custom song sample in just 2 minutes. Perfect for last-minute lifesavers and instant emotional impacts."
+      },
+      {
+        "icon": "edits",
+        "title": "Unlimited Edits & Tweak Till It’s Perfect",
+        "description": "With traditional services, changing a lyric or switching a genre means endless back-and-forth emails and extra fees. With our interactive dashboard, you can tweak the lyrics and switch genres instantly with total creative freedom."
+      },
+      {
+        "icon": "bundle",
+        "title": "A Complete Personalized Music Gift Bundle",
+        "description": "A song is great, but a multimedia memory is legendary. Every unlocked track comes with free customizable lyric video templates and printable wall art templates. It's a complete personalized music gift ecosystem that Songfinch simply doesn't offer."
+      }
+    ]
+  },
+  "Testimonials": {
+    "badge": {
+      "label": "TESTIMONIALS"
+    },
+    "title": "What Customers Say About SendTheSong",
+    "description": "Real stories from people who turned a memory into a song worth sending."
+  },
+  "FAQ": {
+    "title": "Common Questions About SendTheSong",
+    "description": "Everything you need to know before you create, personalize, and send a song they’ll cherish forever.",
+    "items": [
+      {
+        "question": "How does SendTheSong work?",
+        "answer": "It’s pure magic. Just tell us your story by answering a few simple questions, choose your favorite music genre, and we will craft a custom song instantly. You will get a free 60-second studio-quality preview. If you love it, unlock the full song and get access to our free video and print editors!"
+      },
+      {
+        "question": "What makes you different from other custom song platforms?",
+        "answer": "We don't just give you an audio file. We offer the most competitive pricing on the market, plus every song unlocks an unlimited library of free, customizable lyric video and printable wall art templates. You can use our built-in interactive editors to personalize them with your own photos and love notes."
+      },
+      {
+        "question": "Can I edit the lyrics or change the music genre?",
+        "answer": "Absolutely! You are in complete control. Before unlocking the full high-res track, you can tweak the lyrics, change the musical style, or switch the vocal vibe inside our dashboard until it perfectly matches your vision."
+      },
+      {
+        "question": "How can I share my personalized music gift?",
+        "answer": "Every song comes with a stunning, dedicated sharing page that you can send via text, email, or social media. You can fully customize this page with a personal image, a heartfelt note, and your personalized song playing on a spinning vinyl player. It's built to create a real wow-moment."
+      },
+      {
+        "question": "Are there any hidden fees, and is my payment secure?",
+        "answer": "Zero hidden fees. You only pay when you are completely happy with your preview. All payments are encrypted and securely processed through Creem (PCI-compliant). We never store your credit card details on our servers."
+      },
+      {
+        "question": "How long are my custom songs stored?",
+        "answer": "Your purchased tracks, custom lyric videos, and wall art layouts are stored on your account securely and indefinitely. You can log in to stream, replay, or re-download them in high-quality MP3 format at any time."
+      },
+      {
+        "question": "What are the login requirements?",
+        "answer": "We keep it completely frictionless. You don't even need to register to start crafting your preview! We use a \"lazy registration\" system - simply enter your email to listen to your preview, and a guest account is silently created for you. You can sign in via Google or Email later anytime."
+      },
+      {
+        "question": "What if my song creation gets stuck?",
+        "answer": "Our creation process is designed to be reliable, but network glitches can happen. If it gets stuck, refresh the page. If the issue persists, contact support and we will review the issue within 3 business days."
+      }
+    ]
+  },
+  "CTA": {
+    "title": "Send A Custom Song They’ll Cherish Forever",
+    "description": "Tell us your story. Your memories are instantly transformed into a studio-quality <strong>custom song</strong>. Create and <strong>send a song</strong> that makes the perfect <strong>personalized music gift</strong> for birthdays, weddings, or anniversaries.",
+    "button": "Create Your Song",
+    "trustText": "Made for unforgettable moments",
+    "features": {
+      "deploy": "🎵 Studio-Quality Custom Song",
+      "production": "🎁 Personalized Gift Ready",
+      "updates": "⚡ Instant Free Preview",
+      "i18n": "💌 Easy to Send & Share"
+    }
+  }
+}
