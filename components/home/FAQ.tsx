@@ -66,17 +66,25 @@ export default function FAQ({
                     type="button"
                     className="flex w-full cursor-pointer items-center justify-between gap-3 text-left text-base font-semibold leading-6 text-[var(--songtell-ink)]"
                     aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${faqs.indexOf(item)}`}
                     onClick={() => setOpenItem(isOpen ? null : item.question)}
                   >
                     <span>{item.question}</span>
                     <Icon className="size-5 shrink-0 text-[var(--songtell-ink)]" />
                   </button>
 
-                  {isOpen && (
-                    <p className="mt-4 border-t-2 border-[var(--songtell-ink)]/30 pt-4 text-sm leading-6 text-[var(--songtell-ink)]/80">
-                      {item.answer}
-                    </p>
-                  )}
+                  <div
+                    id={`faq-answer-${faqs.indexOf(item)}`}
+                    role="region"
+                    aria-hidden={!isOpen}
+                    className={`grid transition-[grid-template-rows] duration-200 ease-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="mt-4 border-t-2 border-[var(--songtell-ink)]/30 pt-4 text-sm leading-6 text-[var(--songtell-ink)]/80">
+                        {item.answer}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               );
             })}

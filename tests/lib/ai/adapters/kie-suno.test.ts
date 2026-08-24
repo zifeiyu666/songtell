@@ -252,12 +252,12 @@ describe("KIE Suno adapter normalization", () => {
   { "id":"track-a",
     "title":"May,
     My Sweet Valentine",
-    "audioUrl":"https://cdn.sendthesong.io/a/audio.mp3",
+    "audioUrl":"https://cdn.songtell.art/a/audio.mp3",
     "imageUrl":"https://musicfile.kie.ai/cover.jpeg"
   },
   { "id":"track-b",
     "title":"May, My Sweet Valentine",
-    "audioUrl":"https://cdn.sendthesong.io/b/audio.mp3"
+    "audioUrl":"https://cdn.songtell.art/b/audio.mp3"
     "imageUrl":"https://musicfile.kie.ai/cover.jpeg"
   }
 ]`;
@@ -276,13 +276,13 @@ describe("KIE Suno adapter normalization", () => {
         {
           id: "track-a",
           title: "May,\n    My Sweet Valentine",
-          audioUrl: "https://cdn.sendthesong.io/a/audio.mp3",
+          audioUrl: "https://cdn.songtell.art/a/audio.mp3",
           imageUrl: "https://musicfile.kie.ai/cover.jpeg",
         },
         {
           id: "track-b",
           title: "May, My Sweet Valentine",
-          audioUrl: "https://cdn.sendthesong.io/b/audio.mp3",
+          audioUrl: "https://cdn.songtell.art/b/audio.mp3",
           imageUrl: "https://musicfile.kie.ai/cover.jpeg",
         },
       ],

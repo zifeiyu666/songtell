@@ -8,7 +8,7 @@ const statusSteps = [
   ["01", "Story", "Share the details only you know."],
   ["02", "Lyrics", "Shape the words before you unlock."],
   ["03", "Preview", "Hear an original song in minutes."],
-  ["04", "Share", "Open a playable memory they can keep."],
+  ["04", "Share", "Open a playable story they can keep."],
 ] as const;
 
 export default function Hero() {
@@ -44,7 +44,7 @@ export default function Hero() {
             <div key={title} className="relative min-h-[118px] border-[var(--songtell-line)] p-4 text-left sm:min-h-[132px] sm:p-5">
               {index < statusSteps.length - 1 && <span className="absolute right-0 top-7 hidden h-px w-5 bg-[var(--songtell-line)] sm:block" aria-hidden="true" />}
               <span className="text-xs font-semibold text-[var(--songtell-blue)]">{number}</span>
-              <h2 className="mt-4 text-sm font-bold text-[var(--songtell-ink)] sm:text-base">{title}</h2>
+              <h3 className="mt-4 text-sm font-bold text-[var(--songtell-ink)] sm:text-base">{title}</h3>
               <p className="mt-1 text-xs leading-5 text-[var(--songtell-muted)]">{description}</p>
             </div>
           ))}

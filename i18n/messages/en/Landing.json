@@ -2,15 +2,15 @@
   "Hero": {
     "badge": {
       "label": "",
-      "text": "✨ Songtell · Custom song maker",
+      "text": "✨ Songtell · Personalized song gift · Free preview first",
       "href": ""
     },
-    "title": "Turn Your Unspoken Words into a Custom Song",
-    "titleLine": "Turn Your Unspoken Words into a",
-    "titleAccent": "Custom Song",
+    "title": "Turn Your Own Stories into a Personalized Song",
+    "titleLine": "Turn Your Own Stories into a",
+    "titleAccent": "Personalized Song",
     "description": "<p class=\"hero-subtitle\">Let a personalized song tell your story—for anniversaries, weddings, confessions, and gratitude. Preview it free, shape the feeling, and share a song made for one person.</p>",
     "trustBadge": "Songtell · Free preview first · Ready in minutes",
-    "inputLabel": "tell us the feeling",
+    "inputLabel": "tell us your story",
     "trustItems": [
       "Free to preview",
       "Original lyrics",
@@ -36,7 +36,7 @@
       "label": "REACTIONS",
       "text": "😭 Tears of Joy"
     },
-    "title": "Watch a Memory Become Music",
+    "title": "Watch a Story Become Music",
     "description": "<p>Explore real Songtell moments: quiet reactions, familiar voices, and the instant a personal story starts to sound like a song.</p>",
     "playLabel": "Play {title} with sound",
     "muteLabel": "Mute {title}",
@@ -96,11 +96,11 @@
   },
   "HowItWorks": {
     "eyebrow": "How It Works",
-    "title": "From one memory to a song they can keep",
-    "description": "Start with a memory, listen to an original direction, then shape a playable song page with lyrics and visual keepsakes you can share and replay.",
+    "title": "From one story to a song they can keep",
+    "description": "Start with a story, listen to an original direction, then shape a playable song page with lyrics and visual keepsakes you can share and replay.",
     "steps": {
       "story": {
-        "title": "Name the memory",
+        "title": "Name the story",
         "description": "Pick the moment, choose a sound, and share a few details only you would know. Your words become original lyrics.",
         "cta": "Craft My Song"
       },
@@ -114,7 +114,7 @@
       },
       "deliver": {
         "title": "Open the moment",
-        "description": "Unlock the finished song, pair it with a <strong>lyric video</strong>, and give one memory a form they can revisit and keep."
+        "description": "Unlock the finished song, pair it with a <strong>lyric video</strong>, and give one story a form they can revisit and keep."
       }
     }
   },
@@ -326,7 +326,7 @@
     "badge": {
       "label": "TESTIMONIALS"
     },
-    "title": "Small Memories. Songs They Keep.",
+    "title": "Small Stories. Songs They Keep.",
     "description": "Notes from people who gave an ordinary moment its own melody."
   },
   "FAQ": {
@@ -334,7 +334,11 @@
     "description": "A clear guide to turning one meaningful story into a song you can personalize, preview, and share.",
     "items": [
       {
-        "question": "How does Songtell turn a story into a song?",
+        "question": "What is a personalized song?",
+        "answer": "A personalized song is an original song made for a specific person, relationship, or moment. Songtell uses the names, memories, message, and musical feeling you share to create custom lyrics and melody that are unique to your story."
+      },
+      {
+        "question": "How does Songtell create a personalized song?",
         "answer": "Share the people, memories, and feeling you want to capture, then choose a musical direction. Songtell creates an original preview with lyrics and melody so you can hear the idea before deciding whether to unlock the finished song."
       },
       {

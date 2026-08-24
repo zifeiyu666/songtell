@@ -2,7 +2,7 @@
 // app's env vars. Without a fallback, r2PublicUrl() would return relative paths
 // that Remotion resolves against the Lambda site bucket (staticFile), breaking
 // renders. Mirror the DEFAULT_SITE_URL pattern from config/site.ts.
-const DEFAULT_PUBLIC_URL = "https://cdn.sendthesong.io";
+const DEFAULT_PUBLIC_URL = "https://cdn.songtell.art";
 
 const configuredPublicUrl =
   process.env.NEXT_PUBLIC_R2_PUBLIC_URL ||

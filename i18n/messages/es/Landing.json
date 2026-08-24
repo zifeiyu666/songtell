@@ -266,34 +266,34 @@
     },
     "rows": [
       {
-        "feature": "Precio inicial",
-        "songfinch": "Desde $199 por canción",
-        "us": "Opciones más asequibles"
+        "feature": "Primer paso",
+        "songfinch": "Encarga la canción y espera a recibirla",
+        "us": "Empieza con tu historia y explora una muestra"
       },
       {
-        "feature": "Tiempo de entrega",
-        "songfinch": "Entre 4 y 7 días",
-        "us": "Muestra en pocos minutos"
+        "feature": "Cuándo escuchas la muestra",
+        "songfinch": "Depende del plazo de producción del encargo",
+        "us": "Escucha una primera versión mientras das forma a la idea"
       },
       {
-        "feature": "Prueba antes de pagar",
-        "songfinch": "Pago por adelantado",
-        "us": "Muestra gratuita"
+        "feature": "Confianza creativa",
+        "songfinch": "Revisa el encargo cuando está terminado",
+        "us": "Escucha antes de desbloquear la canción final"
       },
       {
-        "feature": "Cambios en la letra",
-        "songfinch": "Limitados o con coste adicional",
-        "us": "Ediciones incluidas"
+        "feature": "Dirección de la letra",
+        "songfinch": "Comparte tu briefing con el compositor",
+        "us": "Ajusta las palabras y la dirección creativa en el editor"
       },
       {
-        "feature": "Vídeo con letras",
-        "songfinch": "No incluido",
-        "us": "Plantillas personalizables disponibles"
+        "feature": "Presentación para compartir",
+        "songfinch": "Una canción terminada para compartir",
+        "us": "Una página reproducible y estilos opcionales de vídeo con letras"
       },
       {
-        "feature": "Lámina imprimible",
-        "songfinch": "No incluida",
-        "us": "Editor de póster con la letra incluido"
+        "feature": "Recuerdo físico",
+        "songfinch": "Se centra en la grabación encargada",
+        "us": "Convierte la letra final en arte de pared imprimible"
       }
     ],
     "painPoints": [
@@ -321,13 +321,17 @@
   },
   "Testimonials": {
     "badge": { "label": "OPINIONES" },
-    "title": "Pequeños recuerdos. Canciones para guardar.",
+    "title": "Pequeñas historias. Canciones para guardar.",
     "description": "Historias de personas que dieron su propia melodía a un momento especial."
   },
   "FAQ": {
     "title": "Preguntas frecuentes sobre Songtell",
     "description": "Una guía clara para convertir una historia importante en una canción que puedes personalizar, escuchar y compartir.",
     "items": [
+      {
+        "question": "¿Qué es una canción personalizada?",
+        "answer": "Es una canción original creada para una persona, relación o momento concretos. Songtell usa los nombres, recuerdos, mensaje y emoción musical que compartes para crear una letra y una melodía únicas para tu historia."
+      },
       {
         "question": "¿Cómo convierte Songtell una historia en una canción?",
         "answer": "Cuéntanos la historia, elige un estilo musical y prepararemos una canción personalizada al instante. Primero recibirás una muestra gratuita de 60 segundos. Si te gusta, podrás desbloquear la canción completa y usar los editores de vídeo y láminas."

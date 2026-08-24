@@ -1,7 +1,6 @@
 "use client";
 
 import { GoogleIcon } from "@/components/icons";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { DEFAULT_LOCALE } from "@/i18n/routing";
@@ -9,7 +8,7 @@ import { authClient } from "@/lib/auth/auth-client";
 import { normalizeEmail } from "@/lib/email";
 import { initializeTracking } from "@/lib/tracking/client";
 import { Turnstile } from "@marsidev/react-turnstile";
-import { Link as LinkIcon, Loader2 } from "lucide-react";
+import { ArrowUpRight, Loader2 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
@@ -254,13 +253,13 @@ export default function LoginForm({
   };
 
   return (
-    <div className={`grid gap-6 ${className}`}>
+    <div className={`grid gap-7 ${className}`}>
       <div className="grid gap-4">
         <Button
           variant="outline"
           onClick={() => signInSocial("google")}
           disabled={isGoogleLoading || isGithubLoading}
-          className="relative"
+          className="creem-login-social relative h-13 border-2 border-[var(--songtell-ink)] bg-white px-5 text-base font-semibold text-[var(--songtell-ink)] shadow-[2px_2px_0_var(--songtell-ink)] hover:translate-x-[-1px] hover:translate-y-[-1px] hover:bg-[#f4efe8] hover:shadow-[3px_3px_0_var(--songtell-ink)] focus-visible:ring-[var(--songtell-theme)]"
         >
           {isGoogleLoading ? (
             <Loader2 className="h-4 w-4 animate-spin" />
@@ -269,12 +268,9 @@ export default function LoginForm({
           )}
           {t("signInMethods.signInWithGoogle")}
           {lastMethod === "google" && (
-            <Badge
-              variant="secondary"
-              className="absolute right-2 text-[10px] px-1.5 py-0.5 pointer-events-none"
-            >
+            <span className="absolute right-3 hidden text-[10px] font-bold uppercase tracking-[0.08em] text-[#756d66] sm:inline">
               Last used
-            </Badge>
+            </span>
           )}
         </Button>
         {/* <Button
@@ -300,49 +296,57 @@ export default function LoginForm({
         </Button> */}
       </div>
 
-      <div className="relative">
+      <div className="relative py-0.5">
         <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t" />
+          <span className="w-full border-t-2 border-[var(--songtell-ink)]" />
         </div>
-        <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">
+        <div className="relative flex justify-center text-xs font-semibold uppercase tracking-[0.06em]">
+          <span className="bg-[#fffdfa] px-3 text-[#665f5a]">
             {t("signInMethods.or")}
           </span>
         </div>
       </div>
 
-      <div className="grid gap-2">
-        <div className="grid">
-          <div className="text-sm font-medium">Email</div>
+      <div className="grid gap-5">
+        <div className="grid gap-2">
+          <label htmlFor="login-email" className="text-base font-bold">
+            Email
+          </label>
           <Input
+            id="login-email"
             type="email"
             placeholder="name@example.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={isLoading || isOtpLoading}
-            onMouseEnter={() => setShowTurnstile(true)}
+            onFocus={() => setShowTurnstile(true)}
+            className="h-13 border-2 border-[var(--songtell-ink)] bg-white px-4 text-base text-[var(--songtell-ink)] shadow-[2px_2px_0_var(--songtell-ink)] placeholder:text-[#837a73] focus-visible:ring-[var(--songtell-theme)]"
           />
         </div>
 
         {mode === "otp" && (
-          <div className="grid">
-            <div className="text-sm font-medium">
+          <div className="grid gap-2">
+            <label
+              htmlFor="login-verification-code"
+              className="text-base font-bold"
+            >
               {t("signInMethods.otpMethod")}
-            </div>
-            <div className="flex gap-2">
+            </label>
+            <div className="flex gap-3">
               <Input
+                id="login-verification-code"
                 type="text"
                 maxLength={6}
                 placeholder="123456"
                 value={otpCode}
                 onChange={(e) => setOtpCode(e.target.value.replace(/\D/g, ""))}
                 disabled={isLoading || isOtpLoading}
-                className="flex-1"
+                className="h-13 min-w-0 flex-1 border-2 border-[var(--songtell-ink)] bg-white px-4 text-base text-[var(--songtell-ink)] shadow-[2px_2px_0_var(--songtell-ink)] placeholder:text-[#837a73] focus-visible:ring-[var(--songtell-theme)]"
               />
               <Button
                 type="button"
                 variant="outline"
-                className="min-w-[120px]"
+                className="h-13 min-w-[124px] border-2 border-[var(--songtell-ink)] bg-white px-3 text-sm font-bold text-[var(--songtell-ink)] shadow-[2px_2px_0_var(--songtell-ink)] hover:translate-x-[-1px] hover:translate-y-[-1px] hover:bg-[#f4efe8] hover:shadow-[3px_3px_0_var(--songtell-ink)] focus-visible:ring-[var(--songtell-theme)] sm:text-base"
                 onClick={handleSendOTP}
                 disabled={
                   !email ||
@@ -402,7 +406,7 @@ export default function LoginForm({
             (mode === "otp" && otpCode.length !== 6) ||
             (!!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !captchaToken)
           }
-          className="w-full bg-primary/90 hover:bg-primary"
+          className="h-13 w-full border-2 border-[var(--songtell-ink)] bg-[var(--songtell-theme)] text-base font-bold text-[var(--songtell-ink)] shadow-[3px_3px_0_var(--songtell-ink)] hover:translate-x-[-1px] hover:translate-y-[-1px] hover:bg-[#f3a97f] hover:shadow-[4px_4px_0_var(--songtell-ink)] focus-visible:ring-[var(--songtell-ink)]"
         >
           {isLoading || isOtpLoading ? (
             <Loader2 className="h-4 w-4 animate-spin" />
@@ -410,7 +414,7 @@ export default function LoginForm({
             t("Button.signIn")
           ) : (
             <>
-              <LinkIcon className="h-4 w-4" />
+              <ArrowUpRight className="h-4 w-4" />
               {t("signInMethods.magicLinkMethod")}
             </>
           )}
@@ -419,7 +423,7 @@ export default function LoginForm({
         <div className="text-center">
           <Button
             variant="link"
-            className="text-xs font-normal text-muted-foreground hover:text-primary"
+            className="h-auto p-0 text-sm font-semibold text-[#665f5a] underline decoration-1 underline-offset-4 hover:text-[var(--songtell-ink)]"
             onClick={toggleMode}
           >
             {mode === "otp"
