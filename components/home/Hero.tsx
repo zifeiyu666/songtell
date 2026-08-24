@@ -30,7 +30,7 @@ export default function Hero() {
               <Highlighter action="underline" color="#F5C19E" strokeWidth={4} padding={1} iterations={2} roughness={1.5} animationDuration={700}>{t("titleAccent")}</Highlighter>
             </span>
           </h1>
-          <div className="mx-auto mt-5 max-w-2xl text-base leading-7 text-[var(--songtell-muted)] sm:text-lg" dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
+          <div className="mx-auto mt-5 max-w-3xl text-base leading-7 text-[var(--songtell-muted)] sm:text-lg" dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
         </div>
         <div className="relative mt-9 w-full max-w-[58rem] text-left sm:mt-11">
           <div className="absolute -top-3 left-4 z-20 rounded-sm bg-[var(--songtell-ink)] px-2.5 py-1 font-['Bradley_Hand','Comic_Sans_MS',cursive] text-sm text-white shadow-sm sm:left-7">{t("inputLabel")}</div>

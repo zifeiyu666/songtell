@@ -13,8 +13,8 @@
     "inputLabel": "tell us your story",
     "trustItems": [
       "Free to preview",
-      "Original lyrics",
-      "Edit before you unlock"
+      "No musical skills needed",
+      "Ready in minutes"
     ],
     "getStarted": "Start a Free Preview",
     "getStartedLink": "/create-song",
@@ -24,9 +24,10 @@
     "viewDocsLink": "/blog"
   },
   "OccasionShowcase": {
-    "eyebrow": "Made for your moment",
-    "title": "Give Your Story Its Own Sound",
-    "description": "Choose the moment, bring the memory, and let Songtell shape it into a song made for one person.",
+    "eyebrow": "Every Moment Deserves a Song",
+    "title": "Songs for Every Occasion",
+    "description": "From birthdays and weddings to apologies and just because, find the moment you want to turn into music.",
+    "seeAll": "See All Occasions",
     "previous": "Previous occasion",
     "next": "Next occasion",
     "carouselLabel": "Occasion carousel"
@@ -100,21 +101,21 @@
     "description": "Start with a story, listen to an original direction, then shape a playable song page with lyrics and visual keepsakes you can share and replay.",
     "steps": {
       "story": {
-        "title": "Name the story",
-        "description": "Pick the moment, choose a sound, and share a few details only you would know. Your words become original lyrics.",
+        "title": "Tell us the story",
+        "description": "Pick the moment, and share a few details only you would know. Your words become original lyrics.",
         "cta": "Craft My Song"
       },
       "preview": {
-        "title": "Tune the feeling",
+        "title": "Tune the feeling for free",
         "description": "Listen to your preview, refine the lyrics, and try a different genre before you unlock the finished song."
       },
       "gift": {
-        "title": "Add your signature",
-        "description": "Unlock the full <strong>custom song</strong> with a playable page and <strong>lyric video</strong> made from the story you shared."
+        "title": "Make it yours",
+        "description": "Choose the final details, unlock the full <strong>custom song</strong>, and add a playable page or <strong>lyric video</strong> for the gift."
       },
       "deliver": {
-        "title": "Open the moment",
-        "description": "Unlock the finished song, pair it with a <strong>lyric video</strong>, and give one story a form they can revisit and keep."
+        "title": "Share and watch the reaction",
+        "description": "Send a private song link or share it on social media, then see their face light up when they press play."
       }
     }
   },
@@ -329,6 +330,37 @@
     "title": "Small Stories. Songs They Keep.",
     "description": "Notes from people who gave an ordinary moment its own melody."
   },
+  "WhyChooseUs": {
+    "eyebrow": "Why Songtell",
+    "title": "Why Choose Songtell for a Personalized Song",
+    "description": "Thoughtful details, a listenable preview, and a finished gift that feels personal from the first note.",
+    "items": [
+      {
+        "title": "Ready in minutes",
+        "description": "Share a few details and hear an original personalized song preview without waiting days for a commission."
+      },
+      {
+        "title": "Professional sound",
+        "description": "Emotional vocals, expressive instruments, and polished production make the finished song feel ready to share."
+      },
+      {
+        "title": "Built from your story",
+        "description": "Names, tiny details, and the feeling behind the moment guide lyrics made for one specific person."
+      },
+      {
+        "title": "Try it before you buy",
+        "description": "Listen to a free preview, refine the lyrics, and explore the direction before unlocking the full track."
+      },
+      {
+        "title": "More than audio",
+        "description": "Turn the finished song into a lyric video or printable wall art so the gift can be shared and kept."
+      },
+      {
+        "title": "A page made to share",
+        "description": "Give them a beautiful private song page with the cover, message, and a simple play button for the reveal."
+      }
+    ]
+  },
   "FAQ": {
     "title": "Common Questions About Songtell",
     "description": "A clear guide to turning one meaningful story into a song you can personalize, preview, and share.",
@@ -367,12 +399,12 @@
       },
       {
         "question": "What should I do if a song is still generating?",
-        "answer": "Give the generation a moment, then refresh the project if the status does not change. If the issue continues, contact support with the project details so the team can investigate it."
+        "answer": "Give the generation a moment. We will email the customer as soon as the song is ready. Refresh the project if the status does not change. If the issue continues, contact support with the project details so the team can investigate it."
       }
     ]
   },
   "CTA": {
-    "title": "Give Their Story a Song They Can Keep",
+    "title": "Give Your Story a Song Worth Keeping",
     "description": "Tell us your story. Your memories become a studio-quality <strong>custom song</strong> you can create, preview, personalize, and share for birthdays, weddings, anniversaries, or any moment worth remembering.",
     "button": "Create Your Song",
     "trustText": "Made for unforgettable moments",

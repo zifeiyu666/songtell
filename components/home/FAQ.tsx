@@ -40,17 +40,17 @@ export default function FAQ({
   const cardButtonLabel = ctaButtonLabel ?? cta("button");
 
   return (
-    <section className="home-section-muted border-t-[3px] border-[var(--songtell-ink)] py-20 text-[var(--songtell-ink)] sm:py-24">
-      <div className="home-container grid grid-cols-[0.78fr_1.22fr] items-start gap-10 max-[900px]:grid-cols-1 max-[900px]:gap-8">
+    <section className="home-section-muted py-20 text-[var(--songtell-ink)] sm:py-24">
+      <div className="home-container grid grid-cols-[0.9fr_1.1fr] items-start gap-10 max-[900px]:grid-cols-1 max-[900px]:gap-8">
         <div data-testid="faq-section-heading">
           <p className="home-eyebrow">FAQ</p>
-          <h2 className="home-title max-w-sm">{headingTitle}</h2>
+          <h2 className="home-title max-w-2xl">{headingTitle}</h2>
           <span className="mt-5 block h-1 w-24 bg-[var(--songtell-theme)]" />
           <p className="home-description mt-5 max-w-sm">{headingDescription}</p>
           <div className="mt-12 border-[3px] border-[var(--songtell-ink)] bg-[var(--songtell-theme)] p-6 shadow-[3px_3px_0_var(--songtell-ink)]">
-            <h3 className="font-display text-2xl tracking-[.02em]">Need more help?</h3>
+            <h3 className="font-display text-2xl tracking-[.02em]">{ctaTitle ?? cta("title")}</h3>
             <p className="mt-3 text-sm leading-6 text-[var(--songtell-ink)]/75">{ctaDescription ?? cta.rich("description", { strong: (chunks) => <strong>{chunks}</strong> })}</p>
-            <MagneticButton href={ctaHref} size="sm" trailingArrow className="mt-6 w-full justify-center border-[3px] border-[var(--songtell-ink)] bg-[var(--songtell-ink)] px-5 text-center text-sm font-bold text-white shadow-[2px_2px_0_var(--songtell-ink)] hover:bg-[var(--songtell-ink)]">{cardButtonLabel}</MagneticButton>
+            <MagneticButton href={ctaHref} size="sm" trailingArrow className="creem-action-button mt-6 w-full justify-center rounded-[6px] border-[3px] border-[var(--songtell-ink)] bg-white px-5 text-center text-sm font-bold text-[var(--songtell-ink)] shadow-[2px_2px_0_var(--songtell-ink)] hover:bg-white hover:shadow-[3px_3px_0_var(--songtell-ink)]">{cardButtonLabel}</MagneticButton>
           </div>
         </div>
 

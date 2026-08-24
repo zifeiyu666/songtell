@@ -13,6 +13,7 @@ export default function WaveDivider({
     <div
       className={`${position} z-10 h-16 w-full overflow-hidden ${className ?? ""}`}
       aria-hidden="true"
+      style={{ backgroundColor: fill }}
     >
       <svg
         className="absolute inset-0 h-full w-full"
@@ -21,7 +22,7 @@ export default function WaveDivider({
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M0,145 C220,285 380,12 720,145 C1060,278 1220,12 1440,145 L1440,250 L0,250 Z"
+          d="M0,145 C220,285 380,12 720,145 C1060,278 1220,12 1440,145 L1440,251 L0,251 Z"
           fill={fill}
         />
       </svg>

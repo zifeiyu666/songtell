@@ -24,6 +24,7 @@ export default function HowItWorks() {
       titleClassName="home-title"
       descriptionClassName="home-description [&_p]:m-0 [&_strong]:font-semibold [&_strong]:text-[#2b1710]"
       cardClassName="min-h-52 text-center sm:min-h-56"
+      cardHover={false}
       kickerClassName="rounded-md bg-[var(--songtell-blue)] text-white"
       stepTitleClassName="text-[var(--songtell-ink)]"
       stepDescriptionClassName="text-sm leading-7 text-[var(--songtell-muted)] [&_strong]:font-semibold [&_strong]:text-inherit"

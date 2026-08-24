@@ -20,9 +20,10 @@
     "viewDocsLink": "/blog"
   },
   "OccasionShowcase": {
-    "eyebrow": "Hecho para tu momento",
-    "title": "Dale a tu historia su propio sonido",
-    "description": "Elige el momento, comparte el recuerdo y deja que Songtell lo convierta en una canción para una sola persona.",
+    "eyebrow": "Cada momento merece una canción",
+    "title": "Canciones para cada ocasión",
+    "description": "Desde cumpleaños y bodas hasta disculpas y un simple porque sí, encuentra el momento que quieres convertir en música.",
+    "seeAll": "Ver todas las ocasiones",
     "previous": "Ocasión anterior",
     "next": "Ocasión siguiente",
     "carouselLabel": "Carrusel de ocasiones"
@@ -106,12 +107,12 @@
         "description": "Recibe una muestra de 60 segundos con sonido de estudio. Puedes retocar la letra o probar otro estilo antes de decidir."
       },
       "gift": {
-        "title": "Desbloquea el regalo completo",
-        "description": "Obtén la <strong>canción personalizada</strong> completa y crea un <strong>vídeo con letras</strong> o una <strong>lámina con la letra</strong> usando nuestras plantillas."
+        "title": "Hazla tuya",
+        "description": "Elige los últimos detalles, desbloquea la <strong>canción personalizada</strong> completa y añade una página reproducible o un <strong>vídeo con letras</strong>."
       },
       "deliver": {
-        "title": "Compártela como prefieras",
-        "description": "Comparte la canción en privado, acompáñala con un <strong>vídeo con letras</strong> o imprime una <strong>lámina con la letra</strong> para convertir un recuerdo en algo que podrán conservar."
+        "title": "Compártela y vive su reacción",
+        "description": "Envía un enlace privado o compártela en redes sociales y mira su reacción cuando pulse el botón de reproducir."
       }
     }
   },
@@ -323,6 +324,19 @@
     "badge": { "label": "OPINIONES" },
     "title": "Pequeñas historias. Canciones para guardar.",
     "description": "Historias de personas que dieron su propia melodía a un momento especial."
+  },
+  "WhyChooseUs": {
+    "eyebrow": "Por qué Songtell",
+    "title": "Una forma más personal de crear una canción",
+    "description": "Detalles que importan, una muestra para escuchar y un regalo terminado que se siente único desde la primera nota.",
+    "items": [
+      { "title": "Lista en pocos minutos", "description": "Comparte algunos detalles y escucha una muestra original sin esperar días a que termine un encargo." },
+      { "title": "Sonido profesional", "description": "Voces emotivas, instrumentos expresivos y una producción cuidada para compartir la canción con confianza." },
+      { "title": "Nace de tu historia", "description": "Los nombres, los pequeños detalles y la emoción del momento guían una letra hecha para esa persona." },
+      { "title": "Pruébala antes de comprar", "description": "Escucha una muestra gratis, ajusta la letra y explora la dirección antes de desbloquear la canción completa." },
+      { "title": "Mucho más que audio", "description": "Convierte la canción en un vídeo con letras o en una lámina imprimible para compartir y conservar el regalo." },
+      { "title": "Una página para compartir", "description": "Regala una página privada con portada, mensaje y un botón de reproducción para crear el momento sorpresa." }
+    ]
   },
   "FAQ": {
     "title": "Preguntas frecuentes sobre Songtell",

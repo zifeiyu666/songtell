@@ -31,6 +31,7 @@ type HowItWorksSectionProps = {
   stepDescriptionClassName?: string;
   backgroundSlot?: ReactNode;
   mobileCarousel?: boolean;
+  cardHover?: boolean;
 };
 
 export default function HowItWorksSection({
@@ -52,12 +53,13 @@ export default function HowItWorksSection({
   stepDescriptionClassName,
   backgroundSlot,
   mobileCarousel = false,
+  cardHover = true,
 }: HowItWorksSectionProps) {
   const renderStepCard = (step: HowItWorksStep) => (
     <article
       key={step.kicker}
       data-how-it-works-card
-      className={cn("home-card home-card-hover p-6", cardClassName)}
+      className={cn("home-card p-6", cardHover && "home-card-hover", cardClassName)}
     >
       <div
         className={cn(

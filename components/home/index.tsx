@@ -8,6 +8,7 @@ import VoicePersonalization from "@/components/home/VoicePersonalization";
 import SongfinchComparison from "@/components/home/SongfinchComparison";
 import ScrollReveal from "@/components/home/ScrollReveal";
 import Testimonials from "@/components/home/Testimonials";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
 import WaveDivider from "@/components/home/WaveDivider";
 import { isCustomerReactionsEnabled } from "@/config/features";
 import { siteConfig } from "@/config/site";
@@ -178,12 +179,20 @@ export default async function HomeComponent() {
       )}
       {messages.Landing.Testimonials && <WaveDivider fill="var(--songtell-paper)" />}
 
+      {messages.Landing.WhyChooseUs && (
+        <ScrollReveal>
+          <WhyChooseUs />
+        </ScrollReveal>
+      )}
+
       {messages.Landing.SongfinchComparison && (
         <ScrollReveal>
           <SongfinchComparison />
         </ScrollReveal>
       )}
-      {messages.Landing.SongfinchComparison && <WaveDivider fill="var(--songtell-paper)" />}
+      {messages.Landing.SongfinchComparison && (
+        <WaveDivider fill="var(--songtell-paper)" className="-mt-16" />
+      )}
 
       {/* {messages.Pricing && <PricingByGroup />}
       {messages.Pricing && <PricingAll />}

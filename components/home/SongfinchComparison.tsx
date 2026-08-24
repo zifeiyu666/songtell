@@ -7,16 +7,9 @@ type ComparisonRow = {
   us: string;
 };
 
-type PainPoint = {
-  title: string;
-  description: string;
-  icon: string;
-};
-
 export default function SongfinchComparison() {
   const t = useTranslations("Landing.SongfinchComparison");
   const rows = t.raw("rows") as ComparisonRow[];
-  const painPoints = t.raw("painPoints") as PainPoint[];
 
   return (
     <section
@@ -114,19 +107,6 @@ export default function SongfinchComparison() {
           ))}
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {painPoints.map((item) => (
-            <article
-              key={item.title}
-              className="border-[3px] border-[var(--songtell-ink)] bg-white p-5 shadow-[3px_3px_0_var(--songtell-ink)] transition-transform duration-200 hover:-translate-y-1"
-            >
-              <p className="text-sm font-black leading-5">{item.title}</p>
-              <p className="mt-3 text-sm leading-6 text-[var(--songtell-ink)]/70">
-                {item.description}
-              </p>
-            </article>
-          ))}
-        </div>
       </div>
     </section>
   );

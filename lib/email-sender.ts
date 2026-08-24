@@ -1,5 +1,5 @@
 const DEFAULT_SENDER_NAME = "SendTheSong.io";
-const DEFAULT_SENDER_EMAIL = "support@sendthesong.io";
+const DEFAULT_SENDER_EMAIL = "support@songtell.art";
 
 export function getTransactionalEmailSender() {
   const email = process.env.EMAIL_FROM_ADDRESS?.trim() || DEFAULT_SENDER_EMAIL;

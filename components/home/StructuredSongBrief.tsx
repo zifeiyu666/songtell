@@ -425,7 +425,7 @@ export default function StructuredSongBrief({
             type="button"
             variant="outline"
             onClick={() => saveBriefAndStart("advanced")}
-            className={`group/nav-link songtell-lift-button h-8 shrink-0 overflow-hidden rounded-md px-3 text-[0.72rem] font-semibold shadow-none sm:text-[0.76rem] ${
+            className={`group/nav-link songtell-lift-button h-9 shrink-0 overflow-hidden rounded-md px-3 text-[0.72rem] font-semibold shadow-none sm:text-[0.76rem] ${
               isLetter
                 ? "border-[#d8bdb0] bg-white/60 text-[#6a4539] hover:bg-[#f7e9e1] hover:text-[#4e2b23]"
                 : "border-[var(--songtell-line)] bg-white text-[var(--songtell-ink)] hover:bg-[#f1f4ff] hover:text-[var(--songtell-blue)]"

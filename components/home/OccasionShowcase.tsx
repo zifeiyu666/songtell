@@ -267,7 +267,14 @@ export default function OccasionShowcase() {
               id="occasion-showcase-heading"
               className="mt-3 text-balance font-display text-3xl font-normal leading-[1.05] tracking-[0.01em] text-white sm:text-4xl md:text-5xl"
             >
-              {t("title")}
+              {t("title").split("Every Occasion").map((part, index, parts) => (
+                <span key={`${part}-${index}`}>
+                  {part}
+                  {index < parts.length - 1 && (
+                    <span className="text-[var(--songtell-theme)]">Every Occasion</span>
+                  )}
+                </span>
+              ))}
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-7 text-white/65 md:text-lg">
               {t("description")}
@@ -277,7 +284,7 @@ export default function OccasionShowcase() {
             href="/music/personalized-gift"
             className="hidden shrink-0 items-center gap-2 pb-1 text-sm font-semibold text-white/80 transition hover:text-white md:inline-flex"
           >
-            See all occasions <ArrowRight className="size-4" />
+            {t("seeAll")} <ArrowRight className="size-4" />
           </Link>
         </div>
       </div>

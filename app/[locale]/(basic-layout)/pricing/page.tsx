@@ -109,17 +109,17 @@ export default async function PricingPage({
   );
 
   return (
-    <main className="public-creem-page min-h-screen w-full text-foreground">
+    <main className="public-creem-page min-h-screen w-full bg-[#fff8e9] text-foreground">
       {!hideHero && (
         <PageHero
           badge={{
             icon: <Sparkles className="size-4" />,
             label: t("hero.badge"),
           }}
-          backgroundClassName="bg-[#f3eadf]"
+          backgroundClassName="bg-[#fff8e9]"
           description={t("hero.description")}
-          descriptionClassName="text-stone-700"
-          titleClassName="text-stone-950"
+          descriptionClassName="text-black/65"
+          titleClassName="text-black"
           titleLines={[t("hero.titleLine1"), t("hero.titleLine2")]}
           underline={{ phrase: t("hero.underline") }}
         />

@@ -250,11 +250,12 @@ export default async function PricingAll({
     : localizedFallbackPlans;
 
   return (
-    <section id="pricing" className="py-8 sm:py-10">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-5 lg:grid-cols-3 lg:items-stretch">
-          {displayPlans.map((plan) => (
+    <section id="pricing" className="bg-[#fff8e9] py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-6 py-6 lg:grid-cols-3 lg:items-stretch lg:py-8">
+          {displayPlans.map((plan, index) => (
             <PricingGiftCard
+              isFeatured={index === 1}
               key={plan.id}
               notIncludedLabel={t("notIncluded")}
               plan={plan}
@@ -263,18 +264,18 @@ export default async function PricingAll({
           ))}
         </div>
 
-        <section className="mt-10 overflow-hidden rounded-2xl border border-primary/15 bg-[radial-gradient(circle_at_top,_rgba(251,113,133,0.12),_transparent_38%),linear-gradient(180deg,_rgba(255,255,255,0.98),_rgba(255,247,245,0.92))] px-4 py-10 shadow-[0_24px_80px_-48px_rgba(251,113,133,0.7)] sm:px-6 lg:px-10">
+        <section className="mt-14 border-2 border-black bg-white px-4 py-10 shadow-[5px_5px_0_#000] sm:px-6 lg:px-10">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="inline-flex items-center rounded-full border border-primary/15 bg-background/80 px-4 py-1 text-[11px] font-black uppercase tracking-[0.16em] text-primary shadow-sm backdrop-blur">
+            <div className="inline-flex items-center border-2 border-black bg-[#ffdc56] px-3 py-1 text-[11px] font-black uppercase tracking-[0.12em] text-black">
               {t("promotion.badge")}
             </div>
-            <h2 className="mt-4 text-3xl font-black tracking-tight text-foreground sm:text-4xl md:text-5xl">
-              {t("promotion.title")} <span className="text-primary">{t("promotion.titleAccent")}</span>
+            <h2 className="mt-4 text-3xl font-black tracking-normal text-black sm:text-4xl md:text-5xl">
+              {t("promotion.title")} <span className="text-[#c75326]">{t("promotion.titleAccent")}</span>
             </h2>
-            <p className="mt-3 text-lg font-bold text-primary sm:text-xl">
+            <p className="mt-3 text-lg font-bold text-black sm:text-xl">
               {t("promotion.lead")}
             </p>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-muted-foreground sm:text-base">
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-black/65 sm:text-base">
               {t("promotion.description")}
             </p>
           </div>
@@ -286,22 +287,22 @@ export default async function PricingAll({
 
               return (
                 <article
-                  className="group relative cursor-pointer overflow-hidden rounded-2xl bg-background/95 p-6 shadow-[0_20px_45px_-30px_rgba(15,23,42,0.18),0_10px_24px_-18px_rgba(251,113,133,0.35)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:bg-background hover:shadow-[0_28px_55px_-30px_rgba(15,23,42,0.22),0_18px_36px_-22px_rgba(251,113,133,0.42)]"
+                  className="group relative cursor-pointer overflow-hidden border-2 border-black bg-[#fffdf7] p-6 shadow-[4px_4px_0_#000] transition-transform duration-200 hover:-translate-y-1"
                   key={item.title}
                 >
                   {hasOverlayCta && (
-                    <div className="absolute inset-x-0 bottom-0 z-20 flex justify-center bg-[linear-gradient(180deg,rgba(255,248,245,0)_0%,rgba(255,248,245,0.72)_45%,rgba(255,248,245,0.92)_100%)] px-5 pb-6 pt-16 opacity-100 transition duration-300 sm:px-6 sm:pb-7 sm:pt-20 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
+                    <div className="absolute inset-x-0 bottom-0 z-20 flex justify-center bg-[linear-gradient(180deg,rgba(255,253,247,0)_0%,rgba(255,253,247,0.86)_45%,#fffdf7_100%)] px-5 pb-6 pt-16 opacity-100 transition duration-300 sm:px-6 sm:pb-7 sm:pt-20 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
                       <div className="pointer-events-auto flex w-full justify-center sm:translate-y-3 sm:transition sm:duration-300 sm:group-hover:translate-y-0 sm:group-focus-within:translate-y-0">
                         {item.trigger === "music-video" ? (
                           <MusicVideoStudioCta
-                            className="inline-flex items-center justify-center gap-2 text-base font-black text-[#170A1E] transition hover:text-primary"
+                            className="inline-flex h-12 w-full items-center justify-center gap-2 border-2 border-black bg-[#ffdc56] px-4 text-base font-normal text-black shadow-[4px_4px_0_#000] transition-all hover:translate-x-[1px] hover:translate-y-[1px] hover:bg-[#ffe578] hover:shadow-[2px_2px_0_#000]"
                             isAuthenticated={isAuthenticated}
                             label={item.ctaLabel}
                             songOptions={musicVideoSongOptions}
                           />
                         ) : (
                           <WallArtStudioCta
-                            className="inline-flex items-center justify-center gap-2 text-base font-black text-[#170A1E] transition hover:text-primary"
+                            className="inline-flex h-12 w-full items-center justify-center gap-2 border-2 border-black bg-[#ffdc56] px-4 text-base font-normal text-black shadow-[4px_4px_0_#000] transition-all hover:translate-x-[1px] hover:translate-y-[1px] hover:bg-[#ffe578] hover:shadow-[2px_2px_0_#000]"
                             isAuthenticated={isAuthenticated}
                             label={item.ctaLabel}
                             songOptions={wallArtSongOptions}
@@ -311,44 +312,44 @@ export default async function PricingAll({
                     </div>
                   )}
 
-                  <div className="absolute right-[-3.5rem] top-6 z-10 rotate-45 bg-gradient-to-r from-orange-400 via-primary to-rose-500 px-14 py-2 text-sm font-black uppercase tracking-[0.08em] text-white shadow-lg">
+                  <div className="absolute right-[-3.5rem] top-6 z-10 rotate-45 bg-[#ffdc56] px-14 py-2 text-sm font-black uppercase tracking-[0.08em] text-black">
                     {t("promotion.freeNow")}
                   </div>
 
-                  <div className="mb-6 flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary transition-transform duration-300 ease-out group-hover:scale-110">
+                  <div className="mb-6 flex size-12 items-center justify-center border-2 border-black bg-[#ffdc56] text-black transition-transform duration-200 group-hover:rotate-6">
                     <Icon className="size-5" />
                   </div>
-                  <h3 className="pr-16 text-2xl font-black leading-tight text-foreground">
+                  <h3 className="pr-16 text-2xl font-black leading-tight text-black">
                     {item.title}
                   </h3>
-                  <p className="mt-4 min-h-24 text-base leading-7 text-muted-foreground">
+                  <p className="mt-4 min-h-24 text-base leading-7 text-black/65">
                     {item.description}
                   </p>
 
-                  <div className="mt-8 border-t border-primary/10 pt-5">
+                  <div className="mt-8 border-t-2 border-black pt-5">
                     <div className="flex flex-wrap items-end gap-x-3 gap-y-2">
-                      <span className="text-xl font-black tracking-tight text-muted-foreground/75 line-through">
+                      <span className="text-xl font-black tracking-normal text-black/45 line-through">
                         {t("promotion.from")} {item.originalPrice}
                       </span>
-                      <span className="text-4xl font-black leading-none tracking-[-0.06em] text-foreground">
+                      <span className="text-4xl font-black leading-none tracking-normal text-black">
                         $0
                       </span>
-                      <span className="pb-1 text-sm font-bold text-foreground">
+                      <span className="pb-1 text-sm font-bold text-black">
                         {item.suffix}
                       </span>
                     </div>
-                    <p className="mt-2 text-sm font-black uppercase tracking-[0.08em] text-primary">
+                    <p className="mt-2 text-sm font-black uppercase tracking-[0.08em] text-[#c75326]">
                       ({item.promoLabel})
                     </p>
-                    <div className="mt-4 h-1.5 w-full overflow-hidden rounded-full bg-primary/10">
-                      <div className="h-full w-2/3 rounded-full bg-gradient-to-r from-orange-400 via-primary to-rose-500 transition-all duration-500 group-hover:w-full" />
+                    <div className="mt-4 h-2 w-full border-2 border-black bg-white">
+                      <div className="h-full w-2/3 bg-[#ffdc56] transition-all duration-500 group-hover:w-full" />
                     </div>
                     {hasOverlayCta ? (
-                      <p className="mt-3 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+                      <p className="mt-3 text-xs font-bold uppercase tracking-[0.12em] text-black/55">
                         {t("promotion.interactiveHint")}
                       </p>
                     ) : (
-                      <p className="mt-3 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground">
+                      <p className="mt-3 text-xs font-bold uppercase tracking-[0.12em] text-black/55">
                         {t("promotion.automaticHint")}
                       </p>
                     )}
@@ -359,22 +360,22 @@ export default async function PricingAll({
           </div>
         </section>
 
-        <section className="mt-8 grid gap-4 rounded-2xl border border-border bg-card p-5 sm:grid-cols-3">
+        <section className="mt-10 grid gap-0 border-2 border-black bg-white sm:grid-cols-3">
           {localizedTrustItems.map((item) => {
             const Icon = item.icon;
 
             return (
               <div
-                className="group cursor-pointer rounded-xl px-2 py-2 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-muted/40"
+                className="group cursor-pointer border-b-2 border-black px-5 py-5 transition-colors duration-200 hover:bg-[#ffdc56] sm:border-b-0 sm:border-r-2 last:sm:border-r-0"
                 key={item.title}
               >
                 <div className="flex items-start gap-3">
-                  <Icon className="mt-1 size-5 shrink-0 text-primary transition-transform duration-300 ease-out group-hover:scale-110" />
+                  <Icon className="mt-1 size-5 shrink-0 text-black transition-transform duration-200 group-hover:scale-110" />
                   <div>
-                    <h3 className="text-sm font-black text-foreground">
+                    <h3 className="text-sm font-black text-black">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                    <p className="mt-2 text-sm leading-6 text-black/65">
                       {item.description}
                     </p>
                   </div>
@@ -422,37 +423,40 @@ function toDisplayPlan(
 }
 
 function PricingGiftCard({
+  isFeatured = false,
   notIncludedLabel,
   plan,
   unlockSongContext,
 }: {
+  isFeatured?: boolean;
   notIncludedLabel: string;
   plan: DisplayPlan & { rawPlan?: PricingPlan };
   unlockSongContext?: UnlockSongContext | null;
 }) {
-  const isPro = plan.tone === "pro";
+  const isPro = isFeatured || plan.tone === "pro";
   const isPlatinum = plan.tone === "platinum";
   const includedFeatures = plan.features.filter((feature) => feature.included);
   const excludedFeatures = plan.features.filter((feature) => !feature.included);
 
   return (
     <article
+      style={{ backgroundColor: isPro ? "#ffdc56" : "#fffdf7" }}
       className={cn(
-        "relative flex min-h-[560px] cursor-pointer flex-col rounded-2xl border p-5 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl",
+        "relative flex min-h-[520px] cursor-pointer flex-col border-2 border-black p-5 shadow-[4px_4px_0_#000] transition-transform duration-200 hover:-translate-y-1 sm:p-6",
         isPro
-          ? "border-foreground bg-foreground text-primary-foreground hover:border-accent"
+          ? "z-10 text-black lg:-my-5 lg:min-h-[568px] lg:py-7"
           : isPlatinum
-            ? "border-primary/30 bg-card hover:border-primary/60 hover:bg-primary/5"
-            : "border-border bg-card hover:border-primary/40 hover:bg-muted/30"
+            ? "text-black"
+            : "text-black"
       )}
     >
       {plan.highlightText && (
         <div
           className={cn(
-            "absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full px-5 py-1.5 text-[11px] font-black uppercase tracking-[0.12em]",
+            "absolute left-6 top-6 border-2 border-black bg-black px-3 py-1.5 text-[11px] font-black uppercase tracking-[0.08em] text-white",
             isPro
-              ? "bg-accent text-accent-foreground"
-              : "bg-primary text-primary-foreground"
+              ? "bg-black text-white"
+              : "bg-[#c75326] text-white"
           )}
         >
           {plan.highlightText}
@@ -461,16 +465,15 @@ function PricingGiftCard({
 
       <p
         className={cn(
-          "text-xs font-black uppercase tracking-[0.12em]",
-          isPro ? "text-accent" : isPlatinum ? "text-primary" : "text-primary"
+          "text-xs font-black uppercase tracking-[0.12em] text-black/55",
+          plan.highlightText && "mt-11"
         )}
       >
         {plan.cardTitle}
       </p>
       <h3
         className={cn(
-          "mt-4 min-h-20 text-xl font-black leading-tight",
-          isPro ? "text-primary-foreground" : "text-foreground"
+          "mt-3 min-h-20 text-2xl font-black leading-tight text-black"
         )}
       >
         {plan.cardDescription}
@@ -478,8 +481,7 @@ function PricingGiftCard({
 
       <div
         className={cn(
-          "my-5 border-t",
-          isPro ? "border-primary-foreground/15" : "border-border"
+          "my-5 border-t-2 border-black"
         )}
       />
 
@@ -487,8 +489,7 @@ function PricingGiftCard({
         <div className="flex items-end gap-2">
           <span
             className={cn(
-              "text-4xl font-black tracking-tight",
-              isPro ? "text-primary-foreground" : "text-foreground"
+              "text-4xl font-black tracking-normal text-black"
             )}
           >
             {plan.displayPrice}
@@ -496,10 +497,7 @@ function PricingGiftCard({
           {plan.originalPrice && (
             <span
               className={cn(
-                "pb-1 text-sm font-semibold line-through",
-                isPro
-                  ? "text-primary-foreground/50"
-                  : "text-muted-foreground"
+                "pb-1 text-sm font-semibold text-black/45 line-through"
               )}
             >
               {plan.originalPrice}
@@ -508,8 +506,7 @@ function PricingGiftCard({
           {plan.priceSuffix && (
             <span
               className={cn(
-                "ml-1 text-xs font-bold",
-                isPro ? "text-primary-foreground/60" : "text-muted-foreground"
+                "ml-1 text-xs font-bold text-black/60"
               )}
             >
               / {plan.priceSuffix}
@@ -520,18 +517,17 @@ function PricingGiftCard({
 
       <div
         className={cn(
-          "my-5 border-t",
-          isPro ? "border-primary-foreground/15" : "border-border"
+          "my-5 border-t-2 border-black"
         )}
       />
 
       {plan.staticCta && (
         <span
           className={cn(
-            "mb-5 inline-flex w-fit rounded-full px-3 py-1.5 text-[11px] font-black uppercase tracking-[0.08em]",
+            "mb-5 inline-flex w-fit border-2 border-black bg-white px-3 py-1.5 text-[11px] font-black uppercase tracking-[0.08em] text-black",
             isPro
-              ? "bg-primary-foreground/10 text-accent"
-              : "bg-primary/10 text-primary"
+              ? "bg-black text-white"
+              : "bg-white text-black"
           )}
         >
           {plan.staticCta}
@@ -549,8 +545,8 @@ function PricingGiftCard({
       </ul>
 
       {excludedFeatures.length > 0 && (
-        <div className="mt-5 border-t border-border pt-4">
-          <p className="mb-3 text-[11px] font-black uppercase tracking-[0.12em] text-muted-foreground">
+        <div className="mt-5 border-t-2 border-black pt-4">
+          <p className="mb-3 text-[11px] font-black uppercase tracking-[0.12em] text-black/55">
           {notIncludedLabel}
           </p>
           <ul className="space-y-2.5">
@@ -570,12 +566,12 @@ function PricingGiftCard({
         {plan.rawPlan ? (
           <PricingCTA
             buttonClassName={cn(
-              "h-10 rounded-full text-sm font-black",
+              "h-10 border-2 border-black text-sm font-black shadow-[3px_3px_0_#000] transition-all hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_#000]",
               isPro
-                ? "bg-accent text-accent-foreground hover:bg-accent/90"
+                ? "bg-black text-white hover:bg-black/85"
                 : isPlatinum
-                  ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                  : "bg-foreground text-primary-foreground hover:bg-foreground/90"
+                  ? "bg-[#ffdc56] text-black hover:bg-[#ffe578]"
+                  : "bg-[#ffdc56] text-black hover:bg-[#ffe578]"
             )}
             localizedPlan={{
               buttonText: plan.buttonText,
@@ -586,10 +582,10 @@ function PricingGiftCard({
         ) : (
           <button
             className={cn(
-              "inline-flex h-10 w-full items-center justify-center rounded-full text-sm font-black",
+              "inline-flex h-10 w-full items-center justify-center border-2 border-black bg-[#ffdc56] text-sm font-black text-black shadow-[3px_3px_0_#000]",
               isPro
-                ? "bg-accent text-accent-foreground"
-                : "bg-foreground text-primary-foreground"
+                ? "bg-black text-white"
+                : "bg-[#ffdc56] text-black"
             )}
             type="button"
           >
@@ -613,21 +609,21 @@ function FeatureLine({
   return (
     <li
       className={cn(
-        "flex items-start gap-2.5 text-xs font-bold leading-5",
+        "flex items-start gap-2.5 text-sm font-medium leading-5",
         isExcluded
-          ? "text-muted-foreground line-through"
+          ? "text-black/40 line-through"
           : isPro
-            ? "text-accent"
-            : "text-foreground"
+            ? "text-black"
+            : "text-black"
       )}
     >
       {isExcluded ? (
-        <X className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
+        <X className="mt-0.5 size-4 shrink-0 text-black/40" />
       ) : (
         <Check
           className={cn(
             "mt-0.5 size-4 shrink-0",
-            isPro ? "text-accent" : "text-primary"
+            "text-black"
           )}
         />
       )}

@@ -178,8 +178,8 @@ export default async function Footer() {
                   <LocaleSwitcher variant="footer" />
                 </div>
                 <div>
-                  <a href="https://firstlook.tools" target="_blank"><img src="https://firstlook.tools/badge/badge_transparent.svg" alt="Featured on First Look" width="200" height="54" /></a>
-                  <a href="https://fazier.com/launches/sendthesong.io" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=dark" width={100} alt="Fazier badge" /></a>
+                  {/* <a href="https://firstlook.tools" target="_blank"><img src="https://firstlook.tools/badge/badge_transparent.svg" alt="Featured on First Look" width="200" height="54" /></a> */}
+                  {/* <a href="https://fazier.com/launches/sendthesong.io" target="_blank"><img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=dark" width={100} alt="Fazier badge" /></a> */}
                   {/* <a href="https://buildvoyage.com/products/sendthesong?ref=badge">
                     <img src="https://buildvoyage.com/images/featured_badge.png" alt="Featured on BuildVoyage" width="250" />
                   </a> */}

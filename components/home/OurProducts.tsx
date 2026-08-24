@@ -12,7 +12,7 @@ import { WallArtStudioCta } from "@/components/song/WallArtStudioCta";
 import WaveDivider from "@/components/home/WaveDivider";
 import { Link } from "@/i18n/routing";
 import { ArrowRight } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { type MouseEvent } from "react";
 
@@ -81,9 +81,8 @@ export default function OurProducts({
   const title = t("title");
   const titleAccent = "Personalized Gift";
   const titleParts = title.split(titleAccent);
-  const locale = useLocale();
   const ctaClassName =
-    "mt-7 inline-flex items-center gap-2 text-base font-bold text-primary transition hover:text-primary/80";
+    "songtell-lift-button mt-7 inline-flex min-h-11 items-center justify-center gap-2 rounded-[6px] border-2 border-[var(--songtell-ink)] bg-[var(--songtell-theme)] px-5 py-2.5 text-sm font-bold text-[var(--songtell-ink)] shadow-[2px_2px_0_var(--songtell-ink)] transition hover:-translate-y-0.5 hover:shadow-[3px_3px_0_var(--songtell-ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--songtell-ink)] focus-visible:ring-offset-2";
 
   const renderProductCard = (productKey: (typeof productKeys)[number]) => {
     const image = productImages[productKey];
@@ -121,41 +120,19 @@ export default function OurProducts({
             {t(`items.${productKey}.description`)}
           </p>
           {productKey === "wallArt" ? (
-            <div className="mt-6 flex flex-col items-center gap-3 md:mt-7">
-              <Link
-                href={
-                  locale === "en"
-                    ? "/custom-song-lyrics-wall-art"
-                    : productHrefs[productKey]
-                }
-                className={ctaClassName.replace("mt-7 ", "")}
-              >
-                Turn lyrics into printable wall art
-                <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-              <WallArtStudioCta
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[#7a5a48] transition hover:text-primary"
-                isAuthenticated={isAuthenticated}
-                label={t(`items.${productKey}.cta`)}
-                songOptions={wallArtSongOptions}
-              />
-            </div>
+            <WallArtStudioCta
+              className={ctaClassName}
+              isAuthenticated={isAuthenticated}
+              label={t(`items.${productKey}.cta`)}
+              songOptions={wallArtSongOptions}
+            />
           ) : productKey === "videoGift" ? (
-            <div className="mt-6 flex flex-col items-center gap-3 md:mt-7">
-              <Link
-                href={productHrefs[productKey]}
-                className={ctaClassName.replace("mt-7 ", "")}
-              >
-                Explore personalized music gifts
-                <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-              <MusicVideoStudioCta
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[#7a5a48] transition hover:text-primary"
-                isAuthenticated={isAuthenticated}
-                label={t(`items.${productKey}.cta`)}
-                songOptions={musicVideoSongOptions}
-              />
-            </div>
+            <MusicVideoStudioCta
+              className={ctaClassName}
+              isAuthenticated={isAuthenticated}
+              label={t(`items.${productKey}.cta`)}
+              songOptions={musicVideoSongOptions}
+            />
           ) : (
             <Link href={productHrefs[productKey]} className={ctaClassName}>
               {t(`items.${productKey}.cta`)}
@@ -168,7 +145,10 @@ export default function OurProducts({
   };
 
   return (
-    <section id="our-products" className="home-section-deep relative bg-[var(--songtell-section-purple)] pt-16 md:pt-20">
+    <section
+      id="our-products"
+      className="home-section-deep relative bg-[var(--songtell-section-purple)] pt-16 md:pt-20"
+    >
       <WaveDivider
         fill="var(--songtell-section-purple)"
         position="absolute"

@@ -33,6 +33,7 @@ const featureMeta: Record<
 
 export default function VoicePersonalization() {
   const t = useTranslations("Landing.VoicePersonalization");
+  const title = t("title");
 
   return (
     <section
@@ -42,7 +43,17 @@ export default function VoicePersonalization() {
       <div className="home-container">
         <div className="home-section-header">
           <p className="home-eyebrow">{t("eyebrow")}</p>
-          <h2 className="home-title">{t("title")}</h2>
+          <h2 className="home-title">
+            {title.split(/(recognize)/i).map((part, index) =>
+              part.toLowerCase() === "recognize" ? (
+                <span className="text-[var(--songtell-theme)]" key={index}>
+                  {part}
+                </span>
+              ) : (
+                part
+              ),
+            )}
+          </h2>
           <p className="home-description">{t("description")}</p>
         </div>
 
@@ -75,7 +86,6 @@ export default function VoicePersonalization() {
                 ) : null} */}
 
                 <div className="flex flex-1 flex-col px-6 py-7 sm:px-8 sm:py-8">
-
                   <h3 className="text-2xl font-black leading-tight text-[#2b1710] sm:text-[1.7rem]">
                     {t(`items.${featureKey}.title`)}
                   </h3>

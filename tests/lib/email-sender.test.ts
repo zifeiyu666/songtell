@@ -20,8 +20,8 @@ describe("transactional email sender", () => {
     delete process.env.EMAIL_FROM_NAME;
 
     assert.deepEqual(getTransactionalEmailSender(), {
-      email: "support@sendthesong.io",
-      from: "SendTheSong.io <support@sendthesong.io>",
+      email: "support@songtell.art",
+      from: "SendTheSong.io <support@songtell.art>",
     });
   });
 
