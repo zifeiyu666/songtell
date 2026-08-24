@@ -873,7 +873,7 @@ export function StepProgress({ currentStep }: { currentStep: WizardStep }) {
                 className={cn(
                   "flex size-10 items-center justify-center rounded-full border-4 text-base font-bold shadow-sm",
                   active
-                    ? "border-foreground bg-foreground text-primary-foreground shadow-foreground/20"
+                    ? "border-foreground bg-foreground text-white shadow-foreground/20"
                     : complete
                       ? "border-primary bg-primary text-primary-foreground"
                       : "border-border bg-card text-muted-foreground",
@@ -906,7 +906,7 @@ export function StepHeading({
 }) {
   return (
     <div className="mx-auto mt-16 max-w-3xl text-center">
-      <h2 className="text-4xl font-black leading-tight tracking-normal text-foreground md:text-5xl">
+      <h2 className="font-display text-4xl font-normal leading-tight tracking-normal text-foreground md:text-5xl">
         {title}
       </h2>
       <p className="mt-5 text-base leading-8 text-muted-foreground">

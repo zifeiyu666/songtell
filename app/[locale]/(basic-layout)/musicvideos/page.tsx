@@ -42,9 +42,9 @@ export default async function MusicVideosPage({ params }: { params: Params }) {
   ).length;
 
   return (
-    <main className="min-h-screen w-full bg-[#fbfaf7] text-foreground">
+    <main className="public-creem-page min-h-screen w-full text-foreground">
       <section className="w-full border-b border-black/5 bg-[#f3eadf]">
-        <div className="w-full px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+        <div className="w-full px-4 pb-14 pt-32 sm:px-6 sm:pt-36 lg:px-8 lg:pb-20 lg:pt-40">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end">
             <div>
               <p className="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-xs font-black uppercase text-primary shadow-sm">

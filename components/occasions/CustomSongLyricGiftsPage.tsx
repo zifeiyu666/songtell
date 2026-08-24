@@ -352,8 +352,8 @@ export default function CustomSongLyricGiftsPage({
     "group mt-6 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[#251a15] px-5 text-sm font-black text-white shadow-[0_16px_34px_rgba(37,26,21,0.18)] transition hover:bg-[#3a261e]";
 
   return (
-    <div className="w-full overflow-hidden bg-[#fffaf5] text-[#2b1d17]">
-      <section className="relative isolate bg-[#fffaf5] px-6 pb-16 pt-10 sm:px-8 md:pb-20 md:pt-14 lg:px-12 xl:px-16">
+    <div className="public-creem-page w-full overflow-hidden bg-[var(--songtell-paper)] text-[var(--songtell-ink)]">
+      <section className="relative isolate bg-[#fffaf5] px-6 pb-16 pt-32 sm:px-8 sm:pt-36 md:pb-20 lg:px-12 lg:pt-40 xl:px-16">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(120deg,rgba(255,250,245,1)_0%,rgba(255,255,255,0.95)_45%,rgba(237,249,244,0.72)_100%)]" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-28 bg-gradient-to-b from-transparent to-white/76" />
 

@@ -10,10 +10,14 @@ import { type WallArtSongOption } from "@/components/song/WallArtEditorDrawer";
 import { buildSongShareUrl, getFinalSongsForOwner } from "@/lib/ai/final-song";
 import { getSession } from "@/lib/auth/server";
 import { ViewCounter } from "@/components/cms/ViewCounter";
+import { StickyContextBanner } from "@/components/content/StickyContextBanner";
+import { InlineDemoPlayer } from "@/components/content/InlineDemoPlayer";
+import { ContextualCreateSongCTA } from "@/components/content/ContextualCreateSongCTA";
 import { TableOfContents } from "@/components/tiptap/TableOfContents";
 import { Button } from "@/components/ui/button";
 import { Link as I18nLink, Locale, LOCALES } from "@/i18n/routing";
 import { blogCms } from "@/lib/cms";
+import { isRetainedBlogSlug } from "@/lib/content/retained-blog";
 import { renderPostMarkdown } from "@/lib/cms/render-markdown";
 import { constructMetadata } from "@/lib/metadata";
 import { PostBase } from "@/types/cms";
@@ -91,7 +95,7 @@ export default async function BlogPage({ params }: { params: Params }) {
 
   const { post, errorCode } = await blogCms.getBySlug(slug, locale);
 
-  if (!post) {
+  if (!post || !isRetainedBlogSlug(slug)) {
     notFound();
   }
 
@@ -182,8 +186,16 @@ export default async function BlogPage({ params }: { params: Params }) {
       ? await renderPostMarkdown(post.content)
       : "";
 
+  const funnelConfig = {
+    "electronic-wedding-songs": { text: "Planning your first dance? Create a custom electronic wedding track in 2 minutes.", occasion: "wedding", genre: "edm", demo: "Neon Vows", subtitle: "Melodic EDM · a Songtell demo" },
+    "mother-son-dance-songs": { text: "Make the mother-son dance sound like your story.", occasion: "gratitude", genre: "ballad", demo: "The Hands That Raised Me", subtitle: "Emotional ballad · a Songtell demo" },
+    "apology-song-ideas": { text: "Turn the apology you keep rehearsing into honest words.", occasion: "apology", genre: "ballad", demo: "I Should Have Said It", subtitle: "Piano ballad · a Songtell demo" },
+    "long-distance-gift-songs": { text: "Make a song that crosses the distance with you.", occasion: "just-because", genre: "indie", demo: "Same Moon, Different Time", subtitle: "Indie folk · a Songtell demo" },
+  }[slug as string] ?? { text: "Have a story in mind? Turn it into a custom song in minutes.", occasion: "just-because", genre: "acoustic", demo: "The Story I Kept", subtitle: "Original acoustic · a Songtell demo" };
+
   return (
-    <div className="w-full">
+    <div className="creem-blog-detail w-full">
+      {funnelConfig && <StickyContextBanner text={funnelConfig.text} occasion={funnelConfig.occasion} genre={funnelConfig.genre} />}
       <ViewCounter
         slug={slug}
         postType="blog"
@@ -192,7 +204,7 @@ export default async function BlogPage({ params }: { params: Params }) {
       />
 
       <header className="w-full border-b border-[#eadfd4] bg-[#f8f4f0]">
-        <div className="mx-auto grid w-full max-w-6xl gap-6 px-4 py-10 sm:px-6 sm:py-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:px-8 lg:py-14">
+        <div className="mx-auto grid w-full max-w-6xl gap-6 px-4 pb-10 pt-32 sm:px-6 sm:pb-12 sm:pt-36 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:px-8 lg:pb-14 lg:pt-40">
           <div className="max-w-3xl">
             <Button
               asChild
@@ -272,7 +284,7 @@ export default async function BlogPage({ params }: { params: Params }) {
             {tagsArray.map((tag) => (
               <div
                 key={tag}
-                className="rounded-full bg-secondary/80 px-3 py-1 text-sm font-medium transition-colors hover:bg-secondary"
+                className="border-2 border-[var(--songtell-ink)] bg-white px-3 py-1 text-sm font-semibold text-[var(--songtell-ink)] shadow-[2px_2px_0_var(--songtell-ink)] transition-transform hover:-translate-y-0.5 hover:bg-[var(--songtell-theme)]"
               >
                 {tag}
               </div>
@@ -301,6 +313,8 @@ export default async function BlogPage({ params }: { params: Params }) {
               className="prose dark:prose-invert mx-auto max-w-[68ch] prose-p:my-5 prose-p:leading-8 prose-headings:font-semibold prose-headings:tracking-tight prose-h1:text-3xl prose-h2:mt-12 prose-h2:text-3xl prose-h3:text-2xl prose-li:my-1 prose-blockquote:not-italic prose-blockquote:font-normal prose-blockquote:text-muted-foreground prose-blockquote:border-l-4 prose-blockquote:border-primary/50 prose-table:my-10 prose-table:block prose-table:w-full prose-table:min-w-full prose-table:overflow-x-auto prose-table:border-separate prose-table:border-spacing-0 prose-table:text-sm prose-thead:bg-[#f8f4f0] prose-th:min-w-44 prose-th:border-b prose-th:border-[#d8d2cc] prose-th:px-5 prose-th:py-4 prose-th:text-left prose-th:text-sm prose-th:font-semibold prose-th:leading-6 prose-th:text-[#1f2937] prose-td:min-w-44 prose-td:border-b prose-td:border-[#e6e1dc] prose-td:px-5 prose-td:py-4 prose-td:align-top prose-td:leading-7 prose-td:text-[#374151] [&_blockquote_p]:before:content-none [&_blockquote_p]:after:content-none [&_table]:rounded-xl [&_table]:border [&_table]:border-[#e6e1dc] [&_tbody_tr:nth-child(even)]:bg-[#fbfaf8] [&_tbody_tr:last-child_td]:border-b-0 [&_td_p]:my-0 [&_th:first-child]:rounded-tl-xl [&_th:last-child]:rounded-tr-xl [&_th_p]:my-0 [&_thead+tbody_tr:first-child_td]:border-t-0 lg:prose-lg lg:prose-p:leading-9"
               dangerouslySetInnerHTML={{ __html: contentHtml }}
             />
+            {funnelConfig && <InlineDemoPlayer title={funnelConfig.demo} subtitle={funnelConfig.subtitle} />}
+            {funnelConfig && <ContextualCreateSongCTA occasion={funnelConfig.occasion} genre={funnelConfig.genre} />}
             {isWallArtStudioPost ? (
               <BlogWallArtStudioCTA
                 isAuthenticated={Boolean(session?.user)}
@@ -338,10 +352,15 @@ export async function generateStaticParams() {
   for (const locale of LOCALES) {
     const { posts: localPosts } = await blogCms.getLocalList(locale);
     localPosts
-      .filter((post) => post.slug && post.status !== "draft")
+      .filter(
+        (post) =>
+          post.slug &&
+          post.status !== "draft" &&
+          isRetainedBlogSlug(post.slug),
+      )
       .forEach((post) => {
         const slugPart = post.slug.replace(/^\//, "").replace(/^blogs\//, "");
-        if (slugPart) {
+        if (slugPart && isRetainedBlogSlug(slugPart)) {
           allSlugs.add(slugPart);
           allParams.push({ locale, slug: slugPart });
         }
@@ -357,7 +376,7 @@ export async function generateStaticParams() {
     if (serverResult.success && serverResult.data?.posts) {
       serverResult.data.posts.forEach((post) => {
         const slugPart = post.slug?.replace(/^\//, "").replace(/^blogs\//, "");
-        if (slugPart) {
+        if (slugPart && isRetainedBlogSlug(slugPart)) {
           allSlugs.add(slugPart);
           allParams.push({ locale, slug: slugPart });
         }

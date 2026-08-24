@@ -113,11 +113,11 @@ export default async function SongDetailPage({ params }: { params: Params }) {
   );
 
   return (
-    <main className="min-h-screen w-full bg-background px-4 py-6 text-foreground sm:px-6">
+    <main className="creem-song-detail min-h-screen w-full bg-[var(--songtell-paper)] px-4 pb-10 pt-28 text-[var(--songtell-ink)] sm:px-6 sm:pt-32">
       <div className="relative mx-auto max-w-6xl">
         <Button
           asChild
-          className="mb-4 h-10 rounded-full bg-card text-sm font-bold text-muted-foreground shadow-[0_10px_30px_rgba(255,120,150,0.09)] hover:text-foreground"
+          className="creem-song-back mb-6 h-10 text-sm font-bold"
           variant="ghost"
         >
           <Link href="/samples">

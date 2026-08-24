@@ -1,4 +1,4 @@
-import { bricolageGrotesque } from "@/app/fonts";
+import { gasoekOne } from "@/app/fonts";
 import {
   HeaderActionText,
   headerActionButtonClassName,
@@ -30,7 +30,7 @@ const Header = async () => {
 
   return (
     <HeaderShell>
-      <nav className="relative flex items-center justify-between container max-w-8xl mx-auto">
+      <nav className="pointer-events-auto relative mx-auto flex max-w-[calc(100%-2rem)] items-center justify-between rounded-[24px] border-[3px] border-[var(--songtell-ink)] bg-white px-4 py-2 shadow-[3px_3px_0_var(--songtell-ink)] sm:max-w-[calc(100%-3rem)] sm:px-6 lg:max-w-8xl">
         <I18nLink
           href="/"
           title={t("title")}
@@ -40,18 +40,18 @@ const Header = async () => {
           <Image
             src="/logo.png"
             alt=""
-            width={512}
-            height={512}
+            width={202}
+            height={144}
             priority
-            className="h-10 w-10 mt-[-6px] drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)] transition-[filter] duration-300 group-data-[scrolled=true]/header:drop-shadow-none"
+            className="mt-[-6px] h-9 w-[50px] object-contain"
           />
           <span
             className={cn(
-              bricolageGrotesque.className,
-              "text-[20px] font-extrabold leading-none tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)] transition-[filter] duration-300 group-data-[scrolled=true]/header:drop-shadow-none"
+              gasoekOne.className,
+              "text-[20px] leading-none tracking-wide text-[var(--songtell-ink)]"
             )}
           >
-            SendTheSong.io
+            Songtell
           </span>
         </I18nLink>
 
@@ -64,7 +64,7 @@ const Header = async () => {
           <div className="hidden lg:flex items-center gap-x-2">
             <Button
               asChild
-              className={headerActionButtonClassName}
+              className={`${headerActionButtonClassName} songtell-lift-button bg-[var(--songtell-theme)] text-[var(--songtell-ink)]`}
             >
               <I18nLink href="/create-song">
                 <HeaderActionText icon={<Music2 className="h-3.5 w-3.5" />}>

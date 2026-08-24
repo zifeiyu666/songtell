@@ -1,5 +1,6 @@
 "use client";
 
+import { gasoekOne } from "@/app/fonts";
 import { DynamicIcon } from "@/components/DynamicIcon";
 import { SidebarUserNav } from "@/components/header/SidebarUserNav";
 import { siteConfig } from "@/config/site";
@@ -59,19 +60,15 @@ export function DashboardSidebar() {
             <Image
               src="/logo.png"
               alt={tHome("title")}
-              width={24}
-              height={24}
-              className="rounded-md"
+              width={42}
+              height={30}
+              className="h-6 w-9 rounded-md object-contain"
             />
           ) : (
-            <Image
-              src="/generated-logos/send-the-song-fredoka-logo.webp"
-              alt={tHome("title")}
-              width={1200}
-              height={238}
-              priority
-              className="h-8 w-auto max-w-full object-contain"
-            />
+            <span className="flex items-center gap-1">
+              <Image src="/logo.png" alt={tHome("title")} width={202} height={144} priority className="h-8 w-[45px] object-contain" />
+              <span className={`${gasoekOne.className} text-lg tracking-wide text-[var(--songtell-ink)]`}>Songtell</span>
+            </span>
           )}
         </I18nLink>
       </SidebarHeader>

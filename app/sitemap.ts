@@ -4,6 +4,8 @@ import { DEFAULT_LOCALE, LOCALES } from "@/i18n/routing";
 import { blogCms } from "@/lib/cms";
 import { db } from "@/lib/db";
 import { posts as postsSchema } from "@/lib/db/schema";
+import { isRetainedBlogSlug } from "@/lib/content/retained-blog";
+import { isDisabledPublicPath } from "@/lib/content/disabled-public-paths";
 import { getAllPlaylistPaths } from "@/lib/playlists/catalog";
 import { eq, max } from "drizzle-orm";
 import { MetadataRoute } from "next";
@@ -99,6 +101,18 @@ const staticPages: {
     changeFrequency: "weekly",
     priority: 0.8,
   },
+  {
+    path: "/occasions/wedding",
+    lastModified: "2026-08-22",
+    changeFrequency: "weekly",
+    priority: 0.8,
+  },
+  {
+    path: "/compare/songfinch-alternative",
+    lastModified: "2026-08-22",
+    changeFrequency: "monthly",
+    priority: 0.6,
+  },
   ...getAllOccasionLandingConfigs().map((occasion) => ({
     path: `/occasions/${occasion.slug}`,
     lastModified: "2026-07-14",
@@ -147,6 +161,8 @@ const englishOnlyStaticPaths = new Set([
   "/gifts/song-message",
   "/lyric-poster-maker",
   "/occasions/custom-song-for-wife",
+  "/occasions/wedding",
+  "/compare/songfinch-alternative",
   ...getAllOccasionLandingConfigs().map(
     (occasion) => `/occasions/${occasion.slug}`,
   ),
@@ -157,7 +173,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return staticPages
       .filter(
         (page) =>
-          locale === DEFAULT_LOCALE || !englishOnlyStaticPaths.has(page.path),
+          !isDisabledPublicPath(page.path) &&
+          (locale === DEFAULT_LOCALE || !englishOnlyStaticPaths.has(page.path)),
       )
       .map((page) => ({
         url: `${siteUrl}${locale === DEFAULT_LOCALE ? "" : `/${locale}`}${page.path}`,
@@ -166,14 +183,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: page.priority,
       }));
   });
-
-  const [latestGlossaryResult] = await db
-    .select({ latest: max(postsSchema.updatedAt) })
-    .from(postsSchema)
-    .where(eq(postsSchema.postType, "glossary"));
-  const glossaryContentMtime = latestGlossaryResult?.latest
-    ? new Date(latestGlossaryResult.latest)
-    : new Date(staticPages[0].lastModified);
 
   const allBlogSitemapEntries: MetadataRoute.Sitemap = [];
 
@@ -198,10 +207,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const locale of [DEFAULT_LOCALE]) {
     const { posts: localPosts } = await blogCms.getLocalList(locale);
     localPosts
-      .filter((post) => post.slug && post.status !== "draft")
+      .filter(
+        (post) =>
+          post.slug &&
+          post.status !== "draft" &&
+          isRetainedBlogSlug(post.slug),
+      )
       .forEach((post) => {
         const slugPart = post.slug.replace(/^\//, "").replace(/^blogs\//, "");
-        if (slugPart) {
+        if (slugPart && isRetainedBlogSlug(slugPart)) {
           allBlogSitemapEntries.push({
             url: `${siteUrl}${locale === DEFAULT_LOCALE ? "" : `/${locale}`}/blog/${slugPart}`,
             lastModified:
@@ -223,7 +237,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     if (serverResult.success && serverResult.data?.posts) {
       serverResult.data.posts.forEach((post) => {
         const slugPart = post.slug?.replace(/^\//, "").replace(/^blogs\//, "");
-        if (slugPart) {
+        if (slugPart && isRetainedBlogSlug(slugPart)) {
           allBlogSitemapEntries.push({
             url: `${siteUrl}${locale === DEFAULT_LOCALE ? "" : `/${locale}`}/blog/${slugPart}`,
             lastModified: post.publishedAt || new Date(),
@@ -239,46 +253,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     new Map(allBlogSitemapEntries.map((entry) => [entry.url, entry])).values(),
   ).filter((entry) => !entry.url.endsWith("/blog/custom-song-lyric-gifts"));
 
-  const allGlossarySitemapEntries: MetadataRoute.Sitemap = [];
-
-  for (const locale of [DEFAULT_LOCALE]) {
-    allGlossarySitemapEntries.push({
-      url: `${siteUrl}${locale === DEFAULT_LOCALE ? "" : `/${locale}`}/glossary`,
-      lastModified: glossaryContentMtime,
-      changeFrequency: "daily" as ChangeFrequency,
-      priority: 0.8,
-    });
-  }
-
-  for (const locale of [DEFAULT_LOCALE]) {
-    const serverResult = await listPublishedPostsAction({
-      locale: locale,
-      pageSize: 1000,
-      visibility: "public",
-      postType: "glossary",
-    });
-    if (serverResult.success && serverResult.data?.posts) {
-      serverResult.data.posts.forEach((post) => {
-        const slugPart = post.slug
-          ?.replace(/^\//, "")
-          .replace(/^glossary\//, "");
-        if (slugPart) {
-          allGlossarySitemapEntries.push({
-            url: `${siteUrl}${locale === DEFAULT_LOCALE ? "" : `/${locale}`}/glossary/${slugPart}`,
-            lastModified: post.publishedAt || new Date(),
-            changeFrequency: "daily" as ChangeFrequency,
-            priority: 0.7,
-          });
-        }
-      });
-    }
-  }
-
-  const uniqueGlossaryEntries = Array.from(
-    new Map(
-      allGlossarySitemapEntries.map((entry) => [entry.url, entry]),
-    ).values(),
-  );
-
-  return [...pages, ...uniqueBlogPostEntries, ...uniqueGlossaryEntries];
+  return [...pages, ...uniqueBlogPostEntries];
 }

@@ -56,7 +56,7 @@ export default function VoicePersonalization() {
             return (
               <article
                 key={featureKey}
-                className="home-card home-card-hover group flex h-full flex-col overflow-hidden lg:min-h-[570px]"
+                className="home-card home-card-hover group flex h-full flex-col overflow-hidden bg-[var(--songtell-purple)] lg:min-h-[570px]"
               >
                 {/* {image ? (
                   <div className="relative h-40 overflow-hidden bg-[#281915] sm:h-44 lg:h-48">
@@ -111,7 +111,7 @@ export default function VoicePersonalization() {
 
                   <Link
                     href={href}
-                    className="mt-auto pt-7 inline-flex w-fit items-center gap-2 text-base font-bold text-primary transition hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4"
+                    className="songtell-lift-button mt-auto inline-flex w-fit items-center gap-2 bg-[var(--songtell-theme)] px-5 py-3 text-base font-bold text-[var(--songtell-ink)] transition hover:bg-[var(--songtell-theme)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--songtell-theme)] focus-visible:ring-offset-4"
                   >
                     {t(`items.${featureKey}.cta`)}
                     <ArrowRight

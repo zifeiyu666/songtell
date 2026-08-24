@@ -115,7 +115,11 @@ export function TableOfContents({
   }, [tocItems]);
 
   const scrollToHeading = (id: string) => {
-    window.location.hash = id;
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+    setActiveId(id);
     if (mobile) {
       setIsOpen(false);
     }
@@ -127,11 +131,11 @@ export function TableOfContents({
 
   if (mobile) {
     return (
-      <div className="mb-8 border rounded-lg bg-card">
+      <div className="mb-8 overflow-hidden border-[3px] border-[var(--songtell-ink)] bg-white shadow-[3px_3px_0_var(--songtell-ink)]">
         <Button
           variant="ghost"
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full justify-between p-4"
+          className="w-full justify-between rounded-none p-4 text-[var(--songtell-ink)] hover:bg-[var(--songtell-theme)]"
         >
           <div className="flex items-center gap-2">
             <List className="h-5 w-5" />
@@ -144,7 +148,7 @@ export function TableOfContents({
           )}
         </Button>
         {isOpen && (
-          <div className="px-4 pb-4">
+          <div className="border-t-[3px] border-[var(--songtell-ink)] bg-[var(--songtell-paper)] px-4 pb-4 pt-3">
             <ul className="space-y-2 text-sm">
               {tocItems.map((item) => (
                 <li
@@ -153,7 +157,7 @@ export function TableOfContents({
                 >
                   <button
                     onClick={() => scrollToHeading(item.id)}
-                    className={`text-left w-full py-1 px-2 rounded transition-colors hover:bg-muted ${
+                    className={`w-full rounded-md px-2 py-1 text-left transition-colors hover:bg-[var(--songtell-theme)] ${
                       activeId === item.id
                         ? "text-primary font-medium bg-muted"
                         : "text-muted-foreground"

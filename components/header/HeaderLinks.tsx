@@ -30,17 +30,17 @@ const HeaderLinks = ({ links, variant = "default" }: HeaderLinksProps) => {
 
   const triggerClassName =
     variant === "adaptive"
-      ? "group/nav-link bg-transparent rounded-xl px-4 py-2 flex items-center gap-x-1 text-sm font-medium text-[#fdf9f4] transition-colors hover:bg-white/10 data-[state=open]:bg-white/10 group-data-[scrolled=true]/header:text-[#270a05] group-data-[scrolled=true]/header:hover:bg-zinc-950/5 group-data-[scrolled=true]/header:data-[state=open]:bg-zinc-950/5"
+      ? "group/nav-link flex items-center gap-x-1 rounded-md px-4 py-2 text-sm font-medium text-[var(--songtell-ink)] transition-colors hover:bg-white data-[state=open]:bg-white"
       : "group/nav-link bg-transparent rounded-xl px-4 py-2 flex items-center gap-x-1 hover:bg-accent-foreground/10 hover:text-accent-foreground text-sm font-medium text-muted-foreground";
 
   const linkClassName =
     variant === "adaptive"
-      ? "group/nav-link bg-transparent rounded-xl px-4 py-2 flex items-center gap-x-1 text-sm font-medium text-[#fdf9f4] transition-colors hover:bg-white/10 group-data-[scrolled=true]/header:text-[#270a05] group-data-[scrolled=true]/header:hover:bg-zinc-950/5"
+      ? "group/nav-link flex items-center gap-x-1 rounded-md px-4 py-2 text-sm font-medium text-[var(--songtell-ink)] transition-colors hover:bg-white"
       : "group/nav-link bg-transparent rounded-xl px-4 py-2 flex items-center gap-x-1 text-sm font-medium text-muted-foreground hover:bg-accent-foreground/10 hover:text-accent-foreground";
 
   const activeClassName =
     variant === "adaptive"
-      ? "bg-white/10 font-semibold text-[#fdf9f4] group-data-[scrolled=true]/header:bg-zinc-950/5 group-data-[scrolled=true]/header:text-[#270a05]"
+      ? "bg-white font-semibold text-[var(--songtell-blue)]"
       : "font-medium text-accent-foreground";
 
   return (

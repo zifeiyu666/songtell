@@ -227,7 +227,7 @@ function VoiceCard({
         {voice.status === "ready" ? (
           <div className="mt-5 flex items-center gap-2">
             <Button asChild className="h-10 flex-1 gap-2 rounded-full text-sm font-semibold">
-              <Link href={`/create-song?customVoice=${voice.id}`}>
+              <Link className="creem-voice-create-action" href={`/create-song?customVoice=${voice.id}`}>
                 <Music2 className="size-4" /> Create a song
               </Link>
             </Button>
@@ -1014,7 +1014,7 @@ export function VoiceLibrary() {
   }
 
   return (
-    <>
+    <div className="creem-voice-library">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
           Create an authorized singing voice, verify it with a unique phrase,
@@ -1059,7 +1059,7 @@ export function VoiceLibrary() {
       )}
 
       <Dialog open={createOpen} onOpenChange={handleCreateOpenChange}>
-        <DialogContent className="max-h-[90vh] max-w-xl overflow-y-auto">
+      <DialogContent className="creem-voice-dialog max-h-[90vh] max-w-xl overflow-y-auto">
           <DialogHeader>
             <DialogTitle>Create your singing voice</DialogTitle>
             <DialogDescription>
@@ -1168,7 +1168,7 @@ export function VoiceLibrary() {
       </Dialog>
 
       <Dialog open={sourceTrimOpen} onOpenChange={setSourceTrimOpen}>
-        <DialogContent className="max-h-[90vh] max-w-2xl overflow-y-auto border-[#eadbd3] bg-[#fffdfa]">
+        <DialogContent className="creem-voice-dialog max-h-[90vh] max-w-2xl overflow-y-auto">
           <DialogHeader>
             <DialogTitle>Choose your best voice sample</DialogTitle>
             <DialogDescription>
@@ -1204,7 +1204,7 @@ export function VoiceLibrary() {
           }
         }}
       >
-        <DialogContent className="max-h-[90vh] max-w-xl overflow-y-auto">
+        <DialogContent className="creem-voice-dialog max-h-[90vh] max-w-xl overflow-y-auto">
           <DialogHeader>
             <DialogTitle>Edit voice details</DialogTitle>
             <DialogDescription>
@@ -1265,7 +1265,7 @@ export function VoiceLibrary() {
       </Dialog>
 
       <Dialog open={verificationOpen} onOpenChange={handleVerificationOpenChange}>
-        <DialogContent className="max-h-[90vh] max-w-xl overflow-y-auto">
+        <DialogContent className="creem-voice-dialog max-h-[90vh] max-w-xl overflow-y-auto">
           <DialogHeader>
             <DialogTitle>Verify your voice</DialogTitle>
             <DialogDescription>
@@ -1344,7 +1344,7 @@ export function VoiceLibrary() {
           }
         }}
       >
-        <AlertDialogContent>
+        <AlertDialogContent className="creem-voice-dialog">
           <AlertDialogHeader>
             <AlertDialogTitle>Delete this voice?</AlertDialogTitle>
             <AlertDialogDescription>
@@ -1375,6 +1375,6 @@ export function VoiceLibrary() {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
-    </>
+    </div>
   );
 }

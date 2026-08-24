@@ -342,6 +342,25 @@ export function CustomSongWizard({
     const draftToken = params.get("draft_token");
 
     try {
+      const heroDraftRaw = window.sessionStorage.getItem("songtell-hero-draft");
+      if (heroDraftRaw) {
+        const heroDraft = JSON.parse(heroDraftRaw) as {
+          recipient?: string;
+          story?: string;
+          occasion?: string;
+          genre?: string;
+        };
+        if (!queryOccasion && heroDraft.occasion) setOccasion(heroDraft.occasion as Occasion);
+        if (!params.get("genre") && heroDraft.genre) setGenre(heroDraft.genre);
+        if (heroDraft.story) setStory(heroDraft.story);
+        if (heroDraft.recipient) setRecipients([{ name: heroDraft.recipient, relationship: "" }]);
+        window.sessionStorage.removeItem("songtell-hero-draft");
+      }
+    } catch {
+      // Ignore unavailable or malformed one-page drafts.
+    }
+
+    try {
       const savedDraft = window.localStorage.getItem(draftStorageKey);
       if (savedDraft) {
         const draft = JSON.parse(savedDraft) as StoredDraft;
@@ -1803,7 +1822,7 @@ export function CustomSongWizard({
   const isSongResultStep = step === 5 && songStage === "player";
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-[#fff9f5] pb-36 text-foreground">
+    <section className="relative min-h-screen w-full overflow-hidden bg-[#f5f2f0] pb-36 pt-24 text-[var(--songtell-ink)] sm:pt-28">
       <CreateSongBackground occasion={step === 5 ? null : occasion} />
 
       <div
@@ -1984,10 +2003,10 @@ export function CustomSongWizard({
       </div>
 
       {step < 5 && !(step === 4 && lyricsStage === "loading") && (
-        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/60 bg-white/80 px-4 py-4 shadow-xl shadow-primary/5 backdrop-blur-xl sm:px-8">
+        <div className="fixed inset-x-0 bottom-0 z-40 border-t-[3px] border-[var(--songtell-ink)] bg-[#f5f2f0]/95 px-4 py-4 shadow-[0_-4px_0_var(--songtell-ink)] backdrop-blur-xl sm:px-8">
           <div className="mx-auto flex max-w-5xl gap-3">
             <Button
-              className="h-12 w-32 rounded-full bg-muted text-sm font-bold text-muted-foreground hover:bg-muted disabled:text-muted-foreground"
+              className="songtell-lift-button h-12 w-32 rounded-xl bg-white text-sm font-bold text-[var(--songtell-ink)] hover:bg-white disabled:text-[var(--songtell-muted)]"
               disabled={step === 1}
               type="button"
               variant="ghost"
@@ -1997,7 +2016,7 @@ export function CustomSongWizard({
               {copy.back}
             </Button>
             <Button
-              className="h-12 flex-1 rounded-full bg-primary text-sm font-bold text-primary-foreground shadow-xl shadow-primary/20 hover:bg-primary/90 disabled:bg-primary/30"
+              className="songtell-lift-button h-12 flex-1 rounded-xl bg-[var(--songtell-theme)] text-sm font-bold text-[var(--songtell-ink)] hover:bg-[var(--songtell-theme)] disabled:bg-[#d8d2cf]"
               disabled={!canContinue || (isSessionPending && !initialIsAuthenticated)}
               type="button"
               onClick={goForward}
@@ -2158,7 +2177,7 @@ function CreateSongBackground({ occasion }: { occasion: Occasion | null }) {
   ];
 
   return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+    <div className="songtell-create-background pointer-events-none absolute inset-0 overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,228,218,0.76)_0%,rgba(255,246,239,0.58)_34%,rgba(255,252,248,0.94)_74%,rgba(255,255,255,0.98)_100%)]" />
       {occasionBackgroundSrc && (
         <div className="absolute -left-4 top-0 h-[min(82vh,820px)] w-[min(60vw,760px)] min-w-[500px] opacity-80 sm:-left-6">

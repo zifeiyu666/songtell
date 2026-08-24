@@ -299,7 +299,7 @@ export default function LyricArtLandingPage({
 
   return (
     <div className="w-full overflow-hidden bg-[#fbf7f0] text-[#271b16]">
-      <section className="relative isolate px-5 pb-16 pt-12 sm:px-8 md:pb-24 md:pt-16 lg:px-12 xl:px-16">
+      <section className="relative isolate px-5 pb-16 pt-32 sm:px-8 sm:pt-36 md:pb-24 lg:px-12 lg:pt-40 xl:px-16">
         <div className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(circle_at_18%_8%,rgba(244,199,107,0.25),transparent_27%),radial-gradient(circle_at_88%_20%,rgba(139,190,173,0.24),transparent_32%),linear-gradient(135deg,#fffaf3_0%,#f8f2e9_55%,#eef5ef_100%)]" />
         <div className="pointer-events-none absolute inset-0 -z-10 opacity-[0.18] [background-image:linear-gradient(rgba(39,27,22,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(39,27,22,0.1)_1px,transparent_1px)] [background-size:42px_42px]" />
 

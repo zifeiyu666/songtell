@@ -66,8 +66,8 @@ function PublicMusicVideoPage({ locale }: { locale: string }) {
   const ja = locale === "ja";
   const features = es ? ["Vídeos con fotos", "Letras sincronizadas", "Exportación en MP4"] : ja ? ["写真スライドショー", "歌詞を自動同期", "MP4で書き出し"] : ["Photo slideshow scenes", "Synced lyric captions", "MP4 video exports"];
   return (
-    <main className="min-h-screen w-full bg-[#fbfaf7] text-stone-950">
-      <section className="grid min-h-[calc(100svh-64px)] w-full gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(420px,1.1fr)] lg:items-center lg:px-8 lg:py-16">
+    <main className="public-creem-page min-h-screen w-full text-stone-950">
+      <section className="grid min-h-[calc(100svh-64px)] w-full gap-8 px-4 pb-12 pt-32 sm:px-6 sm:pt-36 lg:grid-cols-[minmax(0,0.9fr)_minmax(420px,1.1fr)] lg:items-center lg:px-8 lg:pb-16 lg:pt-40">
         <div className="mx-auto w-full max-w-2xl">
           <p className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-rose-600 shadow-sm">
             <Clapperboard className="size-4" />

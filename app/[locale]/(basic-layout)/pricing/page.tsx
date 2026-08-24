@@ -109,7 +109,7 @@ export default async function PricingPage({
   );
 
   return (
-    <main className="min-h-screen bg-background text-foreground w-full">
+    <main className="public-creem-page min-h-screen w-full text-foreground">
       {!hideHero && (
         <PageHero
           badge={{

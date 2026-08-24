@@ -576,7 +576,7 @@ function SuccessContent() {
   );
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[80vh] py-12 px-4 sm:px-6 lg:px-8 w-full">
+    <div className="flex min-h-[80vh] w-full flex-col items-center justify-center px-4 pb-12 pt-28 sm:px-6 sm:pt-32 lg:px-8">
       {status === "verifying" && renderVerifying()}
       {status === "pending" && renderPending()}
       {status === "success" && renderSuccess()}
@@ -587,7 +587,7 @@ function SuccessContent() {
 
 export default function PaymentSuccessPage() {
   return (
-    <main className="container max-w-4xl mx-auto">
+    <main className="public-creem-page container mx-auto max-w-4xl px-4">
       <Suspense
         fallback={
           <div className="flex flex-col items-center justify-center min-h-[80vh] text-center px-4">

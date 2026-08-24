@@ -1,4 +1,4 @@
-import { carterOne } from "@/app/fonts";
+import { gasoekOne } from "@/app/fonts";
 import { Newsletter } from "@/components/footer/Newsletter";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
 import { TwitterX } from "@/components/social-icons/icons";
@@ -8,6 +8,7 @@ import {
   getArticleNavigationLinks,
   withArticleFooterLinks,
 } from "@/lib/cms/article-navigation";
+import { isDisabledPublicPath } from "@/lib/content/disabled-public-paths";
 import { cn } from "@/lib/utils";
 import { FooterLink } from "@/types/common";
 import { GithubIcon, InstagramIcon, MailIcon, Youtube } from "lucide-react";
@@ -28,15 +29,16 @@ export default async function Footer() {
 
   const footerLinks = withArticleFooterLinks(
     tFooter.raw("Links.groups") as FooterLink[],
-    articleLinks
-  );
+    articleLinks,
+  ).map((section) => ({
+    ...section,
+    links: section.links.filter(
+      (link) => !link.href || !isDisabledPublicPath(link.href),
+    ),
+  }));
 
   return (
-    <div className="home-warm-ambient-soft relative overflow-hidden border-t border-white/10 text-white/68">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(18,11,9,0.08),rgba(18,11,9,0.42))]"
-      />
+    <div className="relative overflow-hidden border-t-[3px] border-[var(--songtell-ink)] bg-[#121314] text-white/70">
       <footer className="container relative mx-auto max-w-8xl py-2">
         <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-12">
@@ -52,17 +54,17 @@ export default async function Footer() {
                     <Image
                       src="/logo.png"
                       alt=""
-                      width={512}
-                      height={512}
-                      className="-mt-1.5 h-10 w-10"
+                      width={202}
+                      height={144}
+                      className="-mt-1.5 h-9 w-[50px] object-contain"
                     />
                     <span
                       className={cn(
-                        carterOne.className,
-                        "text-[20px] leading-none tracking-wide"
+                        gasoekOne.className,
+                        "text-[20px] leading-none tracking-wide text-white"
                       )}
                     >
-                      SendTheSong.io
+                      Songtell
                     </span>
                   </I18nLink>
                 </div>
@@ -70,7 +72,7 @@ export default async function Footer() {
                 <p className="text-sm p4-4 md:pr-12">
                   {t.rich("tagLine", {
                     strong: (chunks: ReactNode) => (
-                      <strong className="font-semibold text-white">
+                        <strong className="font-semibold text-white">
                         {chunks}
                       </strong>
                     ),
@@ -87,7 +89,7 @@ export default async function Footer() {
                       rel="noreferrer nofollow noopener"
                       aria-label="GitHub"
                       title="View on GitHub"
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white/62 transition-colors hover:bg-white/8 hover:text-white"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-md text-white/65 transition-colors hover:bg-white hover:text-[#121314]"
                     >
                       <GithubIcon className="size-4" aria-hidden="true" />
                     </Link>
@@ -100,7 +102,7 @@ export default async function Footer() {
                       rel="noreferrer nofollow noopener"
                       aria-label="Twitter"
                       title="View on Twitter"
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white/62 transition-colors hover:bg-white/8 hover:text-white"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-md text-white/65 transition-colors hover:bg-white hover:text-[#121314]"
                     >
                       <TwitterX className="w-4 h-4" aria-hidden="true" />
                     </Link>
@@ -113,7 +115,7 @@ export default async function Footer() {
                       rel="noreferrer nofollow noopener"
                       aria-label="YouTube"
                       title="View on YouTube"
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white/62 transition-colors hover:bg-white/8 hover:text-white"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-md text-white/65 transition-colors hover:bg-white hover:text-[#121314]"
                     >
                       <Youtube className="w-4 h-4" aria-hidden="true" />
                     </Link>
@@ -126,7 +128,7 @@ export default async function Footer() {
                       rel="noreferrer nofollow noopener"
                       aria-label="Instagram"
                       title="View on Instagram"
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white/62 transition-colors hover:bg-white/8 hover:text-white"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-md text-white/65 transition-colors hover:bg-white hover:text-[#121314]"
                     >
                       <InstagramIcon className="w-4 h-4" aria-hidden="true" />
                     </Link>
@@ -139,7 +141,7 @@ export default async function Footer() {
                       rel="noreferrer nofollow noopener"
                       aria-label="TikTok"
                       title="View on TikTok"
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white/62 transition-colors hover:bg-white/8 hover:text-white"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-md text-white/65 transition-colors hover:bg-white hover:text-[#121314]"
                     >
                       <SiTiktok className="w-4 h-4" aria-hidden="true" />
                     </Link>
@@ -152,7 +154,7 @@ export default async function Footer() {
                       rel="noreferrer nofollow noopener"
                       aria-label="Discord"
                       title="Join Discord"
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-white/62 transition-colors hover:bg-white/8 hover:text-white"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-md text-white/65 transition-colors hover:bg-white hover:text-[#121314]"
                     >
                       <SiDiscord className="w-4 h-4" aria-hidden="true" />
                     </Link>
@@ -189,7 +191,7 @@ export default async function Footer() {
             {footerLinks.map((section) => {
               const isArticlesSection = section.id === "articles";
               const linkClassName = cn(
-                "text-white/62 transition-colors hover:text-white",
+                "text-white/65 transition-colors hover:text-[var(--songtell-purple)]",
                 isArticlesSection && "block max-w-sm line-clamp-2 leading-5"
               );
 
@@ -198,7 +200,7 @@ export default async function Footer() {
                   key={section.title}
                   className="min-w-0 lg:col-span-1 xl:col-span-2"
                 >
-                  <div className="mb-4 text-lg font-semibold text-white">
+                    <div className="mb-4 text-lg font-semibold text-white">
                     {section.title}
                   </div>
                   <ul className="space-y-2 text-sm">
@@ -267,8 +269,8 @@ export default async function Footer() {
             )}
           </div>
 
-          <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 md:flex-row">
-            <p className="text-sm text-white/52">
+          <div className="flex flex-col items-center justify-between gap-4 border-t border-white/20 py-6 md:flex-row">
+            <p className="text-sm text-white/55">
               {tFooter("Copyright", {
                 year: new Date().getFullYear(),
                 name: siteConfig.name,
@@ -280,7 +282,7 @@ export default async function Footer() {
                 title={siteConfig.socialLinks.email}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="text-sm text-white/52 transition-colors hover:text-white"
+                className="text-sm text-white/55 transition-colors hover:text-white"
               >
                 Contact us: {siteConfig.socialLinks.email}
               </Link>
@@ -288,7 +290,7 @@ export default async function Footer() {
                 href="/about"
                 title={tFooter("About")}
                 prefetch={false}
-                className="text-sm text-white/52 transition-colors hover:text-white"
+                className="text-sm text-white/55 transition-colors hover:text-white"
               >
                 {tFooter("About")}
               </I18nLink>
@@ -296,7 +298,7 @@ export default async function Footer() {
                 href="/privacy-policy"
                 title={tFooter("PrivacyPolicy")}
                 prefetch={false}
-                className="text-sm text-white/52 transition-colors hover:text-white"
+                className="text-sm text-white/55 transition-colors hover:text-white"
               >
                 {tFooter("PrivacyPolicy")}
               </Link>
@@ -304,7 +306,7 @@ export default async function Footer() {
                 href="/terms-of-service"
                 title={tFooter("TermsOfService")}
                 prefetch={false}
-                className="text-sm text-white/52 transition-colors hover:text-white"
+                className="text-sm text-white/55 transition-colors hover:text-white"
               >
                 {tFooter("TermsOfService")}
               </Link>
@@ -312,7 +314,7 @@ export default async function Footer() {
                 href="/refund-policy"
                 title={tFooter("RefundPolicy")}
                 prefetch={false}
-                className="text-sm text-white/52 transition-colors hover:text-white"
+                className="text-sm text-white/55 transition-colors hover:text-white"
               >
                 {tFooter("RefundPolicy")}
               </Link>

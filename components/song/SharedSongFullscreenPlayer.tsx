@@ -307,7 +307,7 @@ function BrandHomeLink() {
         <Image
           alt=""
           aria-hidden="true"
-          className="object-cover"
+          className="object-contain"
           fill
           sizes="32px"
           src="/logo.png"

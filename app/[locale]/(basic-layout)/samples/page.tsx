@@ -103,7 +103,7 @@ export default async function SamplesPage({
   const formAction = locale === "en" ? "/samples" : `/${locale}/samples`;
 
   return (
-    <main className="min-h-screen w-full bg-[#fbfaf7] text-foreground">
+    <main className="creem-library-page min-h-screen w-full">
       <PageHero
         badge={{
           icon: <Library className="size-4" />,
@@ -124,11 +124,12 @@ export default async function SamplesPage({
               <Link
                 key={value}
                 className={cn(
-                  "inline-flex h-8 items-center whitespace-nowrap rounded-full px-3.5 text-sm font-normal transition",
+                  "creem-filter-pill inline-flex h-9 items-center whitespace-nowrap px-3.5 text-sm font-semibold transition hover:-translate-y-0.5",
                   occasion === value
-                    ? "bg-stone-950 text-white"
-                    : "bg-white text-muted-foreground shadow-sm hover:text-foreground",
+                    ? "text-[var(--songtell-ink)]"
+                    : "text-[var(--songtell-muted)] hover:text-[var(--songtell-ink)]",
                 )}
+                data-active={occasion === value}
                 href={`/samples?occasion=${value}`}
               >
                 {value === "all"
@@ -144,7 +145,7 @@ export default async function SamplesPage({
             )}
             <Search className="pointer-events-none absolute left-3.5 top-1/2 size-3.5 -translate-y-1/2 text-muted-foreground" />
             <Input
-              className="h-10 rounded-full border-0 bg-white pl-9 pr-4 text-sm font-medium outline-none shadow-[0_10px_30px_rgba(28,25,23,0.10)] transition placeholder:text-muted-foreground focus-visible:ring-4 focus-visible:ring-primary/10"
+              className="creem-search h-10 pl-9 pr-4 text-sm font-medium outline-none transition placeholder:text-[var(--songtell-muted)] focus-visible:ring-4 focus-visible:ring-[var(--songtell-theme)]/40"
               defaultValue={q}
               name="q"
               placeholder={t("filters.searchPlaceholder")}
@@ -155,14 +156,14 @@ export default async function SamplesPage({
         <SamplesGrid samples={filteredSamples} />
 
         {!filteredSamples.length && (
-          <div className="mt-10 rounded-2xl border border-dashed border-border bg-card p-8 text-center">
+          <div className="creem-empty mt-10 p-8 text-center">
             <h2 className="text-xl font-black text-foreground">
               {t("empty.title")}
             </h2>
             <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-muted-foreground">
               {t("empty.description")}
             </p>
-            <Button asChild className="mt-5 rounded-full">
+            <Button asChild className="creem-action-button mt-5">
               <Link href="/create-song">{t("empty.create")}</Link>
             </Button>
           </div>

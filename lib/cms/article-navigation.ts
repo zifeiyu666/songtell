@@ -1,6 +1,8 @@
 import "server-only";
 
 import { blogCms } from "@/lib/cms";
+import { isDisabledPublicPath } from "@/lib/content/disabled-public-paths";
+import { isRetainedBlogSlug } from "@/lib/content/retained-blog";
 import {
   isArticlesFooterGroup,
   isArticlesHeaderLink,
@@ -53,9 +55,11 @@ function withPricingPath<T extends { id?: string; href?: string; items?: T[] }>(
 
     return {
       ...nextLink,
-      items: withPricingPath(link.items),
+      items: withPricingPath(
+        link.items.filter((item) => !item.href || !isDisabledPublicPath(item.href)),
+      ),
     };
-  });
+  }).filter((link) => !link.href || !isDisabledPublicPath(link.href));
 }
 
 export function withArticleHeaderLinks(
@@ -129,6 +133,10 @@ export const getArticleNavigationLinks = cache(
         }))
         .filter(({ post, slug }) => {
           if (!post.title || !slug || seenSlugs.has(slug)) {
+            return false;
+          }
+
+          if (!isRetainedBlogSlug(slug)) {
             return false;
           }
 

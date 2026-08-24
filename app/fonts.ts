@@ -1,6 +1,6 @@
 // https://fonts.google.com/
 
-import { Bangers, Bricolage_Grotesque, Carter_One, Karla, Pacifico } from 'next/font/google'
+import { Bangers, Carter_One, Gasoek_One, Geist, Karla, Pacifico } from 'next/font/google'
 
 export const bangers = Bangers({
   weight: '400',
@@ -14,10 +14,18 @@ export const carterOne = Carter_One({
   display: 'swap',
 })
 
-export const bricolageGrotesque = Bricolage_Grotesque({
-  subsets: ['latin'],
-  display: 'swap',
-})
+export const gasoekOne = Gasoek_One({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-display",
+});
+
+export const geist = Geist({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+});
 
 export const pacifico = Pacifico({
   weight: "400",

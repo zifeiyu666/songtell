@@ -2,6 +2,8 @@ import { Aside } from "@/components/mdx/Aside";
 import { Callout } from "@/components/mdx/Callout";
 import CodeBlock from "@/components/mdx/CodeBlock";
 import { MdxCard } from "@/components/mdx/MdxCard";
+import { InlineDemoPlayer } from "@/components/content/InlineDemoPlayer";
+import { ContextualCreateSongCTA } from "@/components/content/ContextualCreateSongCTA";
 import React, { ReactNode } from "react";
 
 interface HeadingProps {
@@ -138,6 +140,8 @@ const MDXComponents: MDXComponentsProps = {
   Aside,
   Callout,
   Card: MdxCard,
+  InlineDemoPlayer,
+  ContextualCreateSongCTA,
 };
 
 export default MDXComponents;

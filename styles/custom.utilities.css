@@ -124,26 +124,31 @@
 }
 
 @utility preset-title {
-  @apply mt-3 text-balance font-sans text-3xl font-black leading-tight text-[#261712] sm:text-4xl md:text-5xl
+  @apply mt-3 text-balance font-display text-3xl font-normal leading-tight text-[#261712] sm:text-4xl md:text-5xl
 }
 
 @utility home-section {
-  @apply bg-[#fffdf9] py-20 text-[#351d17] md:py-24;
+  @apply bg-[var(--songtell-paper)] py-20 text-[var(--songtell-ink)] md:py-24;
+  position: relative;
+  isolation: isolate;
 }
 
 @utility home-section-muted {
-  @apply bg-[#f4e5dc] py-20 text-[#351d17] md:py-24;
+  @apply bg-[var(--songtell-paper)] py-20 text-[var(--songtell-ink)] md:py-24;
+  position: relative;
+  isolation: isolate;
 }
 
 @utility home-section-soft {
-  background:
-    radial-gradient(circle at 12% 6%, rgba(238, 187, 166, 0.2), transparent 27rem),
-    linear-gradient(180deg, #fffdf9 0%, #fffaf4 100%);
-  @apply py-20 text-[#351d17] md:py-24;
+  @apply bg-[var(--songtell-paper)] py-20 text-[var(--songtell-ink)] md:py-24;
+  position: relative;
+  isolation: isolate;
 }
 
 @utility home-section-deep {
-  @apply bg-[#351d17] py-20 text-white md:py-24;
+  @apply bg-[var(--songtell-section-purple)] py-20 text-[var(--songtell-ink)] md:py-24;
+  position: relative;
+  isolation: isolate;
 }
 
 @utility home-warm-ambient {
@@ -167,18 +172,7 @@
 }
 
 @utility home-warm-ambient-soft {
-  background:
-    radial-gradient(
-      circle at 20% 0%,
-      rgba(255, 167, 64, 0.2),
-      transparent 24rem
-    ),
-    radial-gradient(
-      circle at 86% 18%,
-      rgba(224, 65, 50, 0.16),
-      transparent 22rem
-    ),
-    linear-gradient(145deg, #43231b 0%, #351d17 50%, #24110d 100%);
+  @apply bg-[var(--songtell-paper)];
 }
 
 @utility home-warm-ambient-original {
@@ -202,45 +196,7 @@
 }
 
 @utility home-cta-animated-gradient {
-  background-color: #351d17;
-  background-image:
-    radial-gradient(
-      circle at var(--c5-x1) var(--c5-y1),
-      rgba(255, 171, 74, 0.95) 0px,
-      transparent var(--c5-s1)
-    ),
-    radial-gradient(
-      circle at var(--c5-x2) var(--c5-y2),
-      rgba(224, 65, 50, 0.92) 0px,
-      transparent var(--c5-s2)
-    ),
-    radial-gradient(
-      circle at var(--c5-x3) var(--c5-y3),
-      rgba(255, 213, 128, 0.5) 0px,
-      transparent var(--c5-s3)
-    ),
-    radial-gradient(
-      circle at var(--c5-x4) var(--c5-y4),
-      rgba(117, 28, 20, 0.7) 0px,
-      transparent var(--c5-s4)
-    ),
-    radial-gradient(
-      circle at var(--c5-x5) var(--c5-y5),
-      rgba(35, 23, 19, 0.94) 0px,
-      transparent var(--c5-s5)
-    ),
-    linear-gradient(135deg, #4a241a 0%, #351d17 48%, #24110d 100%);
-  animation:
-    c5-blob1 8s ease-in-out infinite,
-    c5-blob2 9s ease-in-out infinite,
-    c5-blob3 8.5s ease-in-out infinite,
-    c5-blob4 10s ease-in-out infinite,
-    c5-blob5 7.5s ease-in-out infinite,
-    c5-size1 6.5s ease-in-out infinite,
-    c5-size2 7s ease-in-out infinite,
-    c5-size3 6.8s ease-in-out infinite,
-    c5-size4 7.4s ease-in-out infinite,
-    c5-size5 6s ease-in-out infinite;
+  @apply bg-[var(--songtell-section-purple)] text-[var(--songtell-ink)];
 }
 
 @utility home-container {
@@ -252,19 +208,19 @@
 }
 
 @utility home-eyebrow {
-  @apply text-xs font-semibold uppercase tracking-[0.16em] text-primary/85;
+  @apply text-xs font-semibold uppercase tracking-[0.16em] text-[var(--songtell-ink)];
 }
 
 @utility home-title {
-  @apply mt-3 text-balance font-sans text-3xl font-black leading-tight tracking-normal text-[#2b1710] sm:text-4xl md:text-5xl;
+  @apply mt-3 text-balance font-display text-3xl font-normal leading-tight tracking-normal text-[var(--songtell-ink)] sm:text-4xl md:text-5xl;
 }
 
 @utility home-title-on-deep {
-  @apply mt-3 text-balance bg-gradient-to-br from-white via-[#f5e8dc] to-[#d9b9a2] bg-clip-text font-sans text-3xl font-black leading-tight tracking-normal text-transparent sm:text-4xl md:text-5xl;
+  @apply mt-3 text-balance font-display text-3xl font-normal leading-tight tracking-normal text-[var(--songtell-ink)] sm:text-4xl md:text-5xl;
 }
 
 @utility hero-title-warm {
-  @apply bg-gradient-to-br from-white via-[#fff8f0] to-[#eee2d7] bg-clip-text text-transparent;
+  @apply text-[var(--songtell-ink)];
 }
 
 @utility home-description {
@@ -272,15 +228,15 @@
 }
 
 @utility home-description-on-deep {
-  @apply mx-auto mt-5 max-w-3xl text-base leading-7 text-white/70 md:text-lg;
+  @apply mx-auto mt-5 max-w-3xl text-base leading-7 text-[var(--songtell-muted)] md:text-lg;
 }
 
 @utility home-card {
-  @apply rounded-2xl border border-[#ead7cd] bg-[#fffaf4] shadow-[0_18px_52px_rgba(80,48,36,0.08)];
+  @apply rounded-lg border-[3px] border-[var(--songtell-ink)] bg-white shadow-[7px_7px_0_var(--songtell-ink)];
 }
 
 @utility home-card-hover {
-  @apply transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_28px_70px_rgba(54,38,27,0.14)];
+  @apply transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-[var(--songtell-ink)] hover:shadow-[10px_10px_0_var(--songtell-ink)];
 }
 
 @utility title-gradient {

@@ -7,7 +7,7 @@ export type HeaderActionTextProps = {
 };
 
 export const headerActionButtonClassName =
-  "group/nav-link relative isolate h-8 overflow-hidden rounded-full bg-primary px-3 text-xs font-semibold text-primary-foreground shadow-none transition-transform duration-300 before:absolute before:inset-0 before:z-0 before:translate-y-[-110%] before:rounded-[inherit] before:bg-white/12 before:transition-transform before:duration-500 before:ease-[cubic-bezier(0.22,1.38,0.36,1)] hover:before:translate-y-0 focus-visible:before:translate-y-0 active:scale-[0.98] motion-reduce:before:transition-none [&>*]:relative [&>*]:z-10";
+  "group/nav-link relative isolate h-10 overflow-hidden rounded-md bg-[var(--songtell-theme)] px-4 text-xs font-semibold text-[var(--songtell-ink)] songtell-lift-button before:absolute before:inset-0 before:z-0 before:translate-y-[-110%] before:rounded-[inherit] before:bg-white/20 before:transition-transform before:duration-300 hover:before:translate-y-0 focus-visible:before:translate-y-0 motion-reduce:before:transition-none [&>*]:relative [&>*]:z-10";
 
 export function HeaderActionText({
   children,

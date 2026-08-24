@@ -31,10 +31,10 @@ export function PageHero({
   underline,
 }: PageHeroProps) {
   return (
-    <section className={cn("w-full bg-[#f3eadf]", backgroundClassName, className)}>
+    <section className={cn("creem-page-hero w-full", backgroundClassName, className)}>
       <div
         className={cn(
-          "mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16",
+          "mx-auto max-w-6xl px-4 pb-14 pt-32 sm:px-6 sm:pb-16 sm:pt-36 lg:pb-20 lg:pt-40",
           containerClassName
         )}
       >
@@ -48,7 +48,7 @@ export function PageHero({
 
           <h1
             className={cn(
-              "mt-5 max-w-5xl text-5xl font-black leading-[0.96] tracking-normal text-stone-950 md:text-7xl",
+              "mt-5 max-w-5xl text-balance font-display text-5xl font-normal leading-[0.98] tracking-[0.01em] text-[var(--songtell-ink)] md:text-7xl",
               titleClassName
             )}
           >
@@ -62,7 +62,7 @@ export function PageHero({
           {description && (
             <p
               className={cn(
-                "mt-5 max-w-2xl text-lg leading-8 text-stone-700",
+                "mt-5 max-w-2xl text-lg leading-8 text-[var(--songtell-muted)]",
                 descriptionClassName
               )}
             >

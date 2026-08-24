@@ -328,7 +328,7 @@ export default function BirthdaySongsPage({
 }: BirthdaySongsPageProps) {
   return (
     <div className="w-full overflow-hidden bg-[#fffaf7] text-[#2b1914]">
-      <section className="relative isolate bg-[#fffaf7] px-6 pb-12 pt-10 sm:px-8 md:pb-14 md:pt-14 lg:px-12 xl:px-16">
+      <section className="relative isolate bg-[#fffaf7] px-6 pb-12 pt-32 sm:px-8 sm:pt-36 md:pb-14 lg:px-12 lg:pt-40 xl:px-16">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_14%_16%,rgba(246,190,50,0.2),transparent_30%),radial-gradient(circle_at_84%_20%,rgba(37,150,142,0.11),transparent_34%),linear-gradient(115deg,rgba(255,247,239,0.98)_0%,rgba(255,255,255,0.96)_46%,rgba(255,239,229,0.72)_100%)]" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-28 bg-gradient-to-b from-transparent to-white/72" />
 

@@ -5,11 +5,11 @@
       "text": "✨ Crea una canción personalizada única",
       "href": ""
     },
-    "title": "Envía una canción personalizada que atesorarán para siempre",
-    "titleLine": "Envía una canción personalizada",
-    "titleAccent": "que nunca olvidarán",
-    "description": "<p class=\"hero-subtitle\">Comparte un recuerdo, un momento importante o esas palabras que nunca has sabido cómo decir. SendTheSong lo transforma en un regalo musical personal, listo para escuchar, ajustar y enviar en minutos.</p>",
-    "trustBadge": "SendTheSong · Muestra gratuita primero · Lista en minutos",
+    "title": "Convierte lo que sientes en una canción personalizada",
+    "titleLine": "Convierte lo que sientes en",
+    "titleAccent": "una canción personalizada",
+    "description": "<p class=\"hero-subtitle\">Comparte un recuerdo, un momento importante o esas palabras que nunca has sabido cómo decir. Songtell lo transforma en música original para escuchar, ajustar y guardar en minutos.</p>",
+    "trustBadge": "Songtell · Muestra gratuita primero · Lista en minutos",
     "inputLabel": "escrito desde el corazón",
     "trustItems": ["Muestra gratis", "Lista en minutos", "Sin tarjeta"],
     "getStarted": "Crear una muestra gratis",
@@ -20,17 +20,17 @@
     "viewDocsLink": "/blog"
   },
   "OccasionShowcase": {
-    "eyebrow": "Ocasiones",
-    "title": "Una melodía personal para cada momento especial",
-    "description": "Envía una canción personalizada para celebrar las historias y emociones que de verdad importan.",
+    "eyebrow": "Hecho para tu momento",
+    "title": "Dale a tu historia su propio sonido",
+    "description": "Elige el momento, comparte el recuerdo y deja que Songtell lo convierta en una canción para una sola persona.",
     "previous": "Ocasión anterior",
     "next": "Ocasión siguiente",
     "carouselLabel": "Carrusel de ocasiones"
   },
   "CustomerReactions": {
     "badge": { "label": "REACCIONES", "text": "😭 Lágrimas de alegría" },
-    "title": "Mira lo que pasa cuando envías la canción",
-    "description": "<p>Ten un pañuelo a mano. Pasa el cursor para ver una muestra sin sonido y haz clic para escuchar cómo enviar una canción crea un momento inolvidable.</p>",
+    "title": "Mira cómo un recuerdo se convierte en música",
+    "description": "<p>Descubre momentos reales de Songtell: reacciones espontáneas, voces familiares y el instante en que una historia empieza a sonar como una canción.</p>",
     "playLabel": "Reproducir {title} con sonido",
     "muteLabel": "Silenciar {title}",
     "trustItems": [
@@ -41,52 +41,52 @@
     "videos": [
       {
         "src": "/cass_demo/optimized/giftsong-slide-2.mp4",
-        "label": "SendTheSong",
+        "label": "Momento Songtell",
         "title": "Reacción de mamá: canción enviada"
       },
       {
         "src": "/cass_demo/optimized/compressed/giftsong-slide-13.mp4",
-        "label": "SendTheSong",
+        "label": "Primera escucha",
         "title": "Alegría por una canción enviada"
       },
       {
         "src": "/cass_demo/optimized/compressed/giftsong-slide-14.mp4",
-        "label": "SendTheSong",
+        "label": "Sorpresa musical",
         "title": "La mejor sorpresa con una canción enviada"
       },
       {
         "src": "/cass_demo/optimized/compressed/giftsong-slide-15.mp4",
-        "label": "SendTheSong",
+        "label": "Recuerdo de boda",
         "title": "Una canción de boda enviada para siempre"
       },
       {
         "src": "/cass_demo/optimized/giftsong-slide-12.mp4",
-        "label": "SendTheSong",
+        "label": "Nota de aniversario",
         "title": "Canción de aniversario enviada"
       },
       {
         "src": "/cass_demo/optimized/giftsong-slide-5.mp4",
-        "label": "SendTheSong",
-        "title": "Enviarle una canción de amor"
+        "label": "Historia de amor",
+        "title": "Una carta de amor convertida en música"
       },
       {
         "src": "/cass_demo/optimized/compressed/giftsong-slide-18.mp4",
-        "label": "SendTheSong",
+        "label": "Reacción genuina",
         "title": "Alegría por una canción enviada"
       },
       {
         "src": "/cass_demo/optimized/giftsong-slide-20.mp4",
-        "label": "SendTheSong",
+        "label": "Recuerdo para repetir",
         "title": "Escuchando una canción enviada"
       },
       {
         "src": "/cass_demo/optimized/compressed/giftsong-slide-17.mp4",
-        "label": "SendTheSong",
+        "label": "Historia familiar",
         "title": "Reacción de papá: canción enviada"
       },
       {
         "src": "/cass_demo/optimized/compressed/giftsong-slide-16.mp4",
-        "label": "SendTheSong",
+        "label": "Cuando la letra llega",
         "title": "Lágrimas por una canción enviada"
       }
     ]
@@ -94,7 +94,7 @@
   "HowItWorks": {
     "eyebrow": "Cómo funciona",
     "title": "De un recuerdo a una canción emocionante en pocos minutos",
-    "description": "Crea una canción personalizada, escucha una muestra gratis y desbloquea el regalo completo, con un vídeo con letras y arte de letras imprimible, para enviar la canción con estilo.",
+    "description": "Crea una canción personalizada, escucha una muestra gratis y completa el recuerdo con un vídeo con letras y arte imprimible para compartirlo a tu manera.",
     "steps": {
       "story": {
         "title": "Cuéntanos vuestra historia",
@@ -111,7 +111,7 @@
       },
       "deliver": {
         "title": "Compártela como prefieras",
-        "description": "Envía la canción en privado, acompáñala con un <strong>vídeo con letras</strong> o imprime una <strong>lámina con la letra</strong> para convertir un recuerdo en un regalo que podrán conservar."
+        "description": "Comparte la canción en privado, acompáñala con un <strong>vídeo con letras</strong> o imprime una <strong>lámina con la letra</strong> para convertir un recuerdo en algo que podrán conservar."
       }
     }
   },
@@ -256,13 +256,13 @@
     ]
   },
   "SongfinchComparison": {
-    "eyebrow": "Por qué algunas personas eligen sendthesong.io frente a Songfinch",
-    "title": "<us>sendthesong.io</us> <vs>vs.</vs> <songfinch>Songfinch</songfinch>",
+    "eyebrow": "Por qué algunas personas eligen Songtell.art frente a Songfinch",
+    "title": "<us>Songtell.art</us> <vs>vs.</vs> <songfinch>Songfinch</songfinch>",
     "subtitle": "No necesitas pagar <price>más de $200</price> por una sola canción. Consigue una <strong>producción con sonido de estudio</strong>, escucha primero una muestra y conserva el control <underline>por mucho menos.</underline>",
     "tableHeaders": {
       "feature": "Característica",
       "songfinch": "Songfinch",
-      "us": "sendthesong.io"
+      "us": "Songtell.art"
     },
     "rows": [
       {
@@ -300,7 +300,7 @@
       {
         "icon": "value",
         "title": "Un regalo personal a un precio razonable",
-        "description": "Songfinch parte de $199. En SendTheSong puedes escuchar una muestra antes de pagar y elegir el formato que mejor encaja con tu regalo."
+        "description": "Songfinch parte de $199. En Songtell puedes escuchar una muestra antes de desbloquear la versión final y elegir el formato que mejor encaja con tu recuerdo."
       },
       {
         "icon": "speed",
@@ -321,19 +321,19 @@
   },
   "Testimonials": {
     "badge": { "label": "OPINIONES" },
-    "title": "Lo que dicen los clientes sobre SendTheSong",
-    "description": "Historias reales de personas que convirtieron un recuerdo en una canción que merecía ser enviada."
+    "title": "Pequeños recuerdos. Canciones para guardar.",
+    "description": "Historias de personas que dieron su propia melodía a un momento especial."
   },
   "FAQ": {
-    "title": "Preguntas frecuentes sobre SendTheSong",
-    "description": "Todo lo que necesitas saber antes de crear, personalizar y enviar una canción que atesorarán para siempre.",
+    "title": "Preguntas frecuentes sobre Songtell",
+    "description": "Una guía clara para convertir una historia importante en una canción que puedes personalizar, escuchar y compartir.",
     "items": [
       {
-        "question": "¿Cómo funciona SendTheSong?",
+        "question": "¿Cómo convierte Songtell una historia en una canción?",
         "answer": "Cuéntanos la historia, elige un estilo musical y prepararemos una canción personalizada al instante. Primero recibirás una muestra gratuita de 60 segundos. Si te gusta, podrás desbloquear la canción completa y usar los editores de vídeo y láminas."
       },
       {
-        "question": "¿Qué diferencia a SendTheSong de otras plataformas?",
+        "question": "¿Para qué ocasiones puedo crear una canción con Songtell?",
         "answer": "Puedes escuchar una muestra antes de pagar, editar la letra y probar otros estilos. Además, la canción puede acompañarse con un vídeo personalizado y una lámina imprimible creada desde nuestros editores."
       },
       {
@@ -342,7 +342,7 @@
       },
       {
         "question": "¿Cómo comparto mi regalo musical personalizado?",
-        "answer": "Cada canción tiene una página privada que puedes enviar por mensaje, correo o redes sociales. También puedes añadir una imagen, una dedicatoria y crear un vídeo o una lámina con la letra."
+        "answer": "Cada canción tiene una página privada que puedes compartir por mensaje, correo o redes sociales. También puedes añadir una imagen, una dedicatoria y crear un vídeo o una lámina con la letra."
       },
       {
         "question": "¿Hay costes ocultos? ¿El pago es seguro?",
@@ -363,8 +363,8 @@
     ]
   },
   "CTA": {
-    "title": "Envía una canción personalizada que atesorarán para siempre",
-    "description": "Cuéntanos vuestra historia y convierte los recuerdos en una <strong>canción personalizada</strong> con sonido de estudio. Crea y <strong>envía una canción</strong> como <strong>regalo musical único</strong> para cumpleaños, bodas o aniversarios.",
+    "title": "Dale a su historia una canción para conservar",
+    "description": "Cuéntanos vuestra historia y convierte los recuerdos en una <strong>canción personalizada</strong> con sonido de estudio. Créala, escúchala y <strong>compártela</strong> como <strong>regalo musical único</strong> para cumpleaños, bodas o aniversarios.",
     "button": "Crear mi canción",
     "trustText": "Hecha para momentos que importan",
     "features": {

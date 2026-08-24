@@ -38,8 +38,8 @@ function PublicLyricWallArtPage({ locale }: { locale: string }) {
     : ja ? ["ポスターテンプレート", "文字を自由に編集", "高解像度で書き出し"]
     : ["Record poster templates", "Editable lyric typography", "High-resolution export"];
   return (
-    <main className="min-h-screen w-full bg-[#fbfaf7] text-stone-950">
-      <section className="grid min-h-[calc(100svh-64px)] w-full gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[minmax(0,0.92fr)_minmax(420px,1.08fr)] lg:items-center lg:px-8 lg:py-16">
+    <main className="public-creem-page min-h-screen w-full text-stone-950">
+      <section className="grid min-h-[calc(100svh-64px)] w-full gap-8 px-4 pb-12 pt-32 sm:px-6 sm:pt-36 lg:grid-cols-[minmax(0,0.92fr)_minmax(420px,1.08fr)] lg:items-center lg:px-8 lg:pb-16 lg:pt-40">
         <div className="mx-auto w-full max-w-2xl">
           <p className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-[#b56e4f] shadow-sm">
             <Disc3 className="size-4" />

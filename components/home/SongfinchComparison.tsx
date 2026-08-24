@@ -1,13 +1,4 @@
-import {
-  CheckCircle2,
-  CircleDollarSign,
-  Clock3,
-  Edit3,
-  Gift,
-  Palette,
-  XCircle,
-  Zap
-} from "lucide-react";
+import { Check, ChevronLeft, ChevronRight, Crown, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 type ComparisonRow = {
@@ -22,13 +13,6 @@ type PainPoint = {
   icon: string;
 };
 
-const painPointIcons = {
-  value: CircleDollarSign,
-  speed: Zap,
-  edits: Edit3,
-  bundle: Gift,
-} as const;
-
 export default function SongfinchComparison() {
   const t = useTranslations("Landing.SongfinchComparison");
   const rows = t.raw("rows") as ComparisonRow[];
@@ -37,111 +21,111 @@ export default function SongfinchComparison() {
   return (
     <section
       id="songfinch-comparison"
-      className="home-section-soft"
+      className="relative overflow-hidden bg-[var(--songtell-purple)] px-4 py-20 text-[var(--songtell-ink)] sm:px-6 sm:py-24 lg:px-8 lg:py-28"
     >
-      <div className="home-container">
-        <div className="home-section-header">
-          {/* <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/80 px-4 py-2 text-sm font-medium text-muted-foreground shadow-sm">
-            <Sparkles className="h-4 w-4" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-20 opacity-20 [background-image:linear-gradient(135deg,transparent_25%,var(--songtell-ink)_25%,var(--songtell-ink)_27%,transparent_27%,transparent_50%,var(--songtell-ink)_50%,var(--songtell-ink)_52%,transparent_52%,transparent_75%,var(--songtell-ink)_75%,var(--songtell-ink)_77%,transparent_77%)] [background-size:42px_42px]"
+      />
+
+      <div className="relative mx-auto max-w-6xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="mb-4 text-xs font-black uppercase tracking-[0.22em]">
             {t("eyebrow")}
-          </div> */}
-          <p className="home-eyebrow">{t("eyebrow")}</p>
-          <h2 className="home-title mx-auto max-w-5xl">
+          </p>
+          <h2 className="font-display text-4xl leading-[0.98] tracking-[0.02em] sm:text-6xl">
             {t.rich("title", {
-              us: (chunks) => (
-                <span className="text-primary">{chunks}</span>
-              ),
+              us: (chunks) => <span>{chunks}</span>,
               vs: (chunks) => (
-                <span className="mx-2 inline-block text-[#c8beb8] sm:mx-3">
+                <span className="mx-2 inline-block text-[var(--songtell-ink)]/55 sm:mx-3">
                   {chunks}
                 </span>
               ),
-              songfinch: (chunks) => (
-                <span className="text-inherit">{chunks}</span>
-              ),
+              songfinch: (chunks) => <span>{chunks}</span>,
             })}
           </h2>
-          <div className="home-description [&_strong]:font-semibold [&_strong]:text-[#2b1710]">
+          <div className="mx-auto mt-5 max-w-2xl text-base leading-7 text-[var(--songtell-ink)]/75 sm:text-lg">
             {t.rich("subtitle", {
-              strong: (chunks) => <strong>{chunks}</strong>,
-              price: (chunks) => (
-                <span className="font-semibold text-primary">{chunks}</span>
-              ),
-              underline: (chunks) => (
-                <span className="relative inline-block whitespace-nowrap text-[#5a2117]">
+              strong: (chunks) => (
+                <strong className="font-black text-[var(--songtell-ink)]">
                   {chunks}
-                  <span
-                    aria-hidden="true"
-                    className="absolute -bottom-1 left-0 h-2 w-full rounded-[50%] border-b-[3px] border-primary/70 [transform:rotate(-1.4deg)]"
-                  />
+                </strong>
+              ),
+              price: (chunks) => <span className="font-black">{chunks}</span>,
+              underline: (chunks) => (
+                <span className="font-black underline decoration-2 underline-offset-4">
+                  {chunks}
                 </span>
               ),
             })}
           </div>
         </div>
 
-        <div className="home-card overflow-hidden">
-          <div className="grid grid-cols-[1.1fr_1fr_1fr] bg-[#2a1710] text-sm font-semibold text-white">
-            <div className="px-3 py-4 sm:px-5 md:text-base">
-              {t("tableHeaders.feature")}
+        <div className="mt-12 overflow-visible border-[3px] border-[var(--songtell-ink)] bg-white shadow-[4px_4px_0_var(--songtell-ink)] sm:mt-16">
+          <div className="grid grid-cols-1 border-b-[3px] border-[var(--songtell-ink)] md:grid-cols-[minmax(0,1fr)_180px_minmax(0,1fr)]">
+            <div className="flex items-center justify-center bg-[#e6e5e3] px-5 py-5 text-center text-xl font-black sm:text-2xl md:justify-start md:text-left">
+              <span>{t("tableHeaders.songfinch")}</span>
             </div>
-            <div className="border-l border-white/10 bg-primary px-3 py-4 text-primary-foreground sm:px-5 md:text-base">
-              {t("tableHeaders.us")}
+            <div className="flex items-center justify-center border-y-[3px] border-[var(--songtell-ink)] bg-white px-4 py-5 text-center text-xs font-black uppercase tracking-[0.14em] md:border-x-[3px] md:border-y-0">
+              <span className="inline-flex items-center gap-2">
+                <ChevronLeft className="size-4" />
+                {t("tableHeaders.feature")}
+                <ChevronRight className="size-4" />
+              </span>
             </div>
-            <div className="border-l border-white/10 px-3 py-4 sm:px-5 md:text-base">
-              {t("tableHeaders.songfinch")}
+            <div className="relative flex items-center justify-center bg-[#23c5a4] px-5 py-5 text-center text-xl font-black sm:text-2xl md:justify-start md:text-left">
+              <Crown
+                aria-hidden="true"
+                className="absolute -top-5 left-1/2 size-9 -translate-x-1/2 -rotate-6 fill-[var(--songtell-theme)] text-[var(--songtell-ink)] sm:-top-6 sm:size-11"
+              />
+              <span>{t("tableHeaders.us")}</span>
             </div>
           </div>
 
-          <div className="divide-y divide-[#eadbd3]">
-            {rows.map((row, index) => (
-              <div
-                key={row.feature}
-                className="grid grid-cols-[1.1fr_1fr_1fr] text-sm md:text-base"
-              >
-                <div className="flex items-center px-3 py-4 font-semibold text-[#2b1710] sm:px-5">
-                  {row.feature}
-                </div>
-                <div className="flex items-center gap-2 border-l border-primary/15 bg-primary/5 px-3 py-4 font-semibold text-[#2b1710] sm:px-5">
-                  <CheckCircle2 className="h-4 w-4 shrink-0 text-primary" />
-                  <span>{row.us}</span>
-                </div>
-                <div className="flex items-center gap-2 border-l border-[#eadbd3] px-3 py-4 text-[#6f625c] sm:px-5">
-                  {index > 3 ? (
-                    <XCircle className="h-4 w-4 shrink-0 text-[#9b8c84]" />
-                  ) : (
-                    <Clock3 className="h-4 w-4 shrink-0 text-[#9b8c84]" />
-                  )}
-                  <span>{row.songfinch}</span>
-                </div>
+          {rows.map((row) => (
+            <div
+              key={row.feature}
+              className="grid grid-cols-1 border-b-[3px] border-[var(--songtell-ink)] last:border-b-0 md:grid-cols-[minmax(0,1fr)_180px_minmax(0,1fr)]"
+            >
+              <div className="flex items-start gap-4 bg-[#f1f0ee] px-5 py-6 sm:px-7">
+                <X
+                  aria-hidden="true"
+                  className="mt-0.5 size-8 shrink-0 stroke-[3] text-[#ed9f79]"
+                />
+                <p className="text-sm font-medium leading-6 sm:text-base">
+                  {row.songfinch}
+                </p>
               </div>
-            ))}
-          </div>
+              <div className="flex items-center justify-center border-y-[3px] border-dashed border-[var(--songtell-ink)] bg-white px-4 py-4 text-center md:border-x-[3px] md:border-y-0">
+                <span className="text-base font-black sm:text-lg">
+                  {row.feature}
+                </span>
+              </div>
+              <div className="flex items-start gap-4 bg-[#e9fff9] px-5 py-6 sm:px-7">
+                <Check
+                  aria-hidden="true"
+                  className="mt-0.5 size-8 shrink-0 stroke-[3] text-[#50c96f]"
+                />
+                <p className="text-sm font-medium leading-6 sm:text-base">
+                  {row.us}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-1 pb-4 [scrollbar-width:none] md:grid md:grid-cols-2 md:overflow-visible md:px-0 md:pb-0 lg:mt-10 lg:grid-cols-4 [&::-webkit-scrollbar]:hidden">
-          {painPoints.map((item) => {
-            const Icon =
-              painPointIcons[item.icon as keyof typeof painPointIcons] ??
-              Palette;
-
-            return (
-              <article
-                key={item.title}
-                className="home-card home-card-hover min-w-[82%] snap-center p-5 min-[430px]:min-w-[76%] md:min-w-0"
-              >
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <h3 className="text-base font-semibold leading-snug text-[#2b1710] md:text-lg">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-[#6f625c]">
-                  {item.description}
-                </p>
-              </article>
-            );
-          })}
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {painPoints.map((item) => (
+            <article
+              key={item.title}
+              className="border-[3px] border-[var(--songtell-ink)] bg-white p-5 shadow-[3px_3px_0_var(--songtell-ink)] transition-transform duration-200 hover:-translate-y-1"
+            >
+              <p className="text-sm font-black leading-5">{item.title}</p>
+              <p className="mt-3 text-sm leading-6 text-[var(--songtell-ink)]/70">
+                {item.description}
+              </p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

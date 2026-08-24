@@ -120,18 +120,6 @@ const useCases: IconBlock[] = [
       "Turn a shared song memory, a private nickname, or your love story into a personalized music gift with replay value.",
     icon: <Heart className="size-5" />,
   },
-  {
-    title: "For family or a best friend",
-    description:
-      "Celebrate milestones, gratitude, or long history with a custom song that feels more intimate than a card or gift card.",
-    icon: <PlayCircle className="size-5" />,
-  },
-  {
-    title: "For a last-minute surprise",
-    description:
-      "When time is short, a fast preview helps you create a gift that still feels intentional, specific, and memorable.",
-    icon: <Clock3 className="size-5" />,
-  },
 ];
 
 const searchIntentSpotlights: SearchIntentSpotlight[] = [
@@ -172,24 +160,6 @@ const searchIntentSpotlights: SearchIntentSpotlight[] = [
     promptHint:
       "Bring in the private language, one cinematic memory, the mood of the relationship, and the reason this gift matters right now.",
     icon: <Heart className="size-5" />,
-  },
-  {
-    title: "Lyric gifts and wall art",
-    description:
-      "Some buyers want a physical keepsake as much as the audio. This topic should guide them toward printable lyric art and replayable song delivery as one cohesive gift.",
-    searchTerms: ["lyric gifts", "song lyric gift"],
-    promptHint:
-      "Think about the exact line you want framed, the photo or color mood that suits it, and whether the gift should feel romantic, family-centered, or quietly sentimental.",
-    icon: <Gift className="size-5" />,
-  },
-  {
-    title: "Custom song gift for family or friends",
-    description:
-      "This catch-all intent captures people who know a generic present will not feel right. The strongest briefs start with one real story and one clear emotional angle.",
-    searchTerms: ["custom song gift", "personalized gift with music"],
-    promptHint:
-      "Choose one story, one shared phrase, and one detail only the two of you would recognize so the gift feels grounded and specific.",
-    icon: <MessageCircleHeart className="size-5" />,
   },
 ];
 
@@ -324,30 +294,25 @@ export default function MusicGiftSongsPage({
   wallArtSongOptions,
 }: MusicGiftSongsPageProps) {
   return (
-    <div className="w-full overflow-hidden bg-[#fffaf7] text-[#2b1914]">
-      <section className="relative isolate bg-[#fffaf7] px-6 pb-12 pt-10 sm:px-8 md:pb-14 md:pt-14 lg:px-12 xl:px-16">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_14%_16%,rgba(246,190,50,0.2),transparent_30%),radial-gradient(circle_at_84%_20%,rgba(162,96,77,0.12),transparent_34%),linear-gradient(115deg,rgba(255,247,239,0.98)_0%,rgba(255,255,255,0.96)_46%,rgba(255,240,232,0.78)_100%)]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-28 bg-gradient-to-b from-transparent to-white/72" />
+    <div className="creem-gift-page w-full overflow-hidden bg-[var(--songtell-paper)] text-[var(--songtell-ink)]">
+      <section className="relative isolate bg-[var(--songtell-purple)] px-6 pb-16 pt-32 sm:px-8 md:pb-20 md:pt-36 lg:px-12 xl:px-16">
 
         <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[0.9fr_1fr] lg:gap-10">
           <div className="max-w-2xl">
-            <div className="inline-flex max-w-full flex-wrap items-center gap-2 rounded-full bg-white/58 px-4 py-2 text-sm text-[#695851] shadow-[0_18px_40px_rgba(92,48,28,0.08),0_2px_10px_rgba(255,255,255,0.35),inset_0_1px_0_rgba(255,255,255,0.78),inset_0_-1px_0_rgba(214,189,176,0.18)] backdrop-blur-xl supports-[backdrop-filter]:bg-white/42">
+            <div className="inline-flex max-w-full flex-wrap items-center gap-2 border-[3px] border-[var(--songtell-ink)] bg-white px-4 py-2 text-sm text-[var(--songtell-ink)] shadow-[3px_3px_0_var(--songtell-ink)]">
               <Stars />
-              <span className="font-bold text-[#261712]">Excellent</span>
-              <span className="text-[#d8c6bd]">/</span>
+              <span className="font-bold">Made for the moment</span>
+              <span className="text-black/40">/</span>
               <span>Personalized music gifts</span>
             </div>
 
-            <h1 className="mt-5 max-w-[12ch] text-balance font-sans text-[2.5rem] font-black leading-[0.98] tracking-normal text-[#250f0b] min-[420px]:text-[2.9rem] sm:text-[3.7rem] lg:text-[4.45rem]">
-              Music Personalized Gifts Written for Them
+            <h1 className="mt-5 max-w-[12ch] text-balance font-display text-[2.5rem] font-normal leading-[0.98] tracking-[0.03em] text-[var(--songtell-ink)] min-[420px]:text-[2.9rem] sm:text-[3.7rem] lg:text-[4.45rem]">
+              A song made from the details only you know
             </h1>
 
-            <p className="mt-5 max-w-lg text-base leading-7 text-[#6c5f59] sm:text-lg">
-              Create a custom song gift for the music lover in your life, then
-              turn it into a replayable keepsake with a preview, music video,
-              and lyric wall art. It is a more personal way to give
-              personalized music for Christmas, kids, partners, family, or
-              friends.
+            <p className="mt-5 max-w-lg text-base leading-7 text-[var(--songtell-ink)]/75 sm:text-lg">
+              Start with a real memory, shape the sound, and make a replayable
+              music gift for someone who deserves more than a generic present.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -355,7 +320,7 @@ export default function MusicGiftSongsPage({
                 href={createMusicGiftSongHref}
                 size="sm"
                 trailingArrow
-                className="border-[#c95c3c] bg-[#c95c3c] px-6 font-bold text-white shadow-[0_18px_38px_rgba(201,92,60,0.28)] hover:border-[#ae4729] hover:bg-[#ae4729] hover:text-white"
+                className="border-[var(--songtell-ink)] bg-[var(--songtell-theme)] px-6 font-bold text-[var(--songtell-ink)] shadow-[3px_3px_0_var(--songtell-ink)]"
               >
                 Create Your Music Gift
               </MagneticButton>
@@ -364,7 +329,7 @@ export default function MusicGiftSongsPage({
                 prefetch={false}
                 variant="light"
                 size="sm"
-                className="border-[#d7b9aa] bg-white px-6 font-bold text-[#923328] shadow-[0_14px_30px_rgba(88,45,28,0.1)] hover:border-[#caa995] hover:bg-[#fff2eb] hover:text-[#73251e]"
+                className="border-[var(--songtell-ink)] bg-white px-6 font-bold text-[var(--songtell-ink)] shadow-[3px_3px_0_var(--songtell-ink)]"
               >
                 <PlayCircle className="size-4" />
                 See examples

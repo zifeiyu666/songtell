@@ -92,7 +92,7 @@ export default async function SampleDetailPage({
   });
 
   return (
-    <main className="relative min-h-screen w-full bg-background py-6 text-foreground">
+    <main className="relative min-h-screen w-full bg-background pb-6 pt-28 text-foreground sm:pt-32">
       <div className="pointer-events-none absolute inset-0 bg-accent/10" />
       <div className="relative mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
         <Button

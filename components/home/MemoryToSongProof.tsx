@@ -175,7 +175,7 @@ function LyricsPanel() {
         </div>
         <div className="relative mt-9 min-h-[290px] flex-1 overflow-hidden rounded-lg border border-white/12 bg-[#f7eee8] shadow-[0_24px_64px_rgba(0,0,0,0.32)] lg:min-h-0">
           <Image
-            alt="Editable custom song lyrics in the SendTheSong editor"
+            alt="Editable custom song lyrics in the Songtell editor"
             className="object-cover object-center"
             fill
             sizes="(max-width: 1024px) 100vw, 64vw"
@@ -349,7 +349,7 @@ function GiftPanel() {
       <div className="flex flex-col justify-center bg-[#2b1710] p-6 text-white sm:p-8 lg:p-9">
         <EvidenceLabel>One song, three finished formats</EvidenceLabel>
         <h3 className="mt-5 text-3xl font-bold leading-tight sm:text-[2.15rem]">
-          Ready to send, show, or print.
+          Ready to share, display, or print.
         </h3>
         <p className="mt-5 text-base leading-7 text-white/68">
           The same story can become a private listening page, a video, or a

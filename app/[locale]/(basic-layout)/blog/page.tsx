@@ -4,6 +4,7 @@ import { PostList } from "@/components/cms/PostList";
 import { PageHero } from "@/components/shared/PageHero";
 import { Locale } from "@/i18n/routing";
 import { blogCms } from "@/lib/cms";
+import { isRetainedBlogSlug } from "@/lib/content/retained-blog";
 import { constructMetadata } from "@/lib/metadata";
 import { BookOpenText, TextSearch } from "lucide-react";
 import { Metadata } from "next";
@@ -50,12 +51,13 @@ export default async function Page({ params }: { params: Params }) {
 
   const initialServerPosts =
     initialServerPostsResult.success && initialServerPostsResult.data?.posts
-      ? initialServerPostsResult.data.posts
+      ? initialServerPostsResult.data.posts.filter((post) =>
+          isRetainedBlogSlug(post.slug),
+        )
       : [];
-  const totalServerPosts =
-    initialServerPostsResult.success && initialServerPostsResult.data?.count
-      ? initialServerPostsResult.data.count
-      : 0;
+  // The public editorial set is intentionally smaller than the legacy CMS
+  // collection, so pagination must not advertise excluded posts.
+  const totalServerPosts = initialServerPosts.length;
 
   if (!initialServerPostsResult.success) {
     console.error(
@@ -65,10 +67,11 @@ export default async function Page({ params }: { params: Params }) {
   }
 
   const noPostsFound =
-    localPosts.length === 0 && initialServerPosts.length === 0;
+    localPosts.filter((post) => isRetainedBlogSlug(post.slug)).length === 0 &&
+    initialServerPosts.length === 0;
 
   return (
-    <main className="min-h-screen w-full bg-[#fbfaf7] text-foreground">
+    <main className="creem-blog-page min-h-screen w-full text-foreground">
       <PageHero
         badge={{
           icon: <BookOpenText className="size-4" />,
@@ -95,7 +98,7 @@ export default async function Page({ params }: { params: Params }) {
           <PostList
             postType="blog"
             baseUrl="/blog"
-            localPosts={localPosts}
+            localPosts={localPosts.filter((post) => isRetainedBlogSlug(post.slug))}
             initialPosts={initialServerPosts}
             initialTotal={totalServerPosts}
             locale={locale}

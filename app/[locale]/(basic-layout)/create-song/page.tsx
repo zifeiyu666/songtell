@@ -30,7 +30,7 @@ export default async function CreateSongPage() {
   ]);
 
   return (
-    <div className="w-full min-h-screen bg-background">
+    <div className="songtell-create-shell min-h-screen w-full bg-[#f5f2f0]">
       <section className="sr-only" aria-labelledby="create-song-title">
         <h1 id="create-song-title">{t("srTitle")}</h1>
         <p>{t("srDescription")}</p>

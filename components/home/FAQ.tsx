@@ -37,76 +37,43 @@ export default function FAQ({
   const faqs: FAQItem[] = items ?? t.raw("items");
   const headingTitle = title ?? t("title");
   const headingDescription = description ?? t("description");
-  const cardTitle = ctaTitle ?? cta("title");
   const cardButtonLabel = ctaButtonLabel ?? cta("button");
 
   return (
-    <section
-      className="home-section-muted !bg-[#f5eee7] text-[#2b1710]"
-    >
-      <div
-        className="home-section-header home-container"
-        data-testid="faq-section-heading"
-      >
-        <p className="home-eyebrow">FAQ</p>
-        <h2 className="home-title">{headingTitle}</h2>
-        <p className="home-description">
-          {headingDescription}
-        </p>
-      </div>
-
-      <div className="home-container grid grid-cols-[1fr_1.15fr] items-stretch gap-6 max-[900px]:grid-cols-1 max-[900px]:gap-8">
-        <div
-          className="home-cta-animated-gradient relative isolate flex flex-col items-center justify-center overflow-hidden rounded-2xl px-8 py-14 text-center text-white shadow-[0_24px_70px_rgba(54,38,27,0.18)] max-[900px]:py-12"
-        >
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(35,23,19,0.08)_0%,rgba(35,23,19,0.28)_64%,rgba(18,11,9,0.58)_100%)]"
-          />
-          <h2
-            className="mb-3 font-bold leading-[1.1]"
-            style={{
-              fontSize: "clamp(2rem, 7vw, 2.75rem)",
-            }}
-          >
-            {cardTitle}
-          </h2>
-          <p className="mb-6 text-[0.9rem] font-normal leading-6 text-white/75">
-            {ctaDescription ??
-              cta.rich("description", {
-                strong: (chunks) => <strong>{chunks}</strong>,
-              })}
-          </p>
-          <MagneticButton
-            href={ctaHref}
-            size="sm"
-            trailingArrow
-            className="px-5 text-center text-[0.9rem] font-semibold leading-tight sm:px-5 sm:text-[0.9rem]"
-          >
-            <span className="whitespace-normal">{cardButtonLabel}</span>
-          </MagneticButton>
+    <section className="home-section-muted border-t-[3px] border-[var(--songtell-ink)] py-20 text-[var(--songtell-ink)] sm:py-24">
+      <div className="home-container grid grid-cols-[0.78fr_1.22fr] items-start gap-10 max-[900px]:grid-cols-1 max-[900px]:gap-8">
+        <div data-testid="faq-section-heading">
+          <p className="home-eyebrow">FAQ</p>
+          <h2 className="home-title max-w-sm">{headingTitle}</h2>
+          <span className="mt-5 block h-1 w-24 bg-[var(--songtell-theme)]" />
+          <p className="home-description mt-5 max-w-sm">{headingDescription}</p>
+          <div className="mt-12 border-[3px] border-[var(--songtell-ink)] bg-[var(--songtell-theme)] p-6 shadow-[3px_3px_0_var(--songtell-ink)]">
+            <h3 className="font-display text-2xl tracking-[.02em]">Need more help?</h3>
+            <p className="mt-3 text-sm leading-6 text-[var(--songtell-ink)]/75">{ctaDescription ?? cta.rich("description", { strong: (chunks) => <strong>{chunks}</strong> })}</p>
+            <MagneticButton href={ctaHref} size="sm" trailingArrow className="mt-6 w-full justify-center border-[3px] border-[var(--songtell-ink)] bg-[var(--songtell-ink)] px-5 text-center text-sm font-bold text-white shadow-[2px_2px_0_var(--songtell-ink)] hover:bg-[var(--songtell-ink)]">{cardButtonLabel}</MagneticButton>
+          </div>
         </div>
 
-        <div className="home-card flex flex-col justify-center px-6 py-5 sm:px-8">
-          <div className="divide-y divide-[#eadbd3]">
+        <div className="space-y-4">
+          <div className="space-y-4">
             {faqs.map((item) => {
               const isOpen = openItem === item.question;
               const Icon = isOpen ? ChevronUp : ChevronDown;
 
               return (
-                <div key={item.question} className="py-4 first:pt-0">
+                <div key={item.question} className={`border-[3px] border-[var(--songtell-ink)] p-5 shadow-[3px_3px_0_var(--songtell-ink)] transition-colors ${isOpen ? "bg-[var(--songtell-purple)]" : "bg-white"}`}>
                   <button
                     type="button"
-                    className="flex w-full cursor-pointer items-center justify-between gap-3 text-left text-[0.95rem] font-semibold leading-6 text-[#2b1710] transition-colors hover:text-primary"
+                    className="flex w-full cursor-pointer items-center justify-between gap-3 text-left text-base font-semibold leading-6 text-[var(--songtell-ink)]"
                     aria-expanded={isOpen}
                     onClick={() => setOpenItem(isOpen ? null : item.question)}
                   >
                     <span>{item.question}</span>
-                    <Icon className="size-4 shrink-0 text-[#9b8c84]" />
+                    <Icon className="size-5 shrink-0 text-[var(--songtell-ink)]" />
                   </button>
 
                   {isOpen && (
-                    <p className="mt-2 text-[0.9rem] leading-6 text-[#6f625c]">
+                    <p className="mt-4 border-t-2 border-[var(--songtell-ink)]/30 pt-4 text-sm leading-6 text-[var(--songtell-ink)]/80">
                       {item.answer}
                     </p>
                   )}

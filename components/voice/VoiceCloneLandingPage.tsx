@@ -156,7 +156,7 @@ export function VoiceCloneLandingPage({ createHref }: VoiceCloneLandingPageProps
     <div className="w-full overflow-hidden bg-[#fffaf7] text-[#2b1914]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqSchema }} />
 
-      <section className="relative isolate px-6 pb-14 pt-10 sm:px-8 md:pb-16 md:pt-14 lg:px-12 xl:px-16">
+      <section className="relative isolate px-6 pb-14 pt-32 sm:px-8 sm:pt-36 md:pb-16 lg:px-12 lg:pt-40 xl:px-16">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_14%_16%,rgba(246,190,50,0.2),transparent_30%),radial-gradient(circle_at_84%_20%,rgba(37,150,142,0.11),transparent_34%),linear-gradient(115deg,rgba(255,247,239,0.98)_0%,rgba(255,255,255,0.96)_46%,rgba(255,239,229,0.72)_100%)]" />
         <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[0.9fr_1fr] lg:gap-11">
           <div className="max-w-2xl">

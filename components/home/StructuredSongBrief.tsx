@@ -97,7 +97,7 @@ function EditableField({
     } ${
       theme === "letter"
         ? "text-[#4d332a] empty:before:text-[#9d7f73]"
-        : "text-white/78 empty:before:text-white/58"
+        : "text-[var(--songtell-ink)] empty:before:text-[var(--songtell-muted)]"
     }`;
   // Multiline fields stay inline so the marker highlight follows each
   // wrapped text fragment instead of painting one big block rectangle.
@@ -215,7 +215,7 @@ function EditableField({
         className={`absolute right-1 top-1/2 -translate-y-1/2 cursor-pointer p-0.5 transition-colors ${
           theme === "letter"
             ? "text-[#a07060] hover:text-[#6d3d31]"
-            : "text-white/45 hover:text-white/85"
+            : "text-[var(--songtell-muted)] hover:text-[var(--songtell-blue)]"
         }`}
       >
         <ChevronDown className="size-3" />
@@ -226,7 +226,7 @@ function EditableField({
           className={`absolute left-1/2 top-full z-30 mt-1.5 w-64 max-w-[calc(100vw-2rem)] -translate-x-1/2 rounded-xl p-1.5 backdrop-blur-xl ${
             theme === "letter"
               ? "border border-[#dfc7bb] bg-[#fffaf4]/95 shadow-[0_18px_40px_rgba(91,55,42,0.18)]"
-              : "border border-white/15 bg-[#262220]/95 shadow-[0_18px_40px_rgba(0,0,0,0.45)]"
+              : "border border-[var(--songtell-line)] bg-white shadow-[0_18px_40px_rgba(17,19,24,0.12)]"
           }`}
         >
           <span className="flex flex-wrap justify-center gap-1">
@@ -239,10 +239,10 @@ function EditableField({
                   option.trim().toLowerCase() === selectedSuggestion
                     ? theme === "letter"
                       ? "bg-[#f1ddd2] text-[#5b342b]"
-                      : "bg-white/16 text-white"
+                      : "bg-[#eef2ff] text-[var(--songtell-blue)]"
                     : theme === "letter"
                       ? "text-[#7b5a4f] hover:bg-[#f6e9e1] hover:text-[#4d2e25]"
-                      : "text-white/75 hover:bg-white/12 hover:text-white"
+                      : "text-[var(--songtell-muted)] hover:bg-[#eef2ff] hover:text-[var(--songtell-blue)]"
                 }`}
               >
                 {option}
@@ -259,7 +259,7 @@ export default function StructuredSongBrief({
   variant = "hero",
   templates = songBriefTemplates,
   introText = "Start with a few details. We will shape them into your song.",
-  leadText = "I want to send a song to",
+  leadText = "I want to create a song for",
   messageLeadText = "I want to say",
   storyLeadText = "Our story",
   submitLabel = "Create immediately",
@@ -326,15 +326,15 @@ export default function StructuredSongBrief({
         event.preventDefault();
         saveBriefAndStart();
       }}
-      className={`w-full max-w-[58rem] rounded-[1rem] p-3 text-left backdrop-blur-[10px] sm:p-3.5 ${
+      className={`hero-brief-sketch w-full max-w-[58rem] p-3 text-left sm:p-3.5 ${
         isLetter
-          ? "border border-[#d9bfb2] bg-[#fffaf2]/94 shadow-[0_28px_80px_rgba(75,43,31,0.18)]"
-          : "bg-black/[0.14]"
+          ? "rounded-[1rem] border border-[#d9bfb2] bg-[#fffaf2]/94 shadow-[0_28px_80px_rgba(75,43,31,0.18)]"
+          : "hero-brief-sketch-dark"
       }`}
     >
       <p
         className={`mb-1.5 text-center text-xs leading-4 sm:text-[0.8rem] ${
-          isLetter ? "text-[#866b60]" : "text-white/65"
+          isLetter ? "text-[#866b60]" : "text-[var(--songtell-muted)]"
         }`}
       >
         {introText}
@@ -342,7 +342,7 @@ export default function StructuredSongBrief({
 
       <div
         className={`flex flex-wrap items-baseline justify-center gap-x-1.5 gap-y-0.5 text-[0.8rem] leading-6 sm:text-sm sm:leading-7 ${
-          isLetter ? "text-[#6d5147]" : "text-white/65"
+          isLetter ? "text-[#6d5147]" : "text-[var(--songtell-muted)]"
         }`}
       >
         <span>{leadText}</span>
@@ -413,7 +413,7 @@ export default function StructuredSongBrief({
           className={`size-7 rounded-full transition-transform hover:rotate-[18deg] sm:size-8 ${
             isLetter
               ? "text-[#8b6255] hover:bg-[#f3e2da] hover:text-[#5b342b]"
-              : "text-white/72 hover:bg-white/14 hover:text-white"
+              : "text-[var(--songtell-muted)] hover:bg-[#eef2ff] hover:text-[var(--songtell-blue)]"
           }`}
           aria-label="Choose another song template"
           title="Choose another template"
@@ -425,10 +425,10 @@ export default function StructuredSongBrief({
             type="button"
             variant="outline"
             onClick={() => saveBriefAndStart("advanced")}
-            className={`group/nav-link h-7 shrink-0 overflow-hidden rounded-full px-3 text-[0.72rem] font-semibold shadow-none sm:h-8 sm:text-[0.76rem] ${
+            className={`group/nav-link songtell-lift-button h-8 shrink-0 overflow-hidden rounded-md px-3 text-[0.72rem] font-semibold shadow-none sm:text-[0.76rem] ${
               isLetter
                 ? "border-[#d8bdb0] bg-white/60 text-[#6a4539] hover:bg-[#f7e9e1] hover:text-[#4e2b23]"
-                : "border-white/20 bg-white/[0.08] text-white/80 hover:bg-white/[0.14] hover:text-white"
+                : "border-[var(--songtell-line)] bg-white text-[var(--songtell-ink)] hover:bg-[#f1f4ff] hover:text-[var(--songtell-blue)]"
             }`}
           >
             <HeaderActionText icon={<Edit3 className="size-3.5" />}>
@@ -437,7 +437,7 @@ export default function StructuredSongBrief({
           </Button>
           <Button
             type="submit"
-            className="group/nav-link h-7 shrink-0 overflow-hidden rounded-full bg-primary px-3 text-[0.76rem] font-semibold text-white shadow-[0_8px_18px_rgba(224,65,50,0.28)] hover:bg-primary/90 sm:h-8 sm:text-[0.8rem]"
+            className="group/nav-link songtell-lift-button h-9 shrink-0 overflow-hidden rounded-md bg-[var(--songtell-theme)] px-3 text-[0.76rem] font-semibold text-[var(--songtell-ink)] sm:text-[0.8rem]"
           >
             <HeaderActionText icon={<Sparkles className="size-3.5" />}>
               {submitLabel} <ArrowRight className="size-3.5" />

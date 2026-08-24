@@ -9,6 +9,7 @@ import { type FinalSongPlayerData } from "@/components/song/FinalSongPlayer";
 import { MusicVideoStudioCta } from "@/components/song/MusicVideoStudioCta";
 import { type WallArtSongOption } from "@/components/song/WallArtEditorDrawer";
 import { WallArtStudioCta } from "@/components/song/WallArtStudioCta";
+import WaveDivider from "@/components/home/WaveDivider";
 import { Link } from "@/i18n/routing";
 import { ArrowRight } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
@@ -77,6 +78,9 @@ export default function OurProducts({
   wallArtSongOptions,
 }: OurProductsProps) {
   const t = useTranslations("Landing.OurProducts");
+  const title = t("title");
+  const titleAccent = "Personalized Gift";
+  const titleParts = title.split(titleAccent);
   const locale = useLocale();
   const ctaClassName =
     "mt-7 inline-flex items-center gap-2 text-base font-bold text-primary transition hover:text-primary/80";
@@ -164,12 +168,29 @@ export default function OurProducts({
   };
 
   return (
-    <section id="our-products" className="home-section-muted !bg-[#f5eee7]">
+    <section id="our-products" className="home-section-deep relative bg-[var(--songtell-section-purple)] pt-16 md:pt-20">
+      <WaveDivider
+        fill="var(--songtell-section-purple)"
+        position="absolute"
+        className="inset-x-0 top-0 h-16 -translate-y-full"
+      />
       <div className="home-container">
-        <div className="home-section-header">
-          <p className="home-eyebrow">{t("eyebrow")}</p>
-          <h2 className="home-title">{t("title")}</h2>
-          <p className="home-description">{t("description")}</p>
+        <div className="home-section-header text-white">
+          <p className="home-eyebrow text-white">{t("eyebrow")}</p>
+          <h2 className="home-title text-white">
+            {titleParts.length === 2 ? (
+              <>
+                {titleParts[0]}
+                <span className="text-[var(--songtell-theme)]">
+                  {titleAccent}
+                </span>
+                {titleParts[1]}
+              </>
+            ) : (
+              title
+            )}
+          </h2>
+          <p className="home-description !text-white/85">{t("description")}</p>
         </div>
 
         <Carousel

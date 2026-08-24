@@ -1,11 +1,22 @@
 import createIntlMiddleware from 'next-intl/middleware';
 import { NextRequest, NextResponse } from 'next/server';
 import { routing } from './i18n/routing';
+import { isDisabledPublicPath } from './lib/content/disabled-public-paths';
 
 const intlMiddleware = createIntlMiddleware(routing);
 
 export async function proxy(request: NextRequest): Promise<NextResponse> {
   const indexNowKey = process.env.INDEXNOW_KEY?.trim();
+
+  if (isDisabledPublicPath(request.nextUrl.pathname)) {
+    const firstSegment = request.nextUrl.pathname.split('/')[1];
+    const locale = ['en', 'es', 'ja'].includes(firstSegment)
+      ? firstSegment
+      : routing.defaultLocale;
+    const url = request.nextUrl.clone();
+    url.pathname = `/${locale}/legacy-disabled`;
+    return NextResponse.rewrite(url);
+  }
 
   if (indexNowKey && request.nextUrl.pathname === `/${indexNowKey}.txt`) {
     const url = request.nextUrl.clone();

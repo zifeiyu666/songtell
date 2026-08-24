@@ -259,7 +259,7 @@ function IconCard({
 export default function SongMessageLandingPage() {
   return (
     <div className="w-full overflow-hidden bg-[#fffaf4] text-[#351d17]">
-      <section className="relative isolate px-5 pb-18 pt-14 sm:px-8 md:pb-24 md:pt-20 lg:px-12">
+      <section className="relative isolate px-5 pb-18 pt-32 sm:px-8 sm:pt-36 md:pb-24 lg:px-12 lg:pt-40">
         <div className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(circle_at_15%_12%,rgba(238,187,166,0.34),transparent_31%),radial-gradient(circle_at_87%_20%,rgba(246,220,174,0.36),transparent_30%),linear-gradient(180deg,#fffaf4_0%,#fffdf9_70%,#f8eee7_100%)]" />
         <div
           aria-hidden="true"

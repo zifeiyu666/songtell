@@ -1,6 +1,6 @@
 import { SiteConfig } from "@/types/siteConfig";
 
-const DEFAULT_SITE_URL = "https://sendthesong.io";
+const DEFAULT_SITE_URL = "https://songtell.art";
 
 function resolveBaseUrl() {
   const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
@@ -20,20 +20,20 @@ const YOUTUBE_URL = ''
 const INSTAGRAM_URL = ''
 const TIKTOK_URL = ''
 const DISCORD_URL = process.env.NEXT_PUBLIC_DISCORD_INVITE_URL
-const EMAIL_URL = 'support@sendthesong.io'
+const EMAIL_URL = 'hello@songtell.art'
 
 export const siteConfig: SiteConfig = {
-  name: "SendTheSong",
-  tagLine: "SendTheSong - AI Personalized Song Gifts",
-  description: "Turn your unique story into a custom, studio-quality song in just 2 minutes. The perfect personalized AI song gift for birthdays, weddings, and anniversaries. Try it free now!",
+  name: "Songtell",
+  tagLine: "Turn the words you cannot say into a song.",
+  description: "Songtell turns a personal story into an original song you can preview, share, and keep. Create a personalized music gift for anniversaries, weddings, confessions, and gratitude.",
   url: BASE_URL,
   authors: [
     {
-      name: "Ethan",
+      name: "Songtell",
       url: BASE_URL,
     }
   ],
-  creator: '@ethan',
+  creator: '@songtellart',
   socialLinks: {
     github: GITHUB_URL,
     twitter: TWITTER_URL,

@@ -114,7 +114,7 @@ export const occasionCards = [
     description:
       'No date needed. Just a beautiful way to say, "I\'m thinking of you."',
     href: "/create-song?occasion=just-because",
-    cta: "Send a just-because song",
+    cta: "Create a just-because song",
     image: "/occasion-generated/avif/01-just-because.avif",
     rotate: -4.6,
     y: 10,
@@ -129,7 +129,7 @@ export const occasionCards = [
     tagline: "Your Love Story, Set to Music",
     description: "Turn your years of shared laughter into a forever melody.",
     href: "/occasions/anniversary",
-    cta: "Send an anniversary song",
+    cta: "Create an anniversary song",
     image: "/occasion-generated/avif/02-anniversary.avif",
     rotate: 2.8,
     y: 34,
@@ -145,7 +145,7 @@ export const occasionCards = [
     description:
       "Freeze the magic of your vows in a song you can relive forever.",
     href: "/music/personalized-gift",
-    cta: "Send a wedding song",
+    cta: "Write a wedding entrance track",
     image: "/occasion-generated/avif/03-wedding.avif",
     rotate: -1.8,
     y: 0,
@@ -161,7 +161,7 @@ export const occasionCards = [
     description:
       "Capture their fleeting childhood years in a melody they'll never outgrow.",
     href: "/occasions/custom-happy-birthday-song",
-    cta: "Send a birthday song",
+    cta: "Make a birthday song",
     image: "/occasion-generated/avif/04-birthday.avif",
     rotate: 3.6,
     y: 28,
@@ -177,7 +177,7 @@ export const occasionCards = [
     description:
       "Wrap your gratitude in a song she will replay with tears of joy.",
     href: "/music/personalized-gift",
-    cta: "Send a song for Mom",
+    cta: "Make a song for Mom",
     image: "/occasion-generated/avif/05-mothers-day-mom.avif",
     rotate: -3.2,
     y: 12,
@@ -193,7 +193,7 @@ export const occasionCards = [
     description:
       "For the man of few words, tell him exactly what he means to you.",
     href: "/music/personalized-gift",
-    cta: "Send a song for Dad",
+    cta: "Make a song for Dad",
     image: "/occasion-generated/avif/06-fathers-day.avif",
     rotate: 4.4,
     y: 40,
@@ -209,7 +209,7 @@ export const occasionCards = [
     description:
       "A cozy melody to bring the whole family closer around the fire.",
     href: "/music/personalized-gift",
-    cta: "Send a holiday song",
+    cta: "Create a holiday song",
     image: "/occasion-generated/avif/07-christmas-holidays.avif",
     rotate: -2.4,
     y: 4,
@@ -225,7 +225,7 @@ export const occasionCards = [
     description:
       'Ensure the perfect "Yes!" with a track that explains why she\'s your forever.',
     href: "/music/personalized-gift",
-    cta: "Send a proposal song",
+    cta: "Write a proposal song",
     image: "/occasion-generated/avif/08-proposal.avif",
     rotate: 2.2,
     y: 26,
@@ -241,7 +241,7 @@ export const occasionCards = [
     description:
       "Honor their big milestone with a song that keeps their roots close.",
     href: "/create-song?occasion=coming-of-age",
-    cta: "Send a milestone song",
+    cta: "Mark the milestone in music",
     image: "/occasion-generated/avif/09-mitzvah-coming-of-age.avif",
     rotate: -4,
     y: 18,
@@ -257,7 +257,7 @@ export const occasionCards = [
     description:
       "Celebrate the late nights and big dreams with an anthem for the road ahead.",
     href: "/create-song?occasion=graduation",
-    cta: "Send a graduation song",
+    cta: "Create a graduation song",
     image: "/occasion-generated/avif/10-graduation.avif",
     rotate: 3.2,
     y: 42,
@@ -273,7 +273,7 @@ export const occasionCards = [
     description:
       "Skip the generic card. Honor a legendary teammate with a song about their impact.",
     href: "/create-song?occasion=appreciation",
-    cta: "Send an appreciation song",
+    cta: "Turn appreciation into music",
     image: "/occasion-generated/avif/11-coworker-appreciation.avif",
     rotate: -2.8,
     y: 8,
@@ -287,9 +287,9 @@ export const occasionCards = [
     title: "Moving / Goodbye",
     tagline: "Distance Can't Erase the Sound",
     description:
-      "Send them off to their next chapter with a melody that feels like home.",
+      "Give them a melody for the next chapter that feels like home.",
     href: "/music/personalized-gift",
-    cta: "Send a goodbye song",
+    cta: "Create a goodbye song",
     image: "/occasion-generated/avif/12-moving-goodbye.avif",
     rotate: 4.8,
     y: 30,
@@ -305,7 +305,7 @@ export const occasionCards = [
     description:
       "When words feel too heavy, let a gentle song soften the distance between you.",
     href: "/create-song?occasion=apology",
-    cta: "Send a healing song",
+    cta: "Turn healing into music",
     image: "/occasion-generated/avif/13-reconciliation-healing.avif",
     rotate: -3.8,
     y: 15,
@@ -321,7 +321,7 @@ export const occasionCards = [
     description:
       "Make their heart skip a beat with a spontaneous, sweet track.",
     href: "/occasions/anniversary",
-    cta: "Send a romantic song",
+    cta: "Write a romantic song",
     image: "/occasion-generated/avif/14-sweetest-day.avif",
     rotate: 2.7,
     y: 37,
@@ -337,7 +337,7 @@ export const occasionCards = [
     description:
       "Celebrate the joy of your soon-to-arrive baby with a heartfelt melody that welcomes them home before they even arrive.",
     href: "/music/personalized-gift",
-    cta: "Send a song for baby",
+    cta: "Make a song for baby",
     image: "/occasion-generated/avif/15-adoption-baby-on-the-way.avif",
     rotate: -1.5,
     y: 5,
@@ -353,7 +353,7 @@ export const occasionCards = [
     description:
       "Show her how beautiful she is as a mother with a soul-stirring ballad.",
     href: "/music/personalized-gift",
-    cta: "Send a song for Mom",
+    cta: "Make a song for Mom",
     image: "/occasion-generated/avif/17-mothers-day-wife-mom.avif",
     rotate: -4.4,
     y: 38,
@@ -369,7 +369,7 @@ export const occasionCards = [
     description:
       "When miles separate you, give them a piece of your soul to hold onto.",
     href: "/music/personalized-gift",
-    cta: "Send a long-distance love song",
+    cta: "Create a long-distance love song",
     image: "/occasion-generated/avif/18-deployment-long-distance.avif",
     rotate: 2.4,
     y: 9,
@@ -385,7 +385,7 @@ export const occasionCards = [
     description:
       "Keep their light alive with a gentle, comforting acoustic tribute.",
     href: "/create-song?occasion=memorial",
-    cta: "Send a tribute song",
+    cta: "Write a tribute song",
     image: "/occasion-generated/avif/19-memorial.avif",
     rotate: -2,
     y: 27,
@@ -401,7 +401,7 @@ export const occasionCards = [
     description:
       "A song woven from your midnight talks, a romance that never fades.",
     href: "/occasions/anniversary",
-    cta: "Send a love song",
+    cta: "Create a love song",
     image: "/occasion-generated/avif/20-valentines-day.avif",
     rotate: 3.8,
     y: 14,
@@ -417,7 +417,7 @@ export const occasionCards = [
     description:
       "Reaffirm your commitment with a soulful track that honors the life you've built.",
     href: "/occasions/anniversary",
-    cta: "Send an anniversary song",
+    cta: "Create an anniversary song",
     image: "/occasion-generated/avif/21-vow-renewal.avif",
     rotate: -3.5,
     y: 33,
@@ -433,7 +433,7 @@ export const occasionCards = [
     description:
       "Speak straight from your soul with a melody that shows your true sincerity.",
     href: "/create-song?occasion=apology",
-    cta: "Send an apology song",
+    cta: "Turn an apology into music",
     image: "/occasion-generated/avif/23-apology.avif",
     rotate: -2.9,
     y: 22,
@@ -457,147 +457,147 @@ export const occasionCardTranslations: Record<
       tagline: "Magia cotidiana",
       description:
         "No hace falta una fecha especial. Una forma bonita de decir: pienso en ti.",
-      cta: "Envía una canción porque sí",
+      cta: "Crea una canción porque sí",
     },
     anniversary: {
       title: "Aniversario",
       tagline: "Vuestra historia convertida en música",
       description:
         "Convierte los años de risas compartidas en una melodía para siempre.",
-      cta: "Envía una canción de aniversario",
+      cta: "Crea una canción de aniversario",
     },
     wedding: {
       title: "Boda",
       tagline: "Para ese gran día y todo lo que viene",
       description:
         "Guarda la emoción de vuestros votos en una canción para volver a vivirla siempre.",
-      cta: "Envía una canción de boda",
+      cta: "Escribe la música para vuestra boda",
     },
     birthday: {
       title: "Cumpleaños",
       tagline: "Un regalo que canta",
       description:
         "Convierte los recuerdos de su infancia en una melodía que siempre querrá escuchar.",
-      cta: "Envía una canción de cumpleaños",
+      cta: "Crea una canción de cumpleaños",
     },
     "mothers-day-mom": {
       title: "Día de la Madre",
       tagline: "Para quien te lo dio todo",
       description:
         "Envuelve tu gratitud en una canción que escuchará con una sonrisa y alguna lágrima.",
-      cta: "Envía una canción para mamá",
+      cta: "Haz una canción para mamá",
     },
     "fathers-day": {
       title: "Día del Padre",
       tagline: "Para su fuerza silenciosa",
       description:
         "Dile a ese hombre de pocas palabras todo lo que significa para ti.",
-      cta: "Envía una canción para papá",
+      cta: "Haz una canción para papá",
     },
     "christmas-holidays": {
       title: "Navidad y fiestas",
       tagline: "Calidez junto al árbol",
       description:
         "Una melodía acogedora para reunir a toda la familia alrededor del fuego.",
-      cta: "Envía una canción navideña",
+      cta: "Crea una canción navideña",
     },
     proposal: {
       title: "Propuesta",
       tagline: "Haz la pregunta con una canción",
       description:
         "Acompaña ese sí con una canción que explique por qué quieres compartir la vida con esa persona.",
-      cta: "Envía una canción para una propuesta",
+      cta: "Escribe una canción para la propuesta",
     },
     "mitzvah-coming-of-age": {
       title: "Mayoría de edad",
       tagline: "Celebrar raíces y crecimiento",
       description:
         "Honra un gran paso con una canción que mantenga cerca sus raíces.",
-      cta: "Envía una canción para un gran momento",
+      cta: "Convierte el gran momento en música",
     },
     graduation: {
       title: "Graduación",
       tagline: "La banda sonora de su próximo capítulo",
       description:
         "Celebra las noches de esfuerzo y los grandes sueños con un himno para el camino que empieza.",
-      cta: "Envía una canción de graduación",
+      cta: "Crea una canción de graduación",
     },
     "coworker-appreciation": {
       title: "Agradecimiento a un compañero",
       tagline: "Más que un gracias de oficina",
       description:
         "Deja la tarjeta genérica. Celebra a un compañero inolvidable con una canción sobre su impacto.",
-      cta: "Envía una canción de agradecimiento",
+      cta: "Convierte el agradecimiento en música",
     },
     "moving-goodbye": {
       title: "Mudanza y despedida",
       tagline: "La distancia no borra lo que se escucha",
       description:
         "Despídele hacia su nuevo capítulo con una melodía que se sienta como hogar.",
-      cta: "Envía una canción de despedida",
+      cta: "Crea una canción de despedida",
     },
     "reconciliation-healing": {
       title: "Reconciliación y sanación",
       tagline: "Tender puentes con armonía",
       description:
         "Cuando las palabras pesan demasiado, una canción suave puede acortar la distancia.",
-      cta: "Envía una canción para sanar",
+      cta: "Convierte la sanación en música",
     },
     "sweetest-day": {
       title: "Un día para consentir",
       tagline: "Un poco más de romance",
       description:
         "Haz que el corazón se acelere con una canción dulce e inesperada.",
-      cta: "Envía una canción romántica",
+      cta: "Escribe una canción romántica",
     },
     adoption: {
       title: "Un bebé en camino",
       tagline: "Una canción antes del primer hola",
       description:
         "Celebra la llegada de un bebé con una melodía que le dé la bienvenida incluso antes de conocerlo.",
-      cta: "Envía una canción para el bebé",
+      cta: "Haz una canción para el bebé",
     },
     "mothers-day-wife-mom": {
       title: "Día de la Madre para esposa y mamá",
       tagline: "El corazón de nuestro hogar",
       description:
         "Dile lo hermosa que es como madre con una balada que hable de ella.",
-      cta: "Envía una canción para mamá",
+      cta: "Haz una canción para mamá",
     },
     "deployment-long-distance": {
       title: "Relación a distancia",
       tagline: "Mantener el amor cerca",
       description:
         "Cuando los kilómetros os separan, regálale un pedazo de ti al que pueda aferrarse.",
-      cta: "Envía una canción de amor a distancia",
+      cta: "Crea una canción de amor a distancia",
     },
     memorial: {
       title: "Homenaje y recuerdo",
       tagline: "Un tributo que permanece",
       description:
         "Mantén viva su luz con un tributo acústico, sereno y reconfortante.",
-      cta: "Envía una canción homenaje",
+      cta: "Escribe una canción homenaje",
     },
     "valentines-day": {
       title: "San Valentín",
       tagline: "Mejor que flores o chocolate",
       description:
         "Una canción nacida de vuestras conversaciones nocturnas: un romance que no se apaga.",
-      cta: "Envía una canción de amor",
+      cta: "Crea una canción de amor",
     },
     "vow-renewal": {
       title: "Renovación de votos",
       tagline: "Te elijo, más que nunca",
       description:
         "Renueva vuestro compromiso con una canción que honre la vida que habéis construido.",
-      cta: "Envía una canción de aniversario",
+      cta: "Crea una canción de aniversario",
     },
     apology: {
       title: "Disculpas",
       tagline: "Cuando un perdón necesita melodía",
       description:
         "Habla desde el corazón con una canción que muestre lo sincero que eres.",
-      cta: "Envía una canción de disculpa",
+      cta: "Convierte una disculpa en música",
     },
   },
   ja: {
@@ -606,136 +606,136 @@ export const occasionCardTranslations: Record<
       tagline: "日常に小さな魔法を",
       description:
         "特別な日でなくても大丈夫。ふと思い出した気持ちを歌で届けられます。",
-      cta: "なんでもない日の歌を送る",
+      cta: "なんでもない日の歌を作る",
     },
     anniversary: {
       title: "記念日",
       tagline: "ふたりの物語を音楽に",
       description: "一緒に笑ってきた年月を、いつまでも聴けるメロディにします。",
-      cta: "記念日の歌を送る",
+      cta: "記念日の歌を作る",
     },
     wedding: {
       title: "結婚式",
       tagline: "特別な一日と、その先の毎日に",
       description: "誓いの瞬間を、何度でも思い出せる一曲に残します。",
-      cta: "結婚式の歌を送る",
+      cta: "結婚式の歌を作る",
     },
     birthday: {
       title: "誕生日",
       tagline: "歌で贈るプレゼント",
       description: "成長の思い出を、いつまでも心に残るメロディにします。",
-      cta: "誕生日の歌を送る",
+      cta: "誕生日の歌を作る",
     },
     "mothers-day-mom": {
       title: "母の日",
       tagline: "すべてを与えてくれた人へ",
       description: "感謝の気持ちを、思わず笑顔と涙がこぼれる一曲に込めます。",
-      cta: "お母さんに歌を送る",
+      cta: "お母さんの歌を作る",
     },
     "fathers-day": {
       title: "父の日",
       tagline: "静かな強さを持つ父へ",
       description: "口数の少ない父に、どれほど大切な存在かを歌で伝えます。",
-      cta: "お父さんに歌を送る",
+      cta: "お父さんの歌を作る",
     },
     "christmas-holidays": {
       title: "クリスマスとホリデー",
       tagline: "ツリーの下のぬくもり",
       description: "家族の距離をそっと近づける、あたたかなメロディです。",
-      cta: "ホリデーソングを送る",
+      cta: "ホリデーソングを作る",
     },
     proposal: {
       title: "プロポーズ",
       tagline: "歌で伝える大切な質問",
       description:
         "なぜずっと一緒にいたいのかを、一曲に込めて最高の「はい」を迎えます。",
-      cta: "プロポーズの歌を送る",
+      cta: "プロポーズの歌を作る",
     },
     "mitzvah-coming-of-age": {
       title: "成人・成長の節目",
       tagline: "ルーツと成長を祝う",
       description: "大きな節目を、家族のルーツを感じられる歌で祝います。",
-      cta: "節目を祝う歌を送る",
+      cta: "節目を祝う歌を作る",
     },
     graduation: {
       title: "卒業",
       tagline: "次の章へ進むためのサウンドトラック",
       description: "努力した夜と大きな夢を、新しい道へ向かう応援歌にします。",
-      cta: "卒業の歌を送る",
+      cta: "卒業の歌を作る",
     },
     "coworker-appreciation": {
       title: "同僚への感謝",
       tagline: "ありきたりな感謝状を超えて",
       description:
         "定型文のカードではなく、忘れられない仲間の存在を歌で讃えます。",
-      cta: "感謝の歌を送る",
+      cta: "感謝の歌を作る",
     },
     "moving-goodbye": {
       title: "引っ越し・別れ",
       tagline: "距離があっても消えない音",
       description:
         "新しい章へ進む人に、故郷のように感じられるメロディを贈ります。",
-      cta: "お別れの歌を送る",
+      cta: "お別れの歌を作る",
     },
     "reconciliation-healing": {
       title: "仲直り・癒やし",
       tagline: "ハーモニーで心の橋をかける",
       description:
         "言葉にするのが難しいとき、優しい歌がふたりの距離を縮めます。",
-      cta: "癒やしの歌を送る",
+      cta: "癒やしの歌を作る",
     },
     "sweetest-day": {
       title: "とびきり甘い一日",
       tagline: "いつもより少しロマンチックに",
       description: "ふいに心が高鳴るような、甘くてやさしい一曲を贈ります。",
-      cta: "ロマンチックな歌を送る",
+      cta: "ロマンチックな歌を作る",
     },
     adoption: {
       title: "赤ちゃんを迎える日",
       tagline: "最初の「こんにちは」の前に",
       description:
         "もうすぐ家族になる赤ちゃんへ、出会う前から歓迎の気持ちを歌にします。",
-      cta: "赤ちゃんに歌を送る",
+      cta: "赤ちゃんの歌を作る",
     },
     "mothers-day-wife-mom": {
       title: "妻であり母でもある人へ",
       tagline: "わが家の中心にいる人へ",
       description:
         "母としての美しさと日々の愛に、心を動かすバラードを贈ります。",
-      cta: "お母さんに歌を送る",
+      cta: "お母さんの歌を作る",
     },
     "deployment-long-distance": {
       title: "遠距離恋愛",
       tagline: "離れていても愛を近くに",
       description:
         "会えない距離があっても、そばに感じられる気持ちを歌に込めます。",
-      cta: "遠距離の愛を歌で送る",
+      cta: "遠距離の愛を歌にする",
     },
     memorial: {
       title: "追悼・メモリアル",
       tagline: "想いが生き続けるための歌",
       description:
         "大切な人の灯りを、静かで心を支えるアコースティックな一曲に残します。",
-      cta: "追悼の歌を送る",
+      cta: "追悼の歌を作る",
     },
     "valentines-day": {
       title: "バレンタインデー",
       tagline: "花やチョコレートより特別に",
       description:
         "夜更けの会話から生まれたような、色あせないロマンスを歌にします。",
-      cta: "ラブソングを送る",
+      cta: "ラブソングを作る",
     },
     "vow-renewal": {
       title: "誓いの更新",
       tagline: "今まで以上に、これからも",
       description: "ふたりで築いた日々を讃える歌で、もう一度約束を交わします。",
-      cta: "記念日の歌を送る",
+      cta: "記念日の歌を作る",
     },
     apology: {
       title: "謝罪",
       tagline: "「ごめん」が歌を必要とするとき",
       description: "心からの誠実さを、まっすぐに伝えるメロディにします。",
-      cta: "謝罪の歌を送る",
+      cta: "謝罪の歌を作る",
     },
   },
 };

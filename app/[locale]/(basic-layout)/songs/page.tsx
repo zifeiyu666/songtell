@@ -152,7 +152,7 @@ export default async function SongsPage({
   const formAction = locale === "en" ? "/songs" : `/${locale}/songs`;
 
   return (
-    <main className="min-h-screen w-full bg-[#fbfaf7] text-foreground">
+    <main className="creem-library-page min-h-screen w-full">
       <PageHero
         badge={{
           icon: <Library className="size-4" />,
@@ -169,11 +169,12 @@ export default async function SongsPage({
               <Link
                 key={value}
                 className={cn(
-                  "inline-flex h-8 items-center whitespace-nowrap rounded-full px-3.5 text-sm font-normal transition",
+                  "creem-filter-pill inline-flex h-9 items-center whitespace-nowrap px-3.5 text-sm font-semibold transition hover:-translate-y-0.5",
                   occasion === value
-                    ? "bg-stone-950 text-white"
-                    : "bg-white text-muted-foreground shadow-sm hover:text-foreground",
+                    ? "text-[var(--songtell-ink)]"
+                    : "text-[var(--songtell-muted)] hover:text-[var(--songtell-ink)]",
                 )}
+                data-active={occasion === value}
                 href={`/songs?occasion=${value}${q ? `&q=${encodeURIComponent(q)}` : ""}`}
               >
                 {value === "all" ? t("filters.all") : labelize(value)}
@@ -190,7 +191,7 @@ export default async function SongsPage({
             )}
             <Search className="pointer-events-none absolute left-3.5 top-1/2 size-3.5 -translate-y-1/2 text-muted-foreground" />
             <input
-              className="h-10 w-full rounded-full bg-white pl-9 pr-4 text-sm font-medium outline-none shadow-[0_10px_30px_rgba(28,25,23,0.10)] transition placeholder:text-muted-foreground focus:ring-4 focus:ring-primary/10"
+              className="creem-search h-10 w-full pl-9 pr-4 text-sm font-medium outline-none transition placeholder:text-[var(--songtell-muted)] focus:ring-4 focus:ring-[var(--songtell-theme)]/40"
               defaultValue={q}
               name="q"
               placeholder={t("filters.searchPlaceholder")}
@@ -210,7 +211,7 @@ export default async function SongsPage({
             ))}
           </div>
         ) : (
-          <Empty className="mt-8 min-h-[360px] border border-dashed border-border bg-white">
+          <Empty className="creem-empty mt-8 min-h-[360px]">
             <EmptyHeader>
               <EmptyMedia
                 className="size-14 rounded-full bg-primary/10 text-primary"
@@ -231,10 +232,10 @@ export default async function SongsPage({
             </EmptyHeader>
             <EmptyContent>
               <div className="flex flex-wrap justify-center gap-3">
-                <Button asChild className="rounded-full">
+                <Button asChild className="creem-action-button">
                   <Link href="/create-song">{t("empty.create")}</Link>
                 </Button>
-                <Button asChild className="rounded-full" variant="outline">
+                <Button asChild className="creem-action-button bg-white" variant="outline">
                   <Link href="/samples">{t("empty.samples")}</Link>
                 </Button>
               </div>

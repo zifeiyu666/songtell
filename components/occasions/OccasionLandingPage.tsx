@@ -154,7 +154,7 @@ export default function OccasionLandingPage({
 
   return (
     <div
-      className="w-full overflow-hidden bg-[#fffdfb] text-[var(--occasion-ink)]"
+      className="public-creem-page w-full overflow-hidden bg-[var(--songtell-paper)] text-[var(--songtell-ink)]"
       style={pageStyle}
     >
       <script
@@ -162,7 +162,7 @@ export default function OccasionLandingPage({
         dangerouslySetInnerHTML={{ __html: faqSchema }}
       />
 
-      <section className="relative isolate px-6 pb-14 pt-10 sm:px-8 md:pb-16 md:pt-14 lg:px-12 xl:px-16">
+      <section className="relative isolate px-6 pb-14 pt-32 sm:px-8 sm:pt-36 md:pb-16 lg:px-12 lg:pt-40 xl:px-16">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_13%_16%,var(--occasion-soft),transparent_32%),radial-gradient(circle_at_86%_18%,var(--occasion-muted),transparent_35%),linear-gradient(115deg,#fffdfb_0%,#ffffff_48%,var(--occasion-soft)_100%)]" />
         <div className="mx-auto grid max-w-6xl items-center gap-9 lg:grid-cols-[0.9fr_1fr] lg:gap-11">
           <div className="max-w-2xl">

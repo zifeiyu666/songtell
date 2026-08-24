@@ -10,7 +10,7 @@ export default async function SidebarInsetHeader() {
   const headerLinks = await getHeaderNavigationLinks(locale);
 
   return (
-    <header className="w-full py-2 px-4 backdrop-blur-md sticky top-0 z-50">
+    <header className="dashboard-creem-header sticky top-0 z-50 w-full px-4 py-3">
       <nav className="flex justify-between items-center w-full mx-auto">
         <div className="flex items-center gap-2">
           <SidebarTrigger />

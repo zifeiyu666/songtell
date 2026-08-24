@@ -24,8 +24,8 @@ const steps = [
 
 export default function ExtensionPage() {
   return (
-    <main className="w-full bg-[#fbfaf7] text-stone-950">
-      <section className="mx-auto grid w-full max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[1.1fr_.9fr] lg:py-24">
+    <main className="public-creem-page w-full">
+      <section className="mx-auto grid w-full max-w-6xl gap-10 px-5 pb-16 pt-32 sm:px-8 sm:pt-36 lg:grid-cols-[1.1fr_.9fr] lg:pb-24 lg:pt-40">
         <div className="max-w-2xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-3 py-1.5 text-sm font-medium shadow-sm">
             <Chrome className="size-4 text-primary" /> Browser extension

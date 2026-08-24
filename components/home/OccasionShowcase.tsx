@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/tooltip";
 import { Link } from "@/i18n/routing";
 import { useGlobalMusicPlayer } from "@/lib/music-player/global-player-store";
+import WaveDivider from "@/components/home/WaveDivider";
 import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight, Pause, Play } from "lucide-react";
 import Image from "next/image";
@@ -253,13 +254,9 @@ export default function OccasionShowcase() {
     <section
       ref={sectionRef}
       id="occasions"
-      className="home-section-deep home-warm-ambient-original relative isolate overflow-hidden py-16 md:py-20"
+      className="home-section-deep relative isolate overflow-hidden bg-[var(--songtell-section-purple)] pb-28 pt-16 md:pb-32 md:pt-20"
       aria-labelledby="occasion-showcase-heading"
     >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(18,11,9,0.42)_72%,rgba(18,11,9,0.72)_100%)]"
-      />
       <div className="home-container relative">
         <div className="mb-9 flex items-end justify-between gap-6 text-left md:mb-11">
           <div className="max-w-3xl">
@@ -268,7 +265,7 @@ export default function OccasionShowcase() {
             </p>
             <h2
               id="occasion-showcase-heading"
-              className="mt-3 text-balance font-sans text-3xl font-black leading-[1.05] tracking-tight text-white sm:text-4xl md:text-5xl"
+              className="mt-3 text-balance font-display text-3xl font-normal leading-[1.05] tracking-[0.01em] text-white sm:text-4xl md:text-5xl"
             >
               {t("title")}
             </h2>
@@ -311,12 +308,12 @@ export default function OccasionShowcase() {
           size="icon-lg"
           onClick={() => mobileApi?.scrollPrev()}
           disabled={mobileActiveIndex === 0}
-          className="rounded-full border-white/15 bg-white/8 text-white shadow-[0_12px_34px_rgba(0,0,0,0.28)] backdrop-blur hover:border-primary/50 hover:bg-white/12 disabled:opacity-40"
+          className="songtell-lift-button rounded-md bg-[var(--songtell-theme)] text-[var(--songtell-ink)] disabled:opacity-40"
           aria-label={t("previous")}
         >
           <ArrowLeft className="size-5" />
         </Button>
-        <div className="min-w-24 rounded-full border border-white/15 bg-white/8 px-4 py-2 text-center text-sm font-semibold text-white shadow-[0_12px_35px_rgba(0,0,0,0.26)] backdrop-blur">
+        <div className="songtell-lift-button min-w-24 rounded-md bg-[var(--songtell-theme)] px-4 py-2 text-center text-sm font-bold text-[var(--songtell-ink)]">
           {localizedCards[mobileActiveIndex]?.index ?? "01"} /{" "}
           {localizedCards.length}
         </div>
@@ -326,7 +323,7 @@ export default function OccasionShowcase() {
           size="icon-lg"
           onClick={() => mobileApi?.scrollNext()}
           disabled={mobileActiveIndex === localizedCards.length - 1}
-          className="rounded-full border-white/15 bg-white/8 text-white shadow-[0_12px_34px_rgba(0,0,0,0.28)] backdrop-blur hover:border-primary/50 hover:bg-white/12 disabled:opacity-40"
+          className="songtell-lift-button rounded-md bg-[var(--songtell-theme)] text-[var(--songtell-ink)] disabled:opacity-40"
           aria-label={t("next")}
         >
           <ArrowRight className="size-5" />
@@ -364,12 +361,12 @@ export default function OccasionShowcase() {
           size="icon-lg"
           onClick={() => moveToIndex(activeIndex - 1)}
           disabled={activeIndex === 0}
-          className="rounded-full border-white/15 bg-white/8 text-white shadow-[0_12px_34px_rgba(0,0,0,0.28)] backdrop-blur hover:border-primary/50 hover:bg-white/12 disabled:opacity-40"
+          className="songtell-lift-button rounded-md bg-[var(--songtell-theme)] text-[var(--songtell-ink)] disabled:opacity-40"
           aria-label={t("previous")}
         >
           <ArrowLeft className="size-5" />
         </Button>
-        <div className="min-w-24 rounded-full border border-white/15 bg-white/8 px-4 py-2 text-center text-sm font-semibold text-white shadow-[0_12px_35px_rgba(0,0,0,0.26)] backdrop-blur">
+        <div className="songtell-lift-button min-w-24 rounded-md bg-[var(--songtell-theme)] px-4 py-2 text-center text-sm font-bold text-[var(--songtell-ink)]">
           {localizedCards[activeIndex]?.index ?? "01"} / {localizedCards.length}
         </div>
         <Button
@@ -378,12 +375,17 @@ export default function OccasionShowcase() {
           size="icon-lg"
           onClick={() => moveToIndex(activeIndex + 1)}
           disabled={activeIndex === localizedCards.length - 1}
-          className="rounded-full border-white/15 bg-white/8 text-white shadow-[0_12px_34px_rgba(0,0,0,0.28)] backdrop-blur hover:border-primary/50 hover:bg-white/12 disabled:opacity-40"
+          className="songtell-lift-button rounded-md bg-[var(--songtell-theme)] text-[var(--songtell-ink)] disabled:opacity-40"
           aria-label={t("next")}
         >
           <ArrowRight className="size-5" />
         </Button>
       </div>
+      <WaveDivider
+        fill="var(--songtell-paper)"
+        position="absolute"
+        className="bottom-0 left-0 h-16"
+      />
     </section>
   );
 }
@@ -403,7 +405,7 @@ function OccasionPhotoCard({
     <article
       ref={refCallback}
       className={cn(
-        "group relative flex shrink-0 select-none flex-col overflow-hidden rounded-[1.35rem] border border-white/[0.06] bg-[#1c1c1b] text-left shadow-[0_18px_45px_rgba(0,0,0,0.34)]",
+        "group relative flex shrink-0 select-none flex-col overflow-hidden rounded-xl border-[3px] border-[var(--songtell-ink)] bg-[#1c1c1b] text-left shadow-[5px_5px_0_var(--songtell-ink)] transition-[transform,box-shadow] duration-200 hover:shadow-[7px_7px_0_var(--songtell-ink)]",
         mobile
           ? "h-[20rem] w-full"
           : "h-[20rem] w-[min(62vw,14.5rem)] sm:h-[21rem] sm:w-[15rem] lg:h-[22rem] lg:w-[15.75rem]",

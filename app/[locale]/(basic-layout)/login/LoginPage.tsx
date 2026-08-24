@@ -29,8 +29,8 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex items-center justify-center flex-1 py-12">
-      <div className="flex flex-col space-y-6">
+    <div className="public-creem-page flex flex-1 items-center justify-center py-20">
+      <div className="flex flex-col space-y-6 border-[3px] border-[var(--songtell-ink)] bg-white p-7 shadow-[3px_3px_0_var(--songtell-ink)]">
         <div className="flex flex-col space-y-2 text-center">
           <h1 className="text-2xl font-semibold tracking-tight">
             {t("title")}

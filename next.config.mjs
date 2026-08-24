@@ -1,13 +1,13 @@
 import withBundleAnalyzer from "@next/bundle-analyzer";
 import { withSentryConfig } from "@sentry/nextjs";
 import createNextIntlPlugin from "next-intl/plugin";
-import { fileURLToPath } from "node:url";
 
 const withNextIntl = createNextIntlPlugin();
-const root = fileURLToPath(new URL(".", import.meta.url));
+const projectRoot = process.cwd();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  outputFileTracingRoot: projectRoot,
   redirects: async () => [
     {
       source: "/dashboard",
@@ -56,9 +56,7 @@ const nextConfig = {
     },
   ],
   images: {
-    unoptimized:
-      process.env.NEXT_PUBLIC_OPTIMIZED_IMAGES &&
-      process.env.NEXT_PUBLIC_OPTIMIZED_IMAGES === "false",
+    unoptimized: process.env.NEXT_PUBLIC_OPTIMIZED_IMAGES === "false",
     remotePatterns: [
       ...((process.env.NEXT_PUBLIC_R2_PUBLIC_URL || process.env.R2_PUBLIC_URL)
         ? [
@@ -70,9 +68,6 @@ const nextConfig = {
           ]
         : []),
     ],
-  },
-  turbopack: {
-    root,
   },
   compiler: {
     removeConsole:

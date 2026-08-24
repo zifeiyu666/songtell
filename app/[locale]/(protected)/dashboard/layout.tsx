@@ -23,11 +23,11 @@ export default async function DashboardLayout({
 }) {
   return (
     <AuthGuard>
-      <SidebarProvider>
+      <SidebarProvider className="dashboard-creem">
         <DashboardSidebar />
-        <SidebarInset className="min-w-0">
+        <SidebarInset className="dashboard-creem-inset min-w-0">
           <SidebarInsetHeader />
-          <div className="flex flex-1 flex-col gap-4 p-4 pt-0 min-w-0">
+          <div className="flex min-w-0 flex-1 flex-col gap-4 bg-[var(--songtell-paper)] p-4 pt-0">
             <div className="min-h-screen flex-1 rounded-xl md:min-h-min min-w-0">
               {children}
             </div>

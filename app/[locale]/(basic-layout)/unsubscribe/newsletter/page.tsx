@@ -64,7 +64,7 @@ export default async function Page(props: { searchParams: SearchParams }) {
   }
 
   return (
-    <div className="flex min-h-[60vh] items-center justify-center py-12 px-4">
+    <div className="public-creem-page flex min-h-[60vh] w-full items-center justify-center px-4 py-12">
       <Card className="w-full max-w-md shadow-lg">
         <CardHeader className="text-center space-y-4 pb-2">
           <div className="mx-auto bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center">

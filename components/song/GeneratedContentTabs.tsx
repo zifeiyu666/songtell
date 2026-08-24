@@ -19,7 +19,7 @@ export function GeneratedContentTabs({
   videos,
 }: GeneratedContentTabsProps) {
   return (
-    <section className="relative z-10 mx-auto mt-6 w-full max-w-5xl px-4 sm:px-6 lg:px-8">
+    <section className="creem-song-video-history relative z-10 mx-auto mt-8 w-full max-w-5xl px-4 sm:px-6 lg:px-8">
       <div className="w-full overflow-hidden rounded-2xl bg-card shadow-[0_18px_54px_rgba(255,120,150,0.11)]">
         <div className="border-b border-border/70 p-5 sm:p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">

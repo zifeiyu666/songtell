@@ -199,7 +199,7 @@ export function SongCoverBackdrop({
 }) {
   if (!imageUrl) {
     return (
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[380px] opacity-70">
+      <div className="creem-song-backdrop pointer-events-none absolute inset-x-0 top-0 h-[380px] opacity-70">
         <div className="absolute inset-x-0 top-[-70px] h-[520px] bg-[radial-gradient(circle_at_36%_34%,rgba(255,184,193,0.56),transparent_34%),radial-gradient(circle_at_64%_34%,rgba(44,31,24,0.24),transparent_38%),linear-gradient(135deg,rgba(255,225,229,0.52),rgba(42,29,24,0.18))] blur-sm" />
         {/* <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-b from-transparent via-background/86 to-background" /> */}
       </div>
@@ -207,7 +207,7 @@ export function SongCoverBackdrop({
   }
 
   return (
-    <div className="pointer-events-none absolute inset-x-0 top-[-10px] h-[420px]">
+    <div className="creem-song-backdrop pointer-events-none absolute inset-x-0 top-[-10px] h-[420px]">
       <img
         alt=""
         aria-hidden="true"
@@ -388,7 +388,7 @@ export function OrganicSongCover({
             gradientUnits="userSpaceOnUse"
           >
             <stop offset="0" stopColor="hsl(var(--accent))" />
-            <stop offset="0.52" stopColor="hsl(var(--primary) / 0.34)" />
+            <stop offset="0.52" stopColor="color-mix(in srgb, var(--songtell-theme) 34%, transparent)" />
             <stop offset="1" stopColor="hsl(var(--foreground) / 0.72)" />
           </linearGradient>
           <radialGradient
@@ -464,7 +464,7 @@ export function OrganicSongCover({
               <circle
                 cx="215"
                 cy="170"
-                fill="hsl(var(--primary) / 0.15)"
+                fill="color-mix(in srgb, var(--songtell-theme) 15%, transparent)"
                 r="82"
               />
               <circle
@@ -541,9 +541,9 @@ export function OrganicSongCover({
 
 export function InfoPill({ icon, label }: SongResultMetadataPill) {
   return (
-    <span className="relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white/28 px-3.5 py-2 text-xs font-semibold text-foreground/72 shadow-[0_8px_32px_rgba(45,31,24,0.08),inset_0_1px_0_rgba(255,255,255,0.76),inset_0_-1px_0_rgba(255,255,255,0.2),inset_0_0_18px_6px_rgba(255,255,255,0.28)] backdrop-blur-xl before:pointer-events-none before:absolute before:inset-x-3 before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-white/80 before:to-transparent after:pointer-events-none after:absolute after:bottom-2 after:left-0 after:top-2 after:w-px after:bg-gradient-to-b after:from-white/80 after:via-transparent after:to-white/30 dark:bg-white/12 dark:text-foreground/74 dark:shadow-[0_8px_32px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-1px_0_rgba(255,255,255,0.08),inset_0_0_18px_6px_rgba(255,255,255,0.06)]">
-      <span className="relative z-10 text-primary">{icon}</span>
-      <span className="relative z-10">{label}</span>
+    <span className="creem-song-pill inline-flex items-center gap-2 px-3.5 py-2 text-xs font-bold">
+      <span className="text-[var(--songtell-theme)]">{icon}</span>
+      <span>{label}</span>
     </span>
   );
 }

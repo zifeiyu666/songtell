@@ -10,33 +10,33 @@ import type { ReactNode } from "react";
 
 export const studioGlassStyles = {
   sheetContent:
-    "w-screen max-w-none gap-0 overflow-visible border-none bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.58),transparent_32%),linear-gradient(180deg,#f6f1eb_0%,#ede5dc_38%,#e8ded4_100%)] p-0 sm:max-w-none [&>button:last-child]:hidden",
+    "w-screen max-w-none gap-0 overflow-visible border-none bg-[var(--songtell-paper)] p-0 sm:max-w-none [&>button:last-child]:hidden",
   header:
-    "relative z-10 mx-2 mt-2 rounded-[12px] bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(247,241,233,0.66))] px-3 py-2 shadow-[0_12px_26px_rgba(70,53,38,0.095),0_1px_0_rgba(255,255,255,0.78)_inset,0_0_0_1px_rgba(255,255,255,0.12)_inset] backdrop-blur-2xl sm:mx-2.5 sm:mt-2.5 sm:px-3.5 lg:mx-3 lg:px-4",
+    "relative z-10 mx-2 mt-2 rounded-[8px] border-[3px] border-[var(--songtell-ink)] bg-white px-3 py-2 shadow-[3px_3px_0_var(--songtell-ink)] sm:mx-2.5 sm:mt-2.5 sm:px-3.5 lg:mx-3 lg:px-4",
   headerIcon:
-    "flex size-8 shrink-0 items-center justify-center rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.95),rgba(255,247,241,0.62)_42%,rgba(232,198,176,0.34)_100%)] text-[#b56e4f] shadow-[0_9px_18px_rgba(181,110,79,0.13),inset_0_1px_0_rgba(255,255,255,0.84)]",
+    "flex size-8 shrink-0 items-center justify-center rounded-md border-2 border-[var(--songtell-ink)] bg-[var(--songtell-theme)] text-[var(--songtell-ink)] shadow-[2px_2px_0_var(--songtell-ink)]",
   headerTitle:
-    "shrink-0 text-[1.1rem] font-black tracking-[-0.03em] text-[#241b16]",
+    "shrink-0 text-[1.1rem] font-black tracking-[0.01em] text-[var(--songtell-ink)]",
   headerDescription:
-    "max-w-[28rem] text-[11px] leading-4 text-[#75695d] lg:truncate",
+    "max-w-[28rem] text-[11px] leading-4 text-[var(--songtell-muted)] lg:truncate",
   panel:
-    "rounded-[12px] bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(247,241,233,0.64))] shadow-[0_14px_34px_rgba(70,53,38,0.095),0_1px_0_rgba(255,255,255,0.4)_inset,0_0_0_1px_rgba(255,255,255,0.16)_inset] backdrop-blur-2xl",
+    "rounded-[8px] border-[3px] border-[var(--songtell-ink)] bg-white shadow-[3px_3px_0_var(--songtell-ink)]",
   subtlePanel:
-    "rounded-[10px] bg-[linear-gradient(180deg,rgba(255,255,255,0.72),rgba(250,246,240,0.54))] shadow-[0_9px_20px_rgba(72,56,41,0.075),0_1px_0_rgba(255,255,255,0.64)_inset,0_0_0_1px_rgba(255,255,255,0.12)_inset] backdrop-blur-xl",
+    "rounded-[8px] border-2 border-[var(--songtell-ink)] bg-[var(--songtell-paper)] shadow-[2px_2px_0_var(--songtell-ink)]",
   field:
-    "h-8 rounded-[10px] border-none bg-white/72 px-2.5 text-[11.5px] font-semibold text-[#302720] shadow-[0_7px_15px_rgba(70,53,38,0.07),0_1px_0_rgba(255,255,255,0.76)_inset,0_0_0_1px_rgba(255,255,255,0.12)_inset] backdrop-blur-xl transition placeholder:text-[#9a8e82] focus-visible:ring-[#c9bbac]/40",
+    "h-8 rounded-[6px] border-2 border-[var(--songtell-ink)] bg-white px-2.5 text-[11.5px] font-semibold text-[var(--songtell-ink)] shadow-[2px_2px_0_var(--songtell-ink)] transition placeholder:text-[var(--songtell-muted)] focus-visible:ring-[var(--songtell-theme)]/60",
   textarea:
-    "rounded-[10px] border-none bg-white/72 px-2.5 py-2 text-[11.5px] leading-4.5 text-[#302720] shadow-[0_8px_17px_rgba(70,53,38,0.075),0_1px_0_rgba(255,255,255,0.78)_inset,0_0_0_1px_rgba(255,255,255,0.12)_inset] backdrop-blur-xl transition placeholder:text-[#9a8e82] focus-visible:ring-[#c9bbac]/40",
+    "rounded-[6px] border-2 border-[var(--songtell-ink)] bg-white px-2.5 py-2 text-[11.5px] leading-4.5 text-[var(--songtell-ink)] shadow-[2px_2px_0_var(--songtell-ink)] transition placeholder:text-[var(--songtell-muted)] focus-visible:ring-[var(--songtell-theme)]/60",
   popover:
     "rounded-[12px] border-none bg-[linear-gradient(180deg,rgba(255,255,255,0.86),rgba(246,240,232,0.8))] p-1 shadow-[0_16px_42px_rgba(56,41,29,0.15),0_1px_0_rgba(255,255,255,0.78)_inset,0_0_0_1px_rgba(255,255,255,0.12)_inset] backdrop-blur-2xl",
   pillButton:
-    "rounded-full border-none bg-white/68 text-[11px] font-bold text-[#4a4038] shadow-[0_7px_15px_rgba(70,53,38,0.07),0_1px_0_rgba(255,255,255,0.74)_inset,0_0_0_1px_rgba(255,255,255,0.12)_inset] backdrop-blur-xl transition hover:bg-white/88 hover:text-[#241b16]",
+    "rounded-[6px] border-2 border-[var(--songtell-ink)] bg-white text-[11px] font-bold text-[var(--songtell-ink)] shadow-[2px_2px_0_var(--songtell-ink)] transition hover:-translate-y-0.5 hover:bg-[var(--songtell-theme)]",
   pillButtonActive:
-    "rounded-full border-none bg-[#2d2622] text-[11px] font-bold text-[#f7f0e6] shadow-[0_10px_20px_rgba(45,38,34,0.2)] hover:bg-[#2d2622] hover:text-[#f7f0e6]",
+    "rounded-[6px] border-2 border-[var(--songtell-ink)] bg-[var(--songtell-ink)] text-[11px] font-bold text-white shadow-[2px_2px_0_var(--songtell-ink)] hover:bg-[var(--songtell-ink)] hover:text-white",
   primaryButton:
-    "rounded-full border-none bg-[#2f2823] px-3.5 text-[11.5px] text-[#faf4eb] shadow-[0_12px_23px_rgba(45,38,34,0.19)] transition hover:bg-[#26201d] hover:text-white",
+    "rounded-[6px] border-2 border-[var(--songtell-ink)] bg-[var(--songtell-theme)] px-3.5 text-[11.5px] font-bold text-[var(--songtell-ink)] shadow-[2px_2px_0_var(--songtell-ink)] transition hover:-translate-y-0.5 hover:bg-[var(--songtell-theme)] hover:text-[var(--songtell-ink)]",
   secondaryButton:
-    "rounded-full border-none bg-white/74 text-[11.5px] text-[#2f2722] shadow-[0_7px_15px_rgba(70,53,38,0.075),0_1px_0_rgba(255,255,255,0.78)_inset,0_0_0_1px_rgba(255,255,255,0.12)_inset] backdrop-blur-xl transition hover:bg-white",
+    "rounded-[6px] border-2 border-[var(--songtell-ink)] bg-white text-[11.5px] text-[var(--songtell-ink)] shadow-[2px_2px_0_var(--songtell-ink)] transition hover:-translate-y-0.5 hover:bg-[var(--songtell-paper)]",
   editorSection:
     "space-y-2.5 rounded-[10px] bg-[linear-gradient(180deg,rgba(255,255,255,0.7),rgba(248,243,237,0.54))] p-2.5 shadow-[0_10px_24px_rgba(70,53,38,0.07),0_1px_0_rgba(255,255,255,0.74)_inset,0_0_0_1px_rgba(255,255,255,0.1)_inset] backdrop-blur-xl",
   infoCard:
@@ -99,11 +99,10 @@ export function StudioBlurBackdrop({ imageUrl }: { imageUrl?: string | null }) {
             className="absolute inset-[-10%] scale-[1.12] bg-center bg-cover opacity-78 blur-[28px] saturate-[1.12]"
             style={{ backgroundImage: `url("${imageUrl}")` }}
           />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_14%,rgba(255,255,255,0.1),transparent_32%),linear-gradient(180deg,rgba(246,241,235,0.26)_0%,rgba(239,231,221,0.4)_34%,rgba(233,224,213,0.52)_100%)] backdrop-blur-[1px]" />
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(221,197,180,0.02)_42%,rgba(95,74,57,0.04)_100%)] mix-blend-soft-light" />
+          <div className="absolute inset-0 bg-[var(--songtell-paper)]/90 backdrop-blur-[1px]" />
         </>
       ) : (
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_14%,rgba(255,255,255,0.48),transparent_32%),linear-gradient(180deg,rgba(246,241,235,0.96)_0%,rgba(239,231,221,0.96)_38%,rgba(233,224,213,0.98)_100%)]" />
+        <div className="absolute inset-0 bg-[var(--songtell-paper)]" />
       )}
     </div>
   );

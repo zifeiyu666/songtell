@@ -1,8 +1,8 @@
 {
   "Home": {
-    "title": "Send a Custom Song Gift in Minutes | SendTheSong.io",
-    "tagLine": "Custom song gifts you can preview, refine, and send.",
-    "description": "Create a personalized, studio-quality custom song from your story. Preview it free, edit the lyrics, and send a meaningful song gift in minutes."
+    "title": "Songtell | Turn Your Story Into a Custom Song",
+    "tagLine": "Turn the words you cannot say into a song.",
+    "description": "Create an original song from your story. Preview it free, shape the feeling, and send a personalized music gift in minutes."
   },
   "Login": {
     "title": "Welcome back",
@@ -387,24 +387,14 @@
         "href": "/music/personalized-gift",
         "items": [
           {
-            "name": "Turn a Message Into a Song",
-            "href": "/gifts/song-message",
-            "description": "Shape a personal message, memory, or voice-note idea into an editable song preview."
-          },
-          {
-            "name": "AI Voice Cloning",
-            "href": "/voice-clone",
-            "description": "Create a verified voice clone from a recording you own or are authorized to use."
-          },
-          {
             "name": "AI song preview tool",
             "href": "/create-song",
             "description": "Turn a story into a free song preview before unlocking the full track."
           },
           {
-            "name": "Birthday song gifts",
-            "href": "/occasions/custom-happy-birthday-song",
-            "description": "Create a personal birthday song with names, stories, and memories."
+            "name": "Music personalized gifts",
+            "href": "/music/personalized-gift",
+            "description": "Explore four story-led gift directions for music lovers, kids, holidays, and couples."
           },
           {
             "name": "Anniversary song gifts",
@@ -412,14 +402,9 @@
             "description": "Turn your love story into an anniversary song they can replay."
           },
           {
-            "name": "Music personalized gifts",
-            "href": "/music/personalized-gift",
-            "description": "Explore personalized songs, videos, and keepsakes for music lovers."
-          },
-          {
-            "name": "Custom Song Lyric Gifts",
-            "href": "/custom-song-lyrics-wall-art",
-            "description": "Turn custom lyrics into printable wall art and keepsakes."
+            "name": "Wedding song gifts",
+            "href": "/occasions/wedding",
+            "description": "Create an entrance, first-dance, or reception song from your story."
           }
         ]
       }
@@ -530,64 +515,16 @@
               "href": "/create-song"
             },
             {
-              "name": "Turn a Message Into a Song",
-              "href": "/gifts/song-message"
-            },
-            {
-              "name": "Birthday song gifts",
-              "href": "/occasions/custom-happy-birthday-song"
+              "name": "Music personalized gifts",
+              "href": "/music/personalized-gift"
             },
             {
               "name": "Anniversary song gifts",
               "href": "/occasions/anniversary"
             },
             {
-              "name": "Custom songs for wife",
-              "href": "/occasions/custom-song-for-wife"
-            },
-            {
-              "name": "Mother's Day song gifts",
-              "href": "/occasions/mothers-day"
-            },
-            {
-              "name": "Father's Day song gifts",
-              "href": "/occasions/fathers-day"
-            },
-            {
-              "name": "Valentine's Day song gifts",
-              "href": "/occasions/valentines-day"
-            },
-            {
-              "name": "Congratulations song gifts",
-              "href": "/occasions/congratulations"
-            },
-            {
               "name": "Wedding song gifts",
               "href": "/occasions/wedding"
-            },
-            {
-              "name": "Memorial song gifts",
-              "href": "/occasions/in-memoriam"
-            },
-            {
-              "name": "Thank you song gifts",
-              "href": "/occasions/thank-you"
-            },
-            {
-              "name": "Get well soon song gifts",
-              "href": "/occasions/get-well-soon"
-            },
-            {
-              "name": "Music personalized gifts",
-              "href": "/music/personalized-gift"
-            },
-            {
-              "name": "Gift playlists",
-              "href": "/playlists"
-            },
-            {
-              "name": "Custom Song Lyric Gifts",
-              "href": "/custom-song-lyrics-wall-art"
             }
           ]
         },

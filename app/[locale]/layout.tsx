@@ -31,14 +31,8 @@ import {
   setRequestLocale,
 } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
-import { Bricolage_Grotesque as FontSans } from "next/font/google";
+import { geist, gasoekOne } from "@/app/fonts";
 import { notFound } from "next/navigation";
-
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-});
 
 type MetadataProps = {
   params: Promise<{ locale: string }>;
@@ -94,7 +88,8 @@ export default async function LocaleLayout({
       <body
         className={cn(
           "min-h-screen bg-background flex flex-col",
-          fontSans.variable
+          geist.variable,
+          gasoekOne.variable
         )}
       >
         <NextIntlClientProvider messages={messages}>

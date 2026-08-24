@@ -575,9 +575,9 @@ function SharePanel({
     url: shareUrl,
   }).toString()}`;
   const glassButtonClassName =
-    "rounded-full border-0 bg-white/38 text-foreground shadow-[0_10px_30px_rgba(45,31,24,0.08),inset_0_1px_0_rgba(255,255,255,0.72),inset_0_-1px_0_rgba(255,255,255,0.2)] backdrop-blur-xl hover:bg-white/52 hover:text-foreground";
+    "creem-song-action inline-flex items-center gap-2 border-2 border-[var(--songtell-ink)] rounded-[6px] bg-white px-4 py-2 text-sm font-bold text-[var(--songtell-ink)] shadow-[2px_2px_0_var(--songtell-ink)] transition hover:-translate-y-0.5 hover:bg-[var(--songtell-theme)] hover:text-[var(--songtell-ink)]";
   const glassDialogButtonClassName =
-    "h-11 justify-start rounded-xl border-0 bg-white/48 text-foreground shadow-[0_10px_28px_rgba(45,31,24,0.07),inset_0_1px_0_rgba(255,255,255,0.78),inset_0_-1px_0_rgba(255,255,255,0.2)] backdrop-blur-xl hover:bg-white/62 hover:text-foreground";
+    "creem-song-action h-11 justify-start border-2 border-[var(--songtell-ink)] rounded-[6px] bg-white px-4 text-sm font-bold text-[var(--songtell-ink)] shadow-[2px_2px_0_var(--songtell-ink)] hover:bg-[var(--songtell-theme)] hover:text-[var(--songtell-ink)]";
 
   async function copyShareUrl() {
     await navigator.clipboard.writeText(shareUrl);
@@ -586,7 +586,7 @@ function SharePanel({
   }
 
   return (
-    <div className="overflow-hidden rounded-2xl bg-card shadow-[0_18px_54px_rgba(255,120,150,0.11)]">
+    <div className="creem-song-share-panel overflow-hidden rounded-2xl bg-card shadow-[0_18px_54px_rgba(255,120,150,0.11)]">
       <div className="flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
         <div className="flex items-start gap-3">
           <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-accent text-accent-foreground">
@@ -774,7 +774,7 @@ function OwnerLyricsPanel({ data }: { data: FinalSongPlayerData }) {
     "rounded-full border-0 bg-white/42 text-foreground shadow-[0_10px_28px_rgba(45,31,24,0.07),inset_0_1px_0_rgba(255,255,255,0.76),inset_0_-1px_0_rgba(255,255,255,0.2)] backdrop-blur-xl hover:bg-white/58 hover:text-foreground";
 
   return (
-    <div className="overflow-hidden rounded-2xl bg-card shadow-[0_18px_54px_rgba(255,120,150,0.11)]">
+    <div className="creem-song-lyrics-panel overflow-hidden rounded-2xl bg-card shadow-[0_18px_54px_rgba(255,120,150,0.11)]">
       <div className="flex flex-col gap-4 px-5 pb-2 pt-5 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-3">
           <span className="flex size-9 items-center justify-center rounded-xl bg-accent text-accent-foreground">
@@ -850,11 +850,11 @@ function SongCreationTools({
     shareUrl: data.shareUrl,
   };
   const toolCardClassName =
-    "group relative flex min-h-[132px] w-full cursor-pointer flex-col justify-between overflow-hidden rounded-2xl bg-card p-5 text-left shadow-[0_18px_48px_rgba(255,120,150,0.16)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_30px_72px_rgba(255,104,142,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/35 focus-visible:ring-offset-2 active:translate-y-0";
+    "creem-song-tool-card group relative flex min-h-[132px] w-full cursor-pointer flex-col justify-between overflow-hidden rounded-[8px] border-[3px] border-[var(--songtell-ink)] bg-white p-5 text-left shadow-[3px_3px_0_var(--songtell-ink)] transition duration-200 hover:-translate-y-1 hover:shadow-[4px_4px_0_var(--songtell-ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--songtell-theme)] active:translate-y-0";
   const toolIconClassName =
     "flex size-10 items-center justify-center rounded-xl bg-accent text-accent-foreground";
   const toolActionClassName =
-    "inline-flex items-center gap-2 rounded-full bg-primary px-3.5 py-2 text-xs font-black text-primary-foreground shadow-[0_12px_26px_rgba(239,62,53,0.22)] transition duration-200 group-hover:gap-3 group-hover:bg-primary/90";
+    "inline-flex items-center gap-2 rounded-[6px] border-2 border-[var(--songtell-ink)] bg-[var(--songtell-theme)] px-3.5 py-2 text-xs font-black text-[var(--songtell-ink)] shadow-[2px_2px_0_var(--songtell-ink)] transition duration-200 group-hover:-translate-y-0.5 group-hover:shadow-[3px_3px_0_var(--songtell-ink)]";
 
   return (
     <div className="grid gap-3 sm:grid-cols-2">
@@ -862,12 +862,12 @@ function SongCreationTools({
         initialSong={initialSong}
         songOptions={songOptions}
         trigger={
-          <button className={toolCardClassName} type="button">
+          <button className={`${toolCardClassName} creem-song-tool-wall-art`} type="button">
             <div className="flex items-start justify-between gap-4">
               <div className={toolIconClassName}>
                 <Wand2 className="size-4" />
               </div>
-              <span className={toolActionClassName}>
+              <span className={`${toolActionClassName} creem-song-tool-action`}>
                 Open editor
                 <ArrowRight className="size-3.5 transition duration-200 group-hover:translate-x-0.5" />
               </span>
@@ -889,12 +889,12 @@ function SongCreationTools({
         initialSong={data}
         songOptions={songOptions}
         trigger={
-          <button className={toolCardClassName} type="button">
+          <button className={`${toolCardClassName} creem-song-tool-video`} type="button">
             <div className="flex items-start justify-between gap-4">
               <div className={toolIconClassName}>
                 <Clapperboard className="size-4" />
               </div>
-              <span className={toolActionClassName}>
+              <span className={`${toolActionClassName} creem-song-tool-action`}>
                 Open editor
                 <ArrowRight className="size-3.5 transition duration-200 group-hover:translate-x-0.5" />
               </span>
@@ -978,7 +978,7 @@ export function FinalSongOwnerPlayer({
   }
 
   return (
-    <div className="relative w-full pb-8">
+    <div className="creem-song-player relative w-full pb-8">
       <SongCoverBackdrop imageUrl={data.imageUrl} title={data.title} />
 
       <section className="relative z-10 px-4 pt-2 sm:px-6 lg:px-8">
@@ -997,7 +997,7 @@ export function FinalSongOwnerPlayer({
             <p className="mb-1 handwritten-subtitle text-2xl font-normal leading-none text-accent-foreground">
               Ta-da! Congratulation!
             </p>
-            <h1 className="max-w-4xl text-balance text-5xl font-black leading-tight text-foreground">
+            <h1 className="max-w-4xl text-balance font-display text-5xl font-normal leading-[0.98] tracking-[0.02em] text-[var(--songtell-ink)] sm:text-6xl lg:text-7xl">
               {data.title}
             </h1>
             <div className="mt-4 flex flex-wrap gap-2">

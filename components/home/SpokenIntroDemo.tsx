@@ -64,7 +64,7 @@ export default function SpokenIntroDemo() {
         <div className="pointer-events-none absolute inset-0 opacity-35 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:24px_24px]" />
         <div className="relative flex items-center justify-between gap-4">
           <div className="min-w-0">
-            <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#ffb4a4]">
+            <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--songtell-theme)]">
               {t("items.spokenIntro.demo.eyebrow")}
             </p>
             <p className="mt-1 truncate text-sm font-bold text-white">
@@ -84,7 +84,7 @@ export default function SpokenIntroDemo() {
                 : t("items.spokenIntro.demo.play")
             }
             onClick={togglePlayback}
-            className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-[#ff725d] text-[#2a120d] shadow-[0_10px_24px_rgba(255,114,93,0.28)] transition hover:scale-105 hover:bg-[#ff8c7b] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#21130f]"
+            className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-[var(--songtell-theme)] text-[var(--songtell-ink)] shadow-[2px_2px_0_var(--songtell-ink)] transition hover:-translate-y-0.5 hover:bg-[var(--songtell-theme)] hover:shadow-[3px_3px_0_var(--songtell-ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--songtell-theme)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#21130f]"
           >
             {isPlaying ? (
               <Pause className="size-4 fill-current" aria-hidden="true" />
@@ -94,8 +94,8 @@ export default function SpokenIntroDemo() {
           </button>
         </div>
 
-        <div className="relative mt-5 border-l border-[#ff8c7b]/55 pl-4">
-          <p className="text-xs font-semibold text-[#ffb4a4]">
+        <div className="relative mt-5 border-l border-[var(--songtell-theme)]/55 pl-4">
+          <p className="text-xs font-semibold text-[var(--songtell-theme)]">
             {t("items.spokenIntro.demo.label")}
           </p>
           <blockquote className="mt-2 text-pretty text-[1.05rem] font-semibold leading-7 text-white sm:text-lg">
@@ -120,12 +120,12 @@ export default function SpokenIntroDemo() {
 
         <div className="relative mt-5 h-1 overflow-hidden rounded-full bg-white/15">
           <div
-            className="h-full rounded-full bg-[#ff725d] shadow-[0_0_12px_rgba(255,114,93,0.8)] transition-[width] duration-150"
+            className="h-full rounded-full bg-[var(--songtell-theme)] shadow-[0_0_12px_rgba(245,193,158,0.55)] transition-[width] duration-150"
             style={{ width: `${introProgress}%` }}
           />
         </div>
         <p className="relative mt-3 flex items-center gap-2 text-xs font-medium text-white/65">
-          <Volume2 className="size-3.5 text-[#ffb4a4]" aria-hidden="true" />
+          <Volume2 className="size-3.5 text-[var(--songtell-theme)]" aria-hidden="true" />
           {isIntroComplete
             ? t("items.spokenIntro.demo.songStarts")
             : t("items.spokenIntro.demo.introPlaying")}

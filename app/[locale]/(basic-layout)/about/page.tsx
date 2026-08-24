@@ -60,7 +60,7 @@ export default async function Page({ params }: { params: Params }) {
   const content = await getMDXContent(locale);
 
   return (
-    <article className="container max-w-7xl mx-auto">
+    <article className="public-creem-page container mx-auto max-w-7xl px-4 py-24 sm:px-6">
       <MDXRemote
         source={content}
         components={MDXComponents}

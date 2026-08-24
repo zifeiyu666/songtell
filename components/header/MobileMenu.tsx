@@ -51,14 +51,14 @@ export default function MobileMenu({
         className={cn(
           "rounded-full p-2 transition-colors",
           variant === "adaptive"
-            ? "text-[#fdf9f4] hover:bg-white/10 group-data-[scrolled=true]/header:text-[#270a05] group-data-[scrolled=true]/header:hover:bg-zinc-950/5"
+            ? "text-[var(--songtell-ink)] hover:bg-white"
             : "text-foreground hover:bg-accent hover:text-accent-foreground"
         )}
         aria-label="Open menu"
       >
         <Menu className="h-5 w-5" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-48">
+      <DropdownMenuContent align="end" className="w-56 border-[var(--songtell-line)] bg-[var(--songtell-paper)] text-[var(--songtell-ink)]">
         <DropdownMenuLabel>
           <I18nLink
             href="/"
@@ -68,11 +68,12 @@ export default function MobileMenu({
           >
             <Image
               alt={t("title")}
-              src="/generated-logos/send-the-song-fredoka-logo.webp"
-              className="h-7 w-auto"
-              width={1200}
-              height={238}
+              src="/logo.png"
+              className="h-8 w-[45px] object-contain"
+              width={202}
+              height={144}
             />
+            <span className="text-base font-bold">Songtell</span>
           </I18nLink>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />

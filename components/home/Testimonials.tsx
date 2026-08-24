@@ -16,66 +16,66 @@ export type TestimonialItem = {
 
 const testimonials: TestimonialItem[] = [
   {
-    badge: "💍 5th Anniversary",
+    badge: "🌙 Anniversary evening",
     quote:
-      "Wow! I made my husband's anniversary song with SendTheSong, and he loved it. The vocals felt warm and natural, and the whole thing sounded studio-quality.",
-    author: "Sarah M. 🇺🇸",
-    avatar: "/avatar/avatar1.jpg",
-    cardClassName: "bg-white",
-  },
-  {
-    badge: "🎂 Mom's 50th",
-    quote:
-      "So much better than a generic greeting card. SendTheSong took less than 2 mins and brought my mom to tears of joy!",
-    author: "David K. 🇬🇧",
-    avatar: "/avatar/avatar2.jpg",
-    cardClassName: "bg-white",
-  },
-  {
-    badge: "✨ Wedding First Dance",
-    quote:
-      "We used this for our first dance. It captured our specific inside jokes perfectly. Pure magic!",
-    author: "Emma & James 🇨🇦",
-    avatar: "/avatar/avatar3.jpg",
-    cardClassName: "bg-white",
-  },
-  {
-    badge: "✈️ Long-Distance",
-    quote:
-      "The perfect way to send a song when you're 3,000 miles apart. I added tiny details from our calls and favorite trips, and she played it on repeat all night.",
-    author: "Liam T. 🇨🇦",
-    avatar: "/avatar/avatar4.jpg",
-    cardClassName: "bg-white",
-  },
-  {
-    badge: "👴 Father's Day",
-    quote:
-      "My kids created a personalized song for me. Not cheesy at all. Actually beautiful. Will cherish forever.",
-    author: "Robert H. 🇦🇺",
-    avatar: "/avatar/avatar5.jpg",
-    cardClassName: "bg-white",
-  },
-  {
-    badge: "🚀 Last-Minute Gift",
-    quote:
-      "Total lifesaver! Realized I forgot a gift the night before. This music gift literally saved the party.",
-    author: "Chloe B. 🇬🇧",
-    avatar: "/avatar/avatar6.jpg",
-    cardClassName: "bg-white",
-  },
-  {
-    badge: "🎸 Boyfriend's Bday",
-    quote:
-      "It actually nailed the 90s indie rock vibe my boyfriend loves. I mentioned his favorite bands, our coffee shop date, and the song came back sounding like a real studio recording.",
-    author: "Sofia R. 🇪🇸",
+      "I turned the little details from our first apartment into a soft late-night ballad. It felt personal without being overdone.",
+    author: "Maya R. · Portland",
     avatar: "/avatar/avatar7.jpg",
     cardClassName: "bg-white",
   },
   {
-    badge: "🤵 Groom's Surprise",
+    badge: "🎈 Birthday toast",
     quote:
-      "Surprised my bride during the reception. The look on her face was priceless. Easiest custom song ever.",
-    author: "Marcus V. 🇺🇸",
+      "My sister and I added the phrases our dad always says. The preview gave us a gift we could actually share together.",
+    author: "Jonah K. · Manchester",
+    avatar: "/avatar/avatar4.jpg",
+    cardClassName: "bg-white",
+  },
+  {
+    badge: "✨ First dance",
+    quote:
+      "We built the song around our road-trip stops and a tiny inside joke. Hearing it at the reception made the room feel like ours.",
+    author: "Nora & Elias · Toronto",
+    avatar: "/avatar/avatar2.jpg",
+    cardClassName: "bg-white",
+  },
+  {
+    badge: "✈️ Across the miles",
+    quote:
+      "I sent it before a long flight so my partner could listen on the train home. The lyrics held all the ordinary moments I was missing.",
+    author: "Theo S. · Dublin",
+    avatar: "/avatar/avatar6.jpg",
+    cardClassName: "bg-white",
+  },
+  {
+    badge: "👵 Grandmother's story",
+    quote:
+      "We collected memories from three generations and shaped them into one gentle folk song. She kept asking to hear it again.",
+    author: "Clara V. · Melbourne",
+    avatar: "/avatar/avatar3.jpg",
+    cardClassName: "bg-white",
+  },
+  {
+    badge: "🚀 Same-day surprise",
+    quote:
+      "I had a story, a mood, and an idea before lunch. By dinner I had a private song page ready to share with a note.",
+    author: "Priya N. · Austin",
+    avatar: "/avatar/avatar1.jpg",
+    cardClassName: "bg-white",
+  },
+  {
+    badge: "🎸 Indie birthday mix",
+    quote:
+      "I described the tiny record shop where we met and picked an indie groove. The result sounded like a memory with a chorus.",
+    author: "Camila D. · Barcelona",
+    avatar: "/avatar/avatar5.jpg",
+    cardClassName: "bg-white",
+  },
+  {
+    badge: "🤍 Vow renewal",
+    quote:
+      "We used a few lines from our original vows and gave them a new melody for our tenth year. It made the renewal feel entirely new.",
+    author: "Hannah & Leo · Wellington",
     avatar: "/avatar/avatar8.jpg",
     cardClassName: "bg-white",
   },
