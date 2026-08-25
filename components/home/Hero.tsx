@@ -26,7 +26,7 @@ export default function Hero() {
         <div className="max-w-4xl">
           <h1 className="text-balance font-display text-[clamp(2.4rem,6vw,5.25rem)] font-normal leading-[0.98] tracking-[0.01em] text-[var(--songtell-ink)]">
             <span className="block">{t("titleLine")}</span>
-            <span className="block pb-2 text-[var(--songtell-ink)] sm:pb-3">
+            <span className="block pb-2 text-[var(--songtell-theme)] sm:pb-3">
               <Highlighter action="underline" color="#F5C19E" strokeWidth={4} padding={1} iterations={2} roughness={1.5} animationDuration={700}>{t("titleAccent")}</Highlighter>
             </span>
           </h1>

@@ -72,6 +72,7 @@ function convertPlanToConfig(plan: DbPricingPlan): string {
   lines.push('  {')
   lines.push(`${indent}id: '${plan.id}',`)
   lines.push(`${indent}environment: '${plan.environment}',`)
+  lines.push(`${indent}siteKey: '${plan.siteKey}',`)
   lines.push(`${indent}groupSlug: '${plan.groupSlug}',`)
   lines.push(`${indent}cardTitle: '${plan.cardTitle.replace(/'/g, "\\'")}',`)
 

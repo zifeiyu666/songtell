@@ -58,6 +58,7 @@ async function main() {
         .values({
           id: plan.id,
           environment: plan.environment,
+          siteKey: plan.siteKey ?? 'default',
           groupSlug: plan.groupSlug ?? 'default',
           cardTitle: plan.cardTitle,
           cardDescription: plan.cardDescription,
@@ -90,6 +91,7 @@ async function main() {
           target: pricingPlansTable.id,
           set: {
             environment: plan.environment,
+            siteKey: plan.siteKey ?? 'default',
             groupSlug: plan.groupSlug ?? 'default',
             cardTitle: plan.cardTitle,
             cardDescription: plan.cardDescription,

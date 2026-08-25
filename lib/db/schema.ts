@@ -180,52 +180,61 @@ export const pricingPlanGroups = pgTable('pricing_plan_groups', {
     .notNull(),
 })
 
-export const pricingPlans = pgTable('pricing_plans', {
-  id: uuid('id').primaryKey().defaultRandom(),
-  environment: pricingPlanEnvironmentEnum('environment').notNull(),
-  groupSlug: varchar('group_slug', { length: 100 })
-    .references(() => pricingPlanGroups.slug, { onDelete: 'restrict' })
-    .default('default')
-    .notNull(),
-  cardTitle: text('card_title').notNull(),
-  cardDescription: text('card_description'),
-  provider: providerEnum('provider').default('none'),
-  stripePriceId: varchar('stripe_price_id', { length: 255 }),
-  stripeProductId: varchar('stripe_product_id', { length: 255 }),
-  stripeCouponId: varchar('stripe_coupon_id', { length: 255 }),
-  creemProductId: varchar('creem_product_id', { length: 255 }),
-  creemDiscountCode: varchar('creem_discount_code', { length: 255 }),
-  paypalPlanId: varchar('paypal_plan_id', { length: 255 }),
-  enableManualInputCoupon: boolean('enable_manual_input_coupon')
-    .default(false)
-    .notNull(),
-  // paymentType: varchar('payment_type', { length: 50 }),
-  paymentType: paymentTypeEnum('payment_type'),
-  // recurringInterval: varchar('recurring_interval', { length: 50 }),
-  recurringInterval: recurringIntervalEnum('recurring_interval'),
-  trialPeriodDays: integer('trial_period_days'),
-  price: numeric('price'),
-  currency: varchar('currency', { length: 10 }),
-  displayPrice: varchar('display_price', { length: 50 }),
-  originalPrice: varchar('original_price', { length: 50 }),
-  priceSuffix: varchar('price_suffix', { length: 100 }),
-  features: jsonb('features').default('[]').notNull(),
-  isHighlighted: boolean('is_highlighted').default(false).notNull(),
-  highlightText: text('highlight_text'),
-  buttonText: text('button_text'),
-  buttonLink: text('button_link'),
-  displayOrder: integer('display_order').default(0).notNull(),
-  isActive: boolean('is_active').default(true).notNull(),
-  langJsonb: jsonb('lang_jsonb').default('{}').notNull(),
-  benefitsJsonb: jsonb('benefits_jsonb').default('{}'),
-  createdAt: timestamp('created_at', { withTimezone: true })
-    .defaultNow()
-    .notNull(),
-  updatedAt: timestamp('updated_at', { withTimezone: true })
-    .defaultNow()
-    .notNull()
-    .$onUpdate(() => new Date()),
-})
+export const pricingPlans = pgTable(
+  'pricing_plans',
+  {
+    id: uuid('id').primaryKey().defaultRandom(),
+    environment: pricingPlanEnvironmentEnum('environment').notNull(),
+    siteKey: varchar('site_key', { length: 100 }).default('default').notNull(),
+    groupSlug: varchar('group_slug', { length: 100 })
+      .references(() => pricingPlanGroups.slug, { onDelete: 'restrict' })
+      .default('default')
+      .notNull(),
+    cardTitle: text('card_title').notNull(),
+    cardDescription: text('card_description'),
+    provider: providerEnum('provider').default('none'),
+    stripePriceId: varchar('stripe_price_id', { length: 255 }),
+    stripeProductId: varchar('stripe_product_id', { length: 255 }),
+    stripeCouponId: varchar('stripe_coupon_id', { length: 255 }),
+    creemProductId: varchar('creem_product_id', { length: 255 }),
+    creemDiscountCode: varchar('creem_discount_code', { length: 255 }),
+    paypalPlanId: varchar('paypal_plan_id', { length: 255 }),
+    enableManualInputCoupon: boolean('enable_manual_input_coupon')
+      .default(false)
+      .notNull(),
+    // paymentType: varchar('payment_type', { length: 50 }),
+    paymentType: paymentTypeEnum('payment_type'),
+    // recurringInterval: varchar('recurring_interval', { length: 50 }),
+    recurringInterval: recurringIntervalEnum('recurring_interval'),
+    trialPeriodDays: integer('trial_period_days'),
+    price: numeric('price'),
+    currency: varchar('currency', { length: 10 }),
+    displayPrice: varchar('display_price', { length: 50 }),
+    originalPrice: varchar('original_price', { length: 50 }),
+    priceSuffix: varchar('price_suffix', { length: 100 }),
+    features: jsonb('features').default('[]').notNull(),
+    isHighlighted: boolean('is_highlighted').default(false).notNull(),
+    highlightText: text('highlight_text'),
+    buttonText: text('button_text'),
+    buttonLink: text('button_link'),
+    displayOrder: integer('display_order').default(0).notNull(),
+    isActive: boolean('is_active').default(true).notNull(),
+    langJsonb: jsonb('lang_jsonb').default('{}').notNull(),
+    benefitsJsonb: jsonb('benefits_jsonb').default('{}'),
+    createdAt: timestamp('created_at', { withTimezone: true })
+      .defaultNow()
+      .notNull(),
+    updatedAt: timestamp('updated_at', { withTimezone: true })
+      .defaultNow()
+      .notNull()
+      .$onUpdate(() => new Date()),
+  },
+  (table) => ({
+    siteEnvironmentActiveOrderIdx: index(
+      'idx_pricing_plans_site_environment_active_order'
+    ).on(table.siteKey, table.environment, table.isActive, table.displayOrder),
+  })
+)
 
 export const orders = pgTable(
   'orders',

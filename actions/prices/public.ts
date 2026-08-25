@@ -18,7 +18,17 @@ export async function getPublicPricingPlans(): Promise<ActionResult<PricingPlan[
     return actionResponse.success([])
   }
 
-  const environment = process.env.NODE_ENV === 'production' ? 'live' : 'test'
+  const configuredEnvironment = process.env.PRICING_ENV?.trim()
+  const environment =
+    configuredEnvironment ||
+    (process.env.NODE_ENV === 'production' ? 'live' : 'test')
+
+  if (environment !== 'test' && environment !== 'live') {
+    console.error('PRICING_ENV must be either "test" or "live"')
+    return actionResponse.error('Pricing environment is not configured correctly')
+  }
+
+  const siteKey = process.env.PRICING_SITE_KEY?.trim() || 'default'
 
   try {
     const plans = await db
@@ -27,6 +37,7 @@ export async function getPublicPricingPlans(): Promise<ActionResult<PricingPlan[
       .where(
         and(
           eq(pricingPlansSchema.environment, environment),
+          eq(pricingPlansSchema.siteKey, siteKey),
           eq(pricingPlansSchema.isActive, true)
         )
       )
