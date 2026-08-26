@@ -1,6 +1,6 @@
 {
   "Home": {
-    "title": "Personalized Song Maker From Your Story | Songtell",
+    "title": "Create A Personalized Song From Your Story | Songtell",
     "tagLine": "Turn the words you cannot say into a song.",
     "description": "Create a personalized song from your stories, names, and message. Preview your custom song free, refine the lyrics, and share a meaningful music gift."
   },
@@ -497,6 +497,12 @@
             {
               "href": "/glossary",
               "name": "Glossary"
+            },
+            {
+              "href": "https://onecustomsong.art",
+              "name": "One Custom Song",
+              "target": "_blank",
+              "rel": "noopener"
             },
             {
               "href": "https://aihustle.tools",

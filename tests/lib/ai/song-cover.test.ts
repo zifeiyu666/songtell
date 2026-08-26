@@ -88,8 +88,12 @@ describe("song cover generation helpers", () => {
           vocalGender: "Female",
           songId: "song-123",
         },
-        {
-          async generateImage(prompt) {
+      {
+        async moderatePrompt({ prompt }) {
+          assert.match(prompt, /red balloons/i);
+          return {};
+        },
+        async generateImage(prompt) {
             assert.match(prompt, /red balloons/i);
             assert.match(prompt, /no text, logo, or watermark/i);
             return "https://replicate.delivery/generated.webp";
@@ -135,6 +139,12 @@ describe("song cover generation helpers", () => {
           calls.push(`image:${prompt.includes("no readable text")}`);
           return "https://replicate.delivery/generated.webp";
         },
+        async moderatePrompt({ prompt, externalId }) {
+          calls.push(
+            `moderate:${prompt.includes("no readable text")}:${externalId}`,
+          );
+          return { id: "mod_123" };
+        },
         async uploadImage(externalUrl, key) {
           calls.push(
             `upload:${externalUrl}:${key.startsWith("song-covers/song-123/")}`,
@@ -154,8 +164,44 @@ describe("song cover generation helpers", () => {
     assert.match(result.prompt, /warm cinematic square album cover/);
     assert.deepEqual(calls, [
       "prompt:true:true",
+      "moderate:true:cover:song-123",
       "image:true",
       "upload:https://replicate.delivery/generated.webp:true",
     ]);
+  });
+
+  test("does not generate an image when Creem blocks the prompt", async () => {
+    let imageGenerated = false;
+
+    await assert.rejects(
+      () =>
+        generateSongCover(
+          {
+            title: "Mia's Birthday Song",
+            lyrics: "[Verse] Mia dances under kitchen lights",
+            occasion: "Birthday",
+            genre: "Pop",
+            language: "English",
+            recipientNames: ["Mia"],
+            story: "Mia loves warm family dinners and red balloons.",
+            vocalGender: "Female",
+          },
+          {
+            async moderatePrompt() {
+              throw new Error("This request cannot be processed.");
+            },
+            async generateImage() {
+              imageGenerated = true;
+              return "https://replicate.delivery/generated.webp";
+            },
+            async uploadImage() {
+              return { key: "unused", url: "https://r2.example.com/unused.webp" };
+            },
+          },
+        ),
+      /cannot be processed/i,
+    );
+
+    assert.equal(imageGenerated, false);
   });
 });

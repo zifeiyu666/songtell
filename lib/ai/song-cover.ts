@@ -2,6 +2,7 @@ import Replicate from "replicate";
 
 import { fetchExternalUrlToR2 } from "@/lib/cloudflare/r2-fetch-upload";
 import { generateR2Key } from "@/lib/cloudflare/r2-utils";
+import { moderateCreemPrompt } from "@/lib/creem/moderation";
 import type { SongCoverArtDirection } from "@/types/song-cover";
 
 export const SONG_COVER_IMAGE_MODEL = "black-forest-labs/flux-dev";
@@ -40,9 +41,15 @@ type UploadGeneratedImage = (
   key: string,
 ) => Promise<{ url: string; key: string }>;
 
+type ModeratePrompt = (input: {
+  externalId?: string;
+  prompt: string;
+}) => Promise<{ id?: string }>;
+
 type GenerateSongCoverDependencies = {
   generatePrompt?: TextPromptGenerator;
   generateImage?: ImageGenerator;
+  moderatePrompt?: ModeratePrompt;
   uploadImage?: UploadGeneratedImage;
 };
 
@@ -180,6 +187,7 @@ export async function generateSongCover(
     dependencies.generatePrompt ?? generatePromptFromSongContext;
   const generateImage =
     dependencies.generateImage ?? generateImageWithReplicate;
+  const moderatePrompt = dependencies.moderatePrompt ?? moderateCreemPrompt;
   const uploadImage = dependencies.uploadImage ?? fetchExternalUrlToR2;
   const promptRequest = buildSongCoverPromptRequest(input);
   const prompt = normalizeSongCoverPrompt(
@@ -189,6 +197,10 @@ export async function generateSongCover(
         "You are an expert album-cover art director. Convert song context into one concise image-generation prompt.",
     }),
   );
+  await moderatePrompt({
+    externalId: input.songId ? `cover:${input.songId}` : undefined,
+    prompt,
+  });
   const externalImageUrl = await generateImage(prompt);
   const key = generateR2Key({
     fileName: "cover.webp",

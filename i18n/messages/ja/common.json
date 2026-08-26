@@ -269,6 +269,7 @@
             { "isSubTitle": true, "name": "資料" },
             { "href": "/blog", "name": "すべての記事" },
             { "href": "/glossary", "name": "用語集" },
+            { "href": "https://onecustomsong.art", "name": "One Custom Song", "target": "_blank", "rel": "noopener" },
             { "href": "https://aihustle.tools", "name": "AI Hustle Tools", "target": "_blank", "rel": "noopener nofollow" }
           ]
         },

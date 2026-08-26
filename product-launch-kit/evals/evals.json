@@ -1,0 +1,23 @@
+{
+  "skill_name": "product-launch-kit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "分析当前仓库，生成一份 Product Hunt 发布素材包，包含 tagline、简介、类别、截图顺序、封面图和 logo 建议、maker 介绍以及第一个评论。把结果写成 Markdown 和 JSON 文件。",
+      "expected_output": "基于仓库事实生成 product-launch-kit.md 和 product-launch-kit.json，包含完整 Product Hunt 字段、视觉资产计划、待确认项和提交清单。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Turn this project into copy-ready launch content for Product Hunt, BetaList, and AlternativeTo. Be honest about anything you cannot verify and include asset briefs for missing visuals.",
+      "expected_output": "输出跨平台字段映射、英文发布文案、事实与待确认项分离，以及缺失图片的可执行设计 brief。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "我只想先做一个轻量发布准备：从代码库提炼一句话定位、160 字符短描述、3 个卖点、首发评论和截图清单，不要编造定价或用户数据。",
+      "expected_output": "输出精简但可直接使用的定位、短描述、卖点、first comment 和截图清单，并明确标记未知信息。",
+      "files": []
+    }
+  ]
+}

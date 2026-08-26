@@ -15,6 +15,7 @@ describe("song cover generation route", () => {
     assert.match(source, /getSession\(\)/);
     assert.match(source, /songCoverGeneration/);
     assert.match(source, /checkRateLimit\(/);
+    assert.match(source, /CreemModerationError/);
     assert.match(source, /generateSongCover\(input\)/);
     assert.match(source, /apiResponse\.success\(result\)/);
   });

@@ -1,6 +1,7 @@
 import { generateSongCover } from "@/lib/ai/song-cover";
 import { apiResponse } from "@/lib/api-response";
 import { getSession } from "@/lib/auth/server";
+import { CreemModerationError } from "@/lib/creem/moderation";
 import { checkRateLimit, getClientIPFromRequest } from "@/lib/upstash";
 import { REDIS_RATE_LIMIT_CONFIGS } from "@/lib/upstash/redis-rate-limit-configs";
 import { z } from "zod";
@@ -70,6 +71,13 @@ export async function POST(req: Request) {
     await recordUserActivity({ userId: session?.user.id, feature: "cover", action: "generate", outcome: "succeeded", resourceType: input.songId ? "song_task" : undefined, resourceId: input.songId, durationMs: Date.now() - startedAt });
     return apiResponse.success(result);
   } catch (error) {
+    if (error instanceof CreemModerationError) {
+      return apiResponse.error(
+        error.message,
+        error.code === "blocked" ? 400 : 503,
+      );
+    }
+
     console.error("[songs/cover/generate] Failed to generate cover:", error);
     await recordUserIssueSignal({ userId: session?.user.id, feature: "cover", action: "generate", error, resourceType: input.songId ? "song_task" : undefined, resourceId: input.songId, durationMs: Date.now() - startedAt });
     return apiResponse.serverError(
