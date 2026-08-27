@@ -1,5 +1,8 @@
+import { getLogger } from "@/lib/logger";
+
 const DEFAULT_CREEM_API_BASE_URL = "https://api.creem.io/v1";
 const MODERATION_TIMEOUT_MS = 5_000;
+const logger = getLogger("creem-moderation");
 
 type ModerationDecision = "allow" | "flag" | "deny";
 
@@ -27,6 +30,14 @@ export async function moderateCreemPrompt({
 }): Promise<{ id?: string }> {
   const apiKey = process.env.CREEM_API_KEY;
   if (!apiKey) {
+    logger.warn(
+      {
+        event: "creem_moderation",
+        externalId: externalId ?? null,
+        reason: "not_configured",
+      },
+      "Creem moderation unavailable",
+    );
     throw new CreemModerationError(
       "Creem moderation is not configured.",
       "unavailable",
@@ -52,6 +63,14 @@ export async function moderateCreemPrompt({
       signal: AbortSignal.timeout(MODERATION_TIMEOUT_MS),
     });
   } catch {
+    logger.warn(
+      {
+        event: "creem_moderation",
+        externalId: externalId ?? null,
+        reason: "request_failed",
+      },
+      "Creem moderation unavailable",
+    );
     throw new CreemModerationError(
       "Content moderation is temporarily unavailable.",
       "unavailable",
@@ -59,6 +78,15 @@ export async function moderateCreemPrompt({
   }
 
   if (!response.ok) {
+    logger.warn(
+      {
+        event: "creem_moderation",
+        externalId: externalId ?? null,
+        reason: "unexpected_response",
+        statusCode: response.status,
+      },
+      "Creem moderation unavailable",
+    );
     throw new CreemModerationError(
       "Content moderation is temporarily unavailable.",
       "unavailable",
@@ -69,21 +97,57 @@ export async function moderateCreemPrompt({
   try {
     result = (await response.json()) as CreemModerationResponse;
   } catch {
+    logger.warn(
+      {
+        event: "creem_moderation",
+        externalId: externalId ?? null,
+        reason: "invalid_response",
+      },
+      "Creem moderation unavailable",
+    );
     throw new CreemModerationError(
       "Content moderation returned an invalid response.",
       "unavailable",
     );
   }
 
-  if (result.decision === "allow") return { id: result.id };
+  if (result.decision === "allow") {
+    logger.info(
+      {
+        decision: result.decision,
+        event: "creem_moderation",
+        externalId: externalId ?? null,
+        moderationId: result.id ?? null,
+      },
+      "Creem moderation completed",
+    );
+    return { id: result.id };
+  }
 
   if (result.decision === "flag" || result.decision === "deny") {
+    logger.info(
+      {
+        decision: result.decision,
+        event: "creem_moderation",
+        externalId: externalId ?? null,
+        moderationId: result.id ?? null,
+      },
+      "Creem moderation completed",
+    );
     throw new CreemModerationError(
       "This request cannot be processed. Please revise it and try again.",
       "blocked",
     );
   }
 
+  logger.warn(
+    {
+      event: "creem_moderation",
+      externalId: externalId ?? null,
+      reason: "unknown_decision",
+    },
+    "Creem moderation unavailable",
+  );
   throw new CreemModerationError(
     "Content moderation returned an invalid response.",
     "unavailable",
