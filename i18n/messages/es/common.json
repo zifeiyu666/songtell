@@ -112,6 +112,7 @@
   },
   "Footer": {
     "Copyright": "Copyright © {year} {name}. Todos los derechos reservados.",
+    "FriendLinks": "Enlaces amigos",
     "About": "Sobre nosotros", "PrivacyPolicy": "Política de privacidad (en inglés)", "TermsOfService": "Términos del servicio (en inglés)", "RefundPolicy": "Política de reembolso (en inglés)",
     "Newsletter": {
       "title": "Recibe nuestras novedades", "description": "Ideas de regalo y novedades de SendTheSong directamente en tu correo.",

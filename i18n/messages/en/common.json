@@ -412,6 +412,7 @@
   },
   "Footer": {
     "Copyright": "Copyright © {year} {name} All rights reserved.",
+    "FriendLinks": "Friends",
     "About": "About",
     "PrivacyPolicy": "Privacy Policy",
     "TermsOfService": "Terms of Service",

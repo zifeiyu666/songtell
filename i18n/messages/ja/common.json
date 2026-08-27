@@ -220,6 +220,7 @@
   },
   "Footer": {
     "Copyright": "Copyright © {year} {name}. All rights reserved.",
+    "FriendLinks": "関連リンク",
     "About": "サービスについて",
     "PrivacyPolicy": "プライバシーポリシー（英語）",
     "TermsOfService": "利用規約（英語）",

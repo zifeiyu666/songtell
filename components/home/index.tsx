@@ -16,7 +16,8 @@ import { type FinalSongPlayerData } from "@/components/song/FinalSongPlayer";
 import { type WallArtSongOption } from "@/components/song/WallArtEditorDrawer";
 import { buildSongShareUrl, getFinalSongsForOwner } from "@/lib/ai/final-song";
 import { getSession } from "@/lib/auth/server";
-import { getLocale, getMessages } from "next-intl/server";
+import { getLocale, getMessages, getTranslations } from "next-intl/server";
+import Link from "next/link";
 
 function getTimestampedLyrics(
   metadata: unknown,
@@ -49,9 +50,10 @@ function getTimestampedLyrics(
 }
 
 export default async function HomeComponent() {
-  const [messages, locale] = await Promise.all([
+  const [messages, locale, tFooter] = await Promise.all([
     getMessages(),
     getLocale(),
+    getTranslations("Footer"),
   ]);
   const session = await getSession();
   const isAuthenticated = Boolean(session?.user);
@@ -203,6 +205,20 @@ export default async function HomeComponent() {
           <FAQ />
         </ScrollReveal>
       )}
+
+      <div className="mx-auto flex w-full max-w-8xl flex-wrap items-center gap-x-3 gap-y-1 border-t border-black/10 px-4 py-5 text-xs text-black/40 sm:px-6 lg:px-8">
+        <span>{tFooter("FriendLinks")}</span>
+        <Link
+          href="https://seektool.ai/"
+          title="SeekTool.ai Tools Directory"
+          prefetch={false}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-black/45 transition-colors hover:text-black/70 hover:underline hover:underline-offset-4"
+        >
+          SeekTool.ai Tools Directory
+        </Link>
+      </div>
     </div>
   );
 }
